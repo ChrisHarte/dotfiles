@@ -1,0 +1,13 @@
+
+ln -s ~/bin/.gemrc ~/.gemrc
+
+ln -s ~/bin/.gitconfig ~/.gitconfig
+ln -s ~/bin/.gitignore ~/.gitignore
+
+ln -s ~/bin/.powconfig ~/.powconfig
+ln -s ~/bin/.pryrc ~/.pryrc
+
+ln -s ~/bin/.rvmrc ~/.rvmrc
+
+ln -s ~/bin/.zshrc ~/.zshrc
+
