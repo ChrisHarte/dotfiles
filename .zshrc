@@ -91,15 +91,6 @@ alias omg="omglog"
 # ctags (brew install ctags)
 alias ctags="`brew --prefix`/bin/ctags"
 
-# pep8
-# sudo easy_install pep8
-
-# create .pem file
-# cat server.key server.crt > pound.pem
-
-# check pound config
-# pound -v -c
-
 # unicorn
 alias uni="rvmsudo bundle exec unicorn -l 127.0.0.1 -p 80"
 alias unir="rvmsudo bundle exec unicorn_rails -l 127.0.0.1 -p 80"
@@ -113,33 +104,10 @@ alias spoton="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.met
 alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 
-# ---------------------------------------------------------------------
-
-# Define Vim wrappers which unsets GEM_HOME and GEM_PATH before
-# invoking vim and all known aliases
-#
-# @author Wael Nasreddine <wael.nasreddine@gmail.com>
-#function define_vim_wrappers()
-#{
-  #vim_commands=(
-    #eview evim gview gvim gvimdiff gvimtutor rgview
-    #rgvim rview rvim vim vimdiff vimtutor xxd mvim
-  #)
-
-  #for cmd in ${vim_commands[@]}; do
-    #cmd_path=`/usr/bin/env which -a "${cmd}" 2>/dev/null | grep '^/'`
-    #if [ -x "${cmd_path}" ]; then
-      #eval "function ${cmd} () { (unset GEM_HOME; unset GEM_PATH; $cmd_path \$@) }"
-    #fi
-  #done
-#}
-#define_vim_wrappers
-
-#alias mvim='rvm system do ~/bin/mvim $@'
-
-# clone site
+# clone a site
 alias cloneurl='wget -m -k -K -E $@'
 
 # start mongodb
-alias mongodb="mongod run --config /usr/local/etc/mongod.conf --rest"
+alias mongodb="mongod run --dbpath ~/bin/local_db --bind_ip 127.0.0.1 --rest"
+#alias mongodb="mongod run --config /usr/local/etc/mongod.conf --rest" 
 

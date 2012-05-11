@@ -25,14 +25,12 @@
 /.gdb_history
 /.gem
 /.getmail/gmail.log
-/.getmail/oldmail-pop.gmail.com-995-gary.bernhardt@gmail.com
 /.gnupg
 /.god
 /.heroku
 /.hg.cvsps
 /.hgk
 /.history
-/.history.436tlA
 /.hoe_template
 /.hudson
 /.ipython
@@ -108,3 +106,7 @@
 *.orig
 *.rej
 *.pyc
+
+~/bin/db/
+
+local_db/

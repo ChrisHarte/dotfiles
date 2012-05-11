@@ -1,3 +1,7 @@
+#!/bin/sh
+
+# ----------------------
+# symlink configs
 
 ln -s ~/bin/.gemrc ~/.gemrc
 
@@ -11,4 +15,9 @@ ln -s ~/bin/.pryrc ~/.pryrc
 ln -s ~/bin/.rvmrc ~/.rvmrc
 
 ln -s ~/bin/.zshrc ~/.zshrc
+
+# ----------------------
+# for the mongo database
+
+mkdir ~/bin/local_db
 
