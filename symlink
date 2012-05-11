@@ -2,6 +2,7 @@
 ln -s ~/bin/.gemrc ~/.gemrc
 
 ln -s ~/bin/.gitconfig ~/.gitconfig
+ln -s ~/bin/.githelpers ~/.githelpers
 ln -s ~/bin/.gitignore ~/.gitignore
 
 ln -s ~/bin/.powconfig ~/.powconfig
