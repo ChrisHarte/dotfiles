@@ -72,7 +72,6 @@ alias ng="sudo nginx"
 # Rails
 alias edge="export PATH=$HOME/.local/bin:$PATH"
 alias pryr="pry -r ./config/environment"
-# alias unicorn="bundle exec unicorn --port 3000"
 
 # RVM
 # switch to global rvm gemset
@@ -93,7 +92,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # unicorn
 alias uni="rvmsudo bundle exec unicorn -l 127.0.0.1 -p 80"
-alias unir="rvmsudo bundle exec unicorn_rails -l 127.0.0.1 -p 80"
 
 # edit hosts
 alias hosts="sudo nano /etc/hosts"
@@ -105,9 +103,13 @@ alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Conten
 alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 
 # clone a site
-alias cloneurl='wget -m -k -K -E $@'
+alias clonesite='wget -m -k -K -E $@'
 
 # start mongodb
 alias mongodb="mongod run --dbpath ~/bin/local_db --bind_ip 127.0.0.1 --rest"
-#alias mongodb="mongod run --config /usr/local/etc/mongod.conf --rest" 
 
+# fix invalid gemset datestamps (when specs go gay). e.g. "patchstamps ruby-1.8.7-p358@homesav"
+alias patchstamps="perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/ruby-1.8.7-p358@homesav/specifications/*.gemspec"
+
+# start tunnels for ssl -> pow
+alias ssl="rvmsudo tunnels"
