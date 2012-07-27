@@ -1,2 +1,2 @@
 # auto-trust .rvmrc files
-rvm_trust_rvmrcs_flag=1
+# rvm_trust_rvmrcs_flag=1

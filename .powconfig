@@ -1,3 +1,4 @@
+export PATH="/usr/local/Cellar/rbenv/0.3.0/bin:/Users/john/.rbenv/shims:/Users/john/.rbenv/bin:$PATH"
+
 export POW_TIMEOUT=30000
 export POW_WORKERS=3
-# export POW_DST_PORT=88

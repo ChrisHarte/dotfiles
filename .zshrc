@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(git bundler brew gem pow rails3)
+plugins=(git bundler brew gem pow rails3 rbenv)
 
 # Do not move
 source $ZSH/oh-my-zsh.sh
@@ -17,11 +17,12 @@ PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/loca
 NODE_PATH=/usr/local/lib/node_modules
 
 # RVM
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 # RBENV
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Colors
 autoload -U colors
@@ -49,10 +50,10 @@ PROMPT='
 ${smiley}  %{$reset_color%}'
 
 # RVM
-#RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
+# RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
 
 # RBENV
- RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
+RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
 
 # Show completion on first TAB
 setopt menucomplete
@@ -76,7 +77,7 @@ alias reload=". ~/.zshrc"
 
 alias c="clear"
 alias h="history"
-alias m="mvim ." # mvim current directory
+alias m="mvim $@" # mvim current directory
 alias emptymail="cat /dev/null > /var/mail/john"
 alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
 alias flushdns="dscacheutil -flushcache"
@@ -99,10 +100,17 @@ alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Conten
 alias mirrorurl='wget -m -k -K -E $@'
 
 # start mongodb
-#alias mongodb="mongod run --dbpath ~/bin/local_db --bind_ip 127.0.0.1 --rest"
+alias mongodb="mongod run --dbpath ~/bin/local_db --bind_ip 127.0.0.1 --rest"
 
 # fix invalid gemset datestamps (when specs go gay)
 # alias patchstamps="perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/ruby-1.8.7-p358@homesav/specifications/*.gemspec"
 
 # start tunnels for ssl -> pow
 alias ssl="sudo tunnels"
+
+# install virtualbox with ie7,8,9 (admin password=Password1)
+alias installie789="curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | bash"
+alias installie7='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="7" bash'
+alias installie8='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="8" bash'
+alias installie9='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="9" bash'
+
