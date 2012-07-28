@@ -11,13 +11,17 @@ ln -s ~/bin/.gitignore ~/.gitignore
 
 ln -s ~/bin/.powconfig ~/.powconfig
 ln -s ~/bin/.pryrc ~/.pryrc
-
 ln -s ~/bin/.rvmrc ~/.rvmrc
-
 ln -s ~/bin/.zshrc ~/.zshrc
 
 # ----------------------
 # for the mongo database
 
 mkdir ~/bin/local_db
+
+# ----------------------
+# dropbox keys
+
+ln -s ~/Dropbox/ssh ~/.ssh
+ln -s ~/Dropbox/ssl ~/.ssl
 
