@@ -25,3 +25,8 @@ mkdir ~/bin/local_db
 ln -s ~/Dropbox/ssh ~/.ssh
 ln -s ~/Dropbox/ssl ~/.ssl
 
+# ----------------------
+# bundler
+
+mkdir ~/.bundle
+ln -s ~/bin/.bundle_config ~/.bundle/config
