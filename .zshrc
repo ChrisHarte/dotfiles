@@ -16,10 +16,6 @@ source $ZSH/oh-my-zsh.sh
 PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/bin:$PATH
 NODE_PATH=/usr/local/lib/node_modules
 
-# RVM
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-# if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
-
 # RBENV
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -33,7 +29,6 @@ setopt prompt_subst
 export TERM='xterm-color'
 alias ls='ls -G'
 alias ll='ls -lG'
-#alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
@@ -48,9 +43,6 @@ local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_colo
 PROMPT='
 %~
 ${smiley}  %{$reset_color%}'
-
-# RVM
-# RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
 
 # RBENV
 RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
@@ -113,4 +105,3 @@ alias installie789="curl -s https://raw.github.com/xdissent/ievms/master/ievms.s
 alias installie7='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="7" bash'
 alias installie8='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="8" bash'
 alias installie9='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="9" bash'
-
