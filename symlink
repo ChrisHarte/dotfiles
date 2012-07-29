@@ -22,8 +22,8 @@ mkdir ~/bin/local_db
 # ----------------------
 # dropbox keys
 
-ln -s ~/Dropbox/ssh ~/.ssh
-ln -s ~/Dropbox/ssl ~/.ssl
+# ln -s ~/Dropbox/ssh ~/.ssh
+# ln -s ~/Dropbox/ssl ~/.ssl
 
 # ----------------------
 # bundler
