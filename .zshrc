@@ -71,7 +71,7 @@ alias c="clear"
 alias h="history"
 
 alias m="mvim $@" # mvim current directory
-alias nano="mvim $@" # stop using nano
+alias nano="vim $@" # stop using nano
 
 alias emptymail="cat /dev/null > /var/mail/john"
 alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
