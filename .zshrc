@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # ---------------------------------------------
 
 # Path
-PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/bin:$PATH
+PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/dotfiles:$PATH
 NODE_PATH=/usr/local/lib/node_modules
 
 # RBENV
@@ -45,7 +45,7 @@ PROMPT='
 ${smiley}  %{$reset_color%}'
 
 # RBENV
-RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
+RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/dotfiles/git-cwd-info.rb)%{$reset_color%}'
 
 # Show completion on first TAB
 setopt menucomplete
@@ -95,7 +95,7 @@ alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Conten
 alias mirrorurl='wget -m -k -K -E $@'
 
 # start mongodb
-alias mongodb="mongod run --dbpath ~/bin/local_db --bind_ip 127.0.0.1 --rest"
+# alias mongodb="mongod run --dbpath ~/dotfiles/local_db --bind_ip 127.0.0.1 --rest"
 
 # fix invalid gemset datestamps (when specs go gay)
 # alias patchstamps="perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/ruby-1.8.7-p358@homesav/specifications/*.gemspec"
