@@ -3,30 +3,24 @@
 # ----------------------
 # symlink configs
 
-ln -s ~/dotfiles/.gemrc ~/.gemrc
+ln -s ~/.dotfiles/.gemrc ~/.gemrc
 
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.githelpers ~/.githelpers
-ln -s ~/dotfiles/.gitignore ~/.gitignore
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.githelpers ~/.githelpers
+ln -s ~/.dotfiles/.gitignore ~/.gitignore
 
-ln -s ~/dotfiles/.powconfig ~/.powconfig
-ln -s ~/dotfiles/.pryrc ~/.pryrc
-ln -s ~/dotfiles/.rvmrc ~/.rvmrc
-ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.powconfig ~/.powconfig
+ln -s ~/.dotfiles/.pryrc ~/.pryrc
+ln -s ~/.dotfiles/.rvmrc ~/.rvmrc
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
 
 # ----------------------
 # for the mongo database
 
-mkdir ~/dotfiles/local_db
-
-# ----------------------
-# dropbox keys
-
-# ln -s ~/Dropbox/ssh ~/.ssh
-# ln -s ~/Dropbox/ssl ~/.ssl
+mkdir ~/.dotfiles/local_db
 
 # ----------------------
 # bundler
 
 mkdir ~/.bundle
-ln -s ~/dotfiles/.bundle_config ~/.bundle/config
+ln -s ~/.dotfiles/.bundle_config ~/.bundle/config
