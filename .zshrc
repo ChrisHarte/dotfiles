@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(git bundler brew gem pow rails3 rbenv)
+plugins=(git bundler brew pow gem rails3 rbenv)
 
 # Do not move
 source $ZSH/oh-my-zsh.sh
@@ -81,9 +81,6 @@ alias hosts="sudo nano /etc/hosts" # edit hosts
 # GIT
 alias con="grep -r'<<<<' *"
 alias omg="omglog"
-
-# ctags (brew install ctags)
-alias ctags="`brew --prefix`/bin/ctags"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
