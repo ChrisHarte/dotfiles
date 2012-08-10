@@ -83,7 +83,7 @@ alias con="grep -r'<<<<' *"
 alias omg="omglog"
 
 # ctags (brew install ctags)
-alias ctags="`brew --prefix`/bin/ctags"
+# alias ctags="`brew --prefix`/bin/ctags"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
