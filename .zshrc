@@ -82,9 +82,6 @@ alias hosts="sudo nano /etc/hosts" # edit hosts
 alias con="grep -r'<<<<' *"
 alias omg="omglog"
 
-# ctags (brew install ctags)
-# alias ctags="`brew --prefix`/bin/ctags"
-
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
 alias spoton="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
@@ -99,12 +96,3 @@ alias mongodb="mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --re
 
 # start tunnels for ssl -> pow
 alias ssl="sudo tunnels"
-
-# install virtualbox with ie7,8,9 (admin password=Password1)
-# alias installie789="curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | bash"
-# alias installie7='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="7" bash'
-# alias installie8='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="8" bash'
-# alias installie9='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="9" bash'
-
-# install libv8 on osx 10.8 => RUBYOPT=-rrubygems bundle install
-
