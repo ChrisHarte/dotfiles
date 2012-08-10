@@ -34,3 +34,5 @@
 
 [merge]
     tool = vimdiff
+[core]
+	autocrlf = input
