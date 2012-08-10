@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # ---------------------------------------------
 
 # Path
-PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/.dotfiles:$PATH
+PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/.dotfiles/bin:$PATH
 NODE_PATH=/usr/local/lib/node_modules
 
 # RBENV
@@ -45,7 +45,7 @@ PROMPT='
 ${smiley}  %{$reset_color%}'
 
 # RBENV
-RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/.dotfiles/git-cwd-info.rb)%{$reset_color%}'
+RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/.dotfiles/bin/git-cwd-info.rb)%{$reset_color%}'
 
 # Show completion on first TAB
 setopt menucomplete
@@ -83,7 +83,7 @@ alias con="grep -r'<<<<' *"
 alias omg="omglog"
 
 # ctags (brew install ctags)
-alias ctags="`brew --prefix`/bin/ctags"
+#alias ctags="`brew --prefix`/bin/ctags"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
