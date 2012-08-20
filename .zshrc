@@ -71,6 +71,9 @@ alias duh='du -csh'
 alias c="clear"
 alias h="history"
 
+alias find="sudo find / -name $*"
+alias rehash="rbenv rehash"
+
 alias version="ruby --version"
 alias r=rails
 alias migrate="bundle exec rake db:migrate"
@@ -103,3 +106,5 @@ alias mongodb="mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --re
 
 # start tunnels for ssl -> pow
 alias ssl="sudo tunnels"
+
+# you can do 'time [command]' to measure the time it take to run something
