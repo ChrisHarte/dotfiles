@@ -2,21 +2,20 @@
 # Oh my zsh integration
 ZSH=$HOME/.oh-my-zsh
 
-# Do not move
-source $ZSH/oh-my-zsh.sh
-
 # Plugins
 plugins=(git bundler brew pow gem rails3 rbenv)
 
 # Completion dots
 COMPLETION_WAITING_DOTS="true"
 
+# Now load oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
 # ---------------------------------------------
 # Load the zsh functions for the fancy grb prompt
 fpath=($fpath $HOME/.dotfiles/zsh/func)
 
 # Setup prompt
-setopt promptsubst
 autoload -U promptinit
 promptinit
 prompt grb
@@ -72,6 +71,7 @@ alias duh='du -csh'
 alias c="clear"
 alias h="history"
 
+alias version="ruby --version"
 alias r=rails
 alias migrate="bundle exec rake db:migrate"
 
@@ -84,6 +84,8 @@ alias emptymail="cat /dev/null > /var/mail/john"
 alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
 alias flushdns="dscacheutil -flushcache"
 alias hosts="sudo nano /etc/hosts" # edit hosts
+
+alias p="ps aux | grep $*"
 
 alias con="grep -r'<<<<' *"
 
