@@ -1,16 +1,37 @@
-# ZSH
+# ---------------------------------------------
+# Oh my zsh integration
 ZSH=$HOME/.oh-my-zsh
-
-# ZSH Config
-COMPLETION_WAITING_DOTS="true"
-
-# Plugins
-plugins=(git bundler brew pow gem rails3 rbenv)
 
 # Do not move
 source $ZSH/oh-my-zsh.sh
 
+# Plugins
+plugins=(git bundler brew pow gem rails3 rbenv)
+
+# Completion dots
+COMPLETION_WAITING_DOTS="true"
+
 # ---------------------------------------------
+# Load the zsh functions for the fancy grb prompt
+fpath=($fpath $HOME/.dotfiles/zsh/func)
+
+# Setup prompt
+setopt promptsubst
+autoload -U promptinit
+promptinit
+prompt grb
+
+# Colors
+autoload -U colors
+colors
+setopt prompt_subst
+
+# Show completion on first TAB
+setopt menucomplete
+
+# Load completions for Ruby, Git, etc.
+autoload compinit
+compinit
 
 # Path
 PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/.dotfiles/bin:$PATH
@@ -20,15 +41,8 @@ NODE_PATH=/usr/local/lib/node_modules
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Colors
-autoload -U colors
-colors
-setopt prompt_subst
-
 # Unbreak broken, non-colored terminal
 export TERM='xterm-color'
-alias ls='ls -G'
-alias ll='ls -lG'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
@@ -37,26 +51,10 @@ export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
-# Prompt
-local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
-
-PROMPT='
-%~
-${smiley}  %{$reset_color%}'
-
-# RBENV
-RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/.dotfiles/bin/git-cwd-info.rb)%{$reset_color%}'
-
-# Show completion on first TAB
-setopt menucomplete
-
-# Load completions for Ruby, Git, etc.
-autoload compinit
-compinit
-
-# Use MacVim for git commits
+# Use macvim for git commits
 export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 
+# Sudo support for rbenv
 function rbenvsudo(){
   executable=$1
   shift 1
@@ -64,11 +62,16 @@ function rbenvsudo(){
 }
 
 # ----------------------------------------------
-
 alias reload=". ~/.zshrc"
+
+alias ls='ls -G'
+alias ll='ls -lG'
+alias duh='du -csh'
 
 alias c="clear"
 alias h="history"
+
+alias r=rails
 
 alias m="mvim $@" # mvim current directory
 alias nano="vim $@" # stop using nano
