@@ -64,6 +64,7 @@ function rbenvsudo(){
 # ----------------------------------------------
 alias reload=". ~/.zshrc"
 
+alias la='ls -la'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
@@ -72,18 +73,19 @@ alias c="clear"
 alias h="history"
 
 alias r=rails
+alias migrate="bundle exec rake db:migrate"
 
-alias m="mvim $@" # mvim current directory
-alias nano="vim $@" # stop using nano
+alias t="ruby -Ilib:test $*"
+
+alias m="mvim $*"
+alias v="vim $*"
 
 alias emptymail="cat /dev/null > /var/mail/john"
 alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
 alias flushdns="dscacheutil -flushcache"
 alias hosts="sudo nano /etc/hosts" # edit hosts
 
-# GIT
 alias con="grep -r'<<<<' *"
-alias omg="omglog"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
