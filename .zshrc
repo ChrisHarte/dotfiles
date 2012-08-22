@@ -60,6 +60,9 @@ function rbenvsudo(){
   sudo $(rbenv which $executable) $* 
 }
 
+# tmux
+alias tmux="TERM=screen-256color-bce tmux"
+
 # ----------------------------------------------
 alias reload=". ~/.zshrc"
 
@@ -81,7 +84,7 @@ alias migrate="bundle exec rake db:migrate"
 alias t="ruby -Ilib:test $*"
 
 alias m="mvim $*"
-alias v="vim $*"
+alias vi="vim $*"
 
 alias emptymail="cat /dev/null > /var/mail/john"
 alias keygen="cd ~/.ssh && ssh-keygen -t dsa"

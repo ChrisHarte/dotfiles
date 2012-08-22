@@ -12,6 +12,7 @@ ln -s ~/.dotfiles/.gitignore ~/.gitignore
 ln -s ~/.dotfiles/.powconfig ~/.powconfig
 ln -s ~/.dotfiles/.pryrc ~/.pryrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 
 # ----------------------
 # for the mongo database
