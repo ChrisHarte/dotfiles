@@ -27,3 +27,10 @@ task :install do
   system("brew install tmux")
 end
 
+task :drive_to_pictures do
+  # symlink Pictures to google drive
+  # prerequisites: install google drive & sync it!
+
+  system("sudo rm ~/Pictures") # remove Pictures dir
+  system("ln -s Google\ Drive/pictures Pictures") # symlink new Pictures dir to google drive
+end
