@@ -111,3 +111,6 @@ alias mongodb="mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --re
 alias ssl="sudo tunnels"
 
 # you can do 'time [command]' to measure the time it take to run something
+
+# Exists to fully update the git repo that you are sitting in...
+alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
