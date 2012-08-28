@@ -27,10 +27,18 @@ task :install do
   system("brew install tmux")
 end
 
-task :drive_to_pictures do
+task :link_pictures do
   # symlink Pictures to google drive
   # prerequisites: install google drive & sync it!
 
   system("sudo rm ~/Pictures") # remove Pictures dir
   system("ln -s Google\ Drive/pictures Pictures") # symlink new Pictures dir to google drive
+end
+
+task :rbenv do
+  system("cd ~ && git clone git://github.com/sstephenson/rbenv.git .rbenv")
+  system("mkdir -p ~/.rbenv/plugins &&
+         cd ~/.rbenv/plugins &&
+          git clone git://github.com/sstephenson/ruby-build.git &&
+          git clone https://github.com/sstephenson/rbenv-vars.git")
 end
