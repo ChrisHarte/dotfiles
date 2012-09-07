@@ -114,3 +114,6 @@ alias ssl="sudo tunnels"
 
 # Exists to fully update the git repo that you are sitting in...
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
+
+# Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
+alias kill-dock="Killall Dock"
