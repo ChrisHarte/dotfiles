@@ -38,3 +38,5 @@
 	autocrlf = input
 [mergetool]
 	keepBackup = true
+[github]
+	user = johnantoni
