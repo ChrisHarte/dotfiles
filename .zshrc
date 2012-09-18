@@ -64,7 +64,7 @@ function rbenvsudo(){
 alias tmux="TERM=screen-256color-bce tmux"
 
 # ----------------------------------------------
-alias reload=". ~/.zshrc"
+alias reload="source ~/.zshrc"
 
 alias la='ls -la'
 alias ls='ls -G'
@@ -117,3 +117,8 @@ alias git-pup="git pull && git submodule init && git submodule update && git sub
 
 # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
 alias kill-dock="Killall Dock"
+
+# Port proxy'ing for Pow => port-proxy 3501 my-app-dirname
+function port-proxy(){
+  echo $1 > ~/.pow/$2
+}
