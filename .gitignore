@@ -108,3 +108,4 @@
 *.pyc
 ~/bin/db/
 local_db/
+bin/subl
