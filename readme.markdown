@@ -18,3 +18,7 @@
 ## Create Sublime Text command-line shortcut "subl ."
 
     ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/.dotfiles/bin/subl
+
+## Example Rails Generator
+
+    rails g controller api/ --skip-javascripts --skip-stylesheets --skip-helpers
