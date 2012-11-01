@@ -67,6 +67,13 @@ alias tmux="TERM=screen-256color-bce tmux"
 eval "$(/Users/johngriffiths/.91/bin/91 init -)"
 
 # ----------------------------------------------
+
+# in terminal vim we want access to the Ctrl+ combinations
+alias vim="stty stop '' -ixoff ; vim"
+# `Frozing' tty, so after any command terminal settings will be restored
+ttyctl -f
+
+# ----------------------------------------------
 alias reload="source ~/.zshrc"
 
 alias la='ls -la'
