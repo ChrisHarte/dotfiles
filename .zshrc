@@ -57,7 +57,7 @@ export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 function rbenvsudo(){
   executable=$1
   shift 1
-  sudo $(rbenv which $executable) $* 
+  sudo $(rbenv which $executable) $*
 }
 
 # tmux
@@ -85,9 +85,7 @@ alias r=rails
 alias migrate="bundle exec rake db:migrate"
 alias t="ruby -Ilib:test $*"
 
-# alias rg="rails g controller api/ --skip-javascripts --skip-stylesheets --skip-helpers"
-
-alias m="mvim $*"
+alias nano="vim $*"
 alias vi="vim $*"
 
 alias emptymail="cat /dev/null > /var/mail/john"
@@ -106,15 +104,10 @@ alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Conten
 alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 
 # mirror site
-alias mirrorurl='wget -m -k -K -E $@'
-
-# start mongodb
-# alias mongodb="mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest"
+alias mirror-site='wget -m -k -K -E $@'
 
 # start tunnels for ssl -> pow
 alias ssl="sudo tunnels"
-
-# you can do 'time [command]' to measure the time it take to run something
 
 # Exists to fully update the git repo that you are sitting in...
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
