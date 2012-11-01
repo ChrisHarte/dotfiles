@@ -63,6 +63,9 @@ function rbenvsudo(){
 # tmux
 alias tmux="TERM=screen-256color-bce tmux"
 
+# sub - https://github.com/37signals/sub
+eval "$(/Users/johngriffiths/.91/bin/91 init -)"
+
 # ----------------------------------------------
 alias reload="source ~/.zshrc"
 
@@ -80,8 +83,9 @@ alias rehash="rbenv rehash"
 alias version="ruby --version"
 alias r=rails
 alias migrate="bundle exec rake db:migrate"
-
 alias t="ruby -Ilib:test $*"
+
+# alias rg="rails g controller api/ --skip-javascripts --skip-stylesheets --skip-helpers"
 
 alias m="mvim $*"
 alias vi="vim $*"
@@ -105,7 +109,7 @@ alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Conten
 alias mirrorurl='wget -m -k -K -E $@'
 
 # start mongodb
-alias mongodb="mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest"
+# alias mongodb="mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest"
 
 # start tunnels for ssl -> pow
 alias ssl="sudo tunnels"
