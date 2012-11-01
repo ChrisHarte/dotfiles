@@ -28,3 +28,7 @@
 ### Start Mongo locally
 
     mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest
+
+### time [command]
+
+you can do 'time [command]' to measure the time it take to run something
