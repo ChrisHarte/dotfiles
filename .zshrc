@@ -90,6 +90,7 @@ alias rehash="rbenv rehash"
 alias version="ruby --version"
 alias r=rails
 alias migrate="bundle exec rake db:migrate"
+alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 
 alias nano="vim $*"
