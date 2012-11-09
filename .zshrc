@@ -92,6 +92,7 @@ alias r=rails
 alias migrate="bundle exec rake db:migrate"
 alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
+alias open="kapow && powder open"
 
 alias nano="vim $*"
 alias vi="vim $*"
