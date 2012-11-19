@@ -76,6 +76,8 @@ ttyctl -f
 # ----------------------------------------------
 alias reload="source ~/.zshrc"
 
+alias exe="chmod +x $*"
+
 alias la='ls -la'
 alias ls='ls -G'
 alias ll='ls -lG'
@@ -94,6 +96,7 @@ alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 alias open="kapow && powder open"
 
+alias m="mvim $*"
 alias nano="vim $*"
 alias vi="vim $*"
 
