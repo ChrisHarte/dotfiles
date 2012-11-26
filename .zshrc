@@ -83,8 +83,8 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
 
-alias c="clear"
-alias h="history"
+alias clean="clear"
+alias hist="history"
 
 alias find="sudo find / -name $*"
 alias rehash="rbenv rehash"
@@ -94,11 +94,17 @@ alias r=rails
 alias migrate="bundle exec rake db:migrate"
 alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
-alias open="kapow && powder open"
+# alias k="kapow && powder open"
+
+alias h="heroku $*"
 
 alias m="mvim $*"
+
 alias nano="vim $*"
 alias vi="vim $*"
+
+# dump database to file
+alias pg_dumper="pg_dump -Fc --no-acl --no-owner -h localhost -U $1 $2 > $2.dump"
 
 alias emptymail="cat /dev/null > /var/mail/john"
 alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
@@ -108,6 +114,8 @@ alias hosts="sudo nano /etc/hosts" # edit hosts
 alias p="ps aux | grep $*"
 
 alias con="grep -r'<<<<' *"
+
+alias localbrowser="open -a Google\ Chrome --args --disable-web-security"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
