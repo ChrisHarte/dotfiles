@@ -86,6 +86,9 @@ alias duh='du -csh'
 alias clean="clear"
 alias hist="history"
 
+# check md5 tag for file
+alias verify="md5 $*"
+
 alias find="sudo find / -name $*"
 alias rehash="rbenv rehash"
 
@@ -97,6 +100,7 @@ alias t="ruby -Ilib:test $*"
 # alias k="kapow && powder open"
 
 alias h="heroku $*"
+# tail logs > heroku logs --tail
 
 alias m="mvim $*"
 
@@ -116,6 +120,8 @@ alias p="ps aux | grep $*"
 alias con="grep -r'<<<<' *"
 
 alias localbrowser="open -a Google\ Chrome --args --disable-web-security"
+
+alias psql="psql -h localhost $*"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
