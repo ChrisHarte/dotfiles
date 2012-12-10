@@ -97,18 +97,18 @@ alias r=rails
 alias migrate="bundle exec rake db:migrate"
 alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
-# alias k="kapow && powder open"
+alias jobstart="bundle exec rake jobs:work"
 
 alias h="heroku $*"
-# tail logs > heroku logs --tail
+alias hlog="tail logs > heroku logs --tail"
+
+alias solrstart="rake sunspot:solr:start"
+alias solrindex="rake sunspot:solr:reindex"
 
 alias m="mvim $*"
 
 alias nano="vim $*"
 alias vi="vim $*"
-
-# dump database to file
-alias pg_dumper="pg_dump -Fc --no-acl --no-owner -h localhost -U $1 $2 > $2.dump"
 
 alias emptymail="cat /dev/null > /var/mail/john"
 alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
@@ -122,6 +122,10 @@ alias con="grep -r'<<<<' *"
 alias localbrowser="open -a Google\ Chrome --args --disable-web-security"
 
 alias psql="psql -h localhost $*"
+alias psqlcheck="ps -aef|grep 'postgres'" # check postgres is running
+
+alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
+alias psqlrestore="pg_restore --verbose --clean --no-acl --no-owner -h localhost -U $0 -d $1 $2"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"

@@ -35,22 +35,14 @@
     ll = log --stat --abbrev-commit
     undo = "reset --soft HEAD~1"
 
-[merge]
-	tool = Kaleidoscope
 [core]
-  	autocrlf = input
+  autocrlf = input
 [mergetool]
-	keepBackup = true
-	prompt = false
+  keepBackup = true
+  prompt = false
 [github]
-	user = johnantoni
+  user = johnantoni
 [push]
-	default = simple
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-	tool = Kaleidoscope
+  default = simple
 [difftool]
-	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  prompt = false
