@@ -7,7 +7,7 @@
 
 ## Ubuntu RBENV
 
-   sudo apt-get install libreadline-dev zlib1g-dev
+    sudo apt-get install libreadline-dev zlib1g-dev
 
 ## Extras
 
