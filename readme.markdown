@@ -6,6 +6,7 @@
     rake
 
 ## Ubuntu RBENV
+#### https://gist.github.com/1200482
 
     sudo apt-get install libreadline-dev zlib1g-dev
     git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
