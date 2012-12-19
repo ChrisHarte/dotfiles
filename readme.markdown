@@ -16,6 +16,12 @@
     
     rbenv global 1.9.3-p327
 
+## ruby debugger
+
+    gem install debugger
+    rehash
+    bundle install
+
 ## RMagick gem on Ubuntu (12.04)
 
     sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
