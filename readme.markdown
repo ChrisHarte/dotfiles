@@ -13,6 +13,8 @@
     which openssl
     
     CONFIGURE_OPTS=--with-openssl-dir=/usr/local rbenv install 1.9.3-p327
+    
+    rbenv global 1.9.3-p327
 
 ## RMagick gem on Ubuntu (12.04)
 
