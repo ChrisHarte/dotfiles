@@ -37,6 +37,11 @@
     gem install pg
     rbenv rehash
 
+## mysql2 gem on Ubuntu
+
+    sudo aptitude install mysql-server libmysqlclient-dev
+    gem install mysql2
+
 ## Extras
 
 ### VirtualBox
