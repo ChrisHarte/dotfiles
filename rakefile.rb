@@ -16,6 +16,7 @@ task :default do
 
   # for the mongo database
   system("mkdir ~/.dotfiles/local_db")
+  system("mkdir ~/.bundle")
   system("ln -s ~/.dotfiles/.bundle_config ~/.bundle/config")
 end
 
