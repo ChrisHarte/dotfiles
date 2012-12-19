@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 task :default do
+  # delete original config
+  system("rm ~/.zshrc")
+
   # symlink configs
   system("ln -s ~/.dotfiles/.gemrc ~/.gemrc")
   system("ln -s ~/.dotfiles/.gitconfig ~/.gitconfig")
