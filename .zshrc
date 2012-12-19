@@ -149,3 +149,9 @@ alias kill-dock="Killall Dock"
 function port-proxy(){
   echo $1 > ~/.pow/$2
 }
+
+# ----------------------------------------------
+
+alias ngstart="sudo service nginx start"
+alias ngstop="sudo service nginx stop"
+alias ngcheck="sudo service nginx configtest"
