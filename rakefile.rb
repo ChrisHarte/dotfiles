@@ -3,7 +3,7 @@
 task :default do
   # delete original config
   system("rm ~/.zshrc")
-  system("mkdir ~/.91")
+  system("git clone git@github.com:johnantoni/91.git ~/.91")
   
   # symlink configs
   system("ln -s ~/.dotfiles/.gemrc ~/.gemrc")
