@@ -64,7 +64,7 @@ function rbenvsudo(){
 alias tmux="TERM=screen-256color-bce tmux"
 
 # sub - https://github.com/37signals/sub
-eval "$(/Users/johngriffiths/.91/bin/91 init -)"
+eval "$($HOME/.91/bin/91 init -)"
 
 # ----------------------------------------------
 
