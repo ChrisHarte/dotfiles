@@ -31,7 +31,7 @@
     ra = !git r --all
     l = "!source ~/.githelpers && pretty_git_log"
     la = !git l --all
-    lt = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset * %cd * %s %C(white)- %an, %ar%Creset'
+    lt = log --graph --pretty=format:"%C(yellow)%h%C(cyan)%d%Creset * %cd * %s %C(white)- %an, %ar%Creset"
     ll = log --stat --abbrev-commit
     undo = "reset --soft HEAD~1"
 
@@ -42,7 +42,7 @@
   prompt = false
 [github]
   user = johnantoni
-[push]
-  default = simple
+#[push]
+#  default = simple
 [difftool]
   prompt = false
