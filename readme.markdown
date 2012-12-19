@@ -12,7 +12,7 @@
     git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
     which openssl
     
-    CONFIGURE_OPTS=--with-openssl-dir=/usr/local rbenv install 2.0.0-preview1
+    CONFIGURE_OPTS=--with-openssl-dir=/usr/local rbenv install 1.9.3-p327
 
 ## RMagick gem on Ubuntu (12.04)
 
