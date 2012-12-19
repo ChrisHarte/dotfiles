@@ -41,9 +41,10 @@ task :link_pictures do
 end
 
 task :rbenv do
+  # rbenv ~ https://github.com/sstephenson/rbenv
   system("cd ~ && git clone git://github.com/sstephenson/rbenv.git .rbenv")
-  system("mkdir -p ~/.rbenv/plugins &&
-         cd ~/.rbenv/plugins &&
-          git clone git://github.com/sstephenson/ruby-build.git &&
-          git clone https://github.com/sstephenson/rbenv-vars.git")
+  # ruby-build ~ https://github.com/sstephenson/ruby-build
+  system("cd ~ && git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build")
+  # rbenv-vars ~ https://github.com/sstephenson/rbenv-vars
+  system("mkdir -p ~/.rbenv/plugins && cd ~/.rbenv/plugins && git clone https://github.com/sstephenson/rbenv-vars.git")
 end
