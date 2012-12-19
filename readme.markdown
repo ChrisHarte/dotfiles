@@ -19,7 +19,7 @@
 ## ruby debugger
 
     gem install debugger
-    rehash
+    rbenv rehash
     bundle install
 
 ## RMagick gem on Ubuntu (12.04)
@@ -28,6 +28,13 @@
 
     gem install rmagick
     
+    rbenv rehash
+
+## PG gem on Ubuntu
+
+    sudo aptitude install libpq-dev
+    
+    gem install pg
     rbenv rehash
 
 ## Extras
