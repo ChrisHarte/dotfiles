@@ -41,6 +41,7 @@
 
     sudo aptitude install mysql-server libmysqlclient-dev
     gem install mysql2
+    rbenv rehash
 
 ## Extras
 
