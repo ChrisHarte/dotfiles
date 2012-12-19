@@ -43,6 +43,10 @@
     gem install mysql2
     rbenv rehash
 
+## dropbox on Ubuntu
+
+    sudo apt-get update && sudo apt-get install nautilus-dropbox
+
 ## Extras
 
 ### VirtualBox
