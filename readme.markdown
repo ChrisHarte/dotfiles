@@ -48,6 +48,7 @@
     sudo apt-get update && sudo apt-get install nautilus-dropbox
     dropbox start
     dropbox status
+    dropbox stop
     /var/lib/dropbox/.dropbox-dist/dropboxd
 
 ## Extras
