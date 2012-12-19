@@ -11,7 +11,8 @@
     sudo apt-get install libreadline-dev zlib1g-dev
     git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
     which openssl
-    ruby-build 1.9.3-p327 ~/.rbenv/versions/1.9.3-p327 --with-openssl-dir=/usr/local
+    
+    CONFIGURE_OPTS=--with-openssl-dir=/usr/local rbenv install 2.0.0-preview1
 
 ## RMagick gem on Ubuntu (12.04)
 
