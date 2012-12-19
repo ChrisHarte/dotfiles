@@ -9,7 +9,7 @@
 
     sudo apt-get install libreadline-dev zlib1g-dev
 
-## RMagick gem on Ubuntu
+## RMagick gem on Ubuntu (12.04)
 
     sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
 
