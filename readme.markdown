@@ -19,6 +19,8 @@
     sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
 
     gem install rmagick
+    
+    rbenv rehash
 
 ## Extras
 
