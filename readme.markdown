@@ -5,7 +5,7 @@
     cd ~/.dotfiles
     rake
 
-## Ubuntu RBENV
+### Ubuntu RBENV
 #### https://gist.github.com/1200482
 
     sudo apt-get install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
@@ -16,13 +16,13 @@
     
     rbenv global 1.9.3-p327
 
-## ruby debugger
+### ruby debugger
 
     gem install debugger
     rbenv rehash
     bundle install
 
-## RMagick gem on Ubuntu (12.04)
+### RMagick gem on Ubuntu (12.04)
 
     sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
 
@@ -30,20 +30,20 @@
     
     rbenv rehash
 
-## PG gem on Ubuntu
+### PG gem on Ubuntu
 
     sudo aptitude install libpq-dev
     
     gem install pg
     rbenv rehash
 
-## mysql2 gem on Ubuntu
+### mysql2 gem on Ubuntu
 
     sudo aptitude install mysql-server libmysqlclient-dev
     gem install mysql2
     rbenv rehash
 
-## dropbox on Ubuntu
+### dropbox on Ubuntu
 
     sudo apt-get update && sudo apt-get install nautilus-dropbox
     dropbox start
@@ -52,6 +52,13 @@
     /var/lib/dropbox/.dropbox-dist/dropboxd
 
 ## Extras
+
+### chkconfig
+
+    sudo apt-get install chkconfig
+    sudo chkconfig --add nginx    
+    sudo chkconfig nginx on  
+
 
 ### VirtualBox
 
