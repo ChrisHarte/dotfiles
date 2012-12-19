@@ -4,6 +4,8 @@
 
     cd ~/.dotfiles
     rake
+    
+## Dev Machine Setup
 
 ### Ubuntu RBENV
 #### https://gist.github.com/1200482
