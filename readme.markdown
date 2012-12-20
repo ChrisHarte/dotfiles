@@ -52,6 +52,10 @@
     rbenv rehash
     gem install therubyracer execjs
 
+### Java for Ubuntu
+
+    sudo apt-get install openjdk-7-jre
+
 ### dropbox on Ubuntu
 
     sudo apt-get update && sudo apt-get install nautilus-dropbox
