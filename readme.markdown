@@ -45,6 +45,13 @@
     gem install mysql2
     rbenv rehash
 
+### therubyracer gem on Ubuntu (12.04)
+
+    sudo aptitude install libv8-dev
+    gem install libv8
+    rbenv rehash
+    gem install therubyracer
+
 ### dropbox on Ubuntu
 
     sudo apt-get update && sudo apt-get install nautilus-dropbox
