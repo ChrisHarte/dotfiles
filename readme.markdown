@@ -45,12 +45,12 @@
     gem install mysql2
     rbenv rehash
 
-### therubyracer gem on Ubuntu (12.04)
+### therubyracer gem on Ubuntu (12.04) "Could not find a JavaScript runtime."
 
-    sudo aptitude install libv8-dev
+    sudo aptitude install libv8-dev nodejs
     gem install libv8
     rbenv rehash
-    gem install therubyracer
+    gem install therubyracer execjs
 
 ### dropbox on Ubuntu
 
