@@ -45,6 +45,17 @@
     gem install mysql2
     rbenv rehash
 
+### therubyracer gem on Ubuntu (12.04) "Could not find a JavaScript runtime."
+
+    sudo aptitude install libv8-dev nodejs
+    gem install libv8
+    rbenv rehash
+    gem install therubyracer execjs
+
+### Java for Ubuntu
+
+    sudo apt-get install openjdk-7-jre
+
 ### dropbox on Ubuntu
 
     sudo apt-get update && sudo apt-get install nautilus-dropbox
@@ -90,3 +101,11 @@
 ### time [command]
 
 you can do 'time [command]' to measure the time it take to run something
+
+### Postgres Backup / Restore
+
+    pg_dump -Fc --no-acl --no-owner -h localhost -U username dbname -f dbname.dump
+
+    pg_restore -i -U username -d dbname -v dbname.dump
+    
+    
