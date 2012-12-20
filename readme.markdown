@@ -101,3 +101,11 @@
 ### time [command]
 
 you can do 'time [command]' to measure the time it take to run something
+
+### Postgres Backup / Restore
+
+    pg_dump -Fc --no-acl --no-owner -h localhost -U username dbname -f dbname.dump
+
+    pg_restore -i -U username -d dbname -v dbname.dump
+    
+    
