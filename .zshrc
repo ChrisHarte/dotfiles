@@ -121,11 +121,15 @@ alias con="grep -r'<<<<' *"
 
 alias localbrowser="open -a Google\ Chrome --args --disable-web-security"
 
-alias psql="psql -h localhost $*"
+alias psqlocal="psql -h localhost $*"
 alias psqlcheck="ps -aef|grep 'postgres'" # check postgres is running
 
 alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
-alias psqlrestore="pg_restore --verbose --clean --no-acl --no-owner -h localhost -U $0 -d $1 $2"
+# alias psqlrestore="pg_restore --verbose --clean --no-acl --no-owner -h localhost -U $0 -d $1 $2"
+alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
+
+# recursive copy
+alias copy="cp -r $*"
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
