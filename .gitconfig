@@ -22,6 +22,7 @@
     fa = fetch --all
     pom = push origin master
     b = branch
+    ba = branch -a
     ds = diff --stat=160,120
     dh1 = diff HEAD~1
 
