@@ -150,7 +150,7 @@ alias ssl="sudo tunnels"
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 
 # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
-alias kill-dock="Killall Dock"
+alias killdock="Killall Dock"
 
 # Port proxy'ing for Pow => port-proxy 3501 my-app-dirname
 function port-proxy(){
