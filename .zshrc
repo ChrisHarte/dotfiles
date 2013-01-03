@@ -76,7 +76,7 @@ ttyctl -f
 # ----------------------------------------------
 alias reload="source ~/.zshrc"
 
-alias remote="ssh ubuntu"
+alias term="ssh ubuntu"
 
 alias tardir="tar -zcvf $0 $1"
 
