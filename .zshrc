@@ -76,6 +76,10 @@ ttyctl -f
 # ----------------------------------------------
 alias reload="source ~/.zshrc"
 
+alias remote="ssh ubuntu"
+
+alias tardir="tar -zcvf $0 $1"
+
 alias exe="chmod +x $*"
 
 alias free="free -m"
@@ -127,7 +131,6 @@ alias psqlocal="psql -h localhost $*"
 alias psqlcheck="ps -aef|grep 'postgres'" # check postgres is running
 
 alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
-# alias psqlrestore="pg_restore --verbose --clean --no-acl --no-owner -h localhost -U $0 -d $1 $2"
 alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
 
 # recursive copy
@@ -149,7 +152,7 @@ alias ssl="sudo tunnels"
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 
 # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
-alias kill-dock="Killall Dock"
+alias killdock="Killall Dock"
 
 # Port proxy'ing for Pow => port-proxy 3501 my-app-dirname
 function port-proxy(){
