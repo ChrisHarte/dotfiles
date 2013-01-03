@@ -163,6 +163,17 @@ function port-proxy(){
   echo $1 > ~/.pow/$2
 }
 
+# Print all 256 colors to terminal for testing
+aa_256 ()
+{
+( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;
+for i in {0..256};
+do
+o=00$i;
+echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
+done )
+}
+
 # ----------------------------------------------
 
 alias ngstart="sudo service nginx start"
