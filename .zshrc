@@ -78,12 +78,14 @@ alias reload="source ~/.zshrc"
 
 alias exe="chmod +x $*"
 
+alias free="free -m"
+
 alias la='ls -la'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
 
-alias clean="clear"
+alias cls="clear"
 alias hist="history"
 
 # check md5 tag for file
@@ -159,3 +161,6 @@ function port-proxy(){
 alias ngstart="sudo service nginx start"
 alias ngstop="sudo service nginx stop"
 alias ngcheck="sudo service nginx configtest"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
