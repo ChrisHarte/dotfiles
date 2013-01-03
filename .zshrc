@@ -63,6 +63,10 @@ function rbenvsudo(){
 # tmux
 alias tmux="TERM=screen-256color-bce tmux"
 
+# full 256 colors in terminal
+# run "tput colors" to check
+export TERM=xterm-256color
+
 # sub - https://github.com/37signals/sub
 eval "$($HOME/.91/bin/91 init -)"
 
