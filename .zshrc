@@ -70,7 +70,8 @@ export TERM=xterm-256color
 # sub - https://github.com/37signals/sub
 eval "$($HOME/.91/bin/91 init -)"
 
-# ----------------------------------------------
+# start tmux automatically
+# if [ "$TMUX" = "" ]; then tmux; fi
 
 # in terminal vim we want access to the Ctrl+ combinations
 alias vim="stty stop '' -ixoff ; vim"
