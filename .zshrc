@@ -174,11 +174,11 @@ echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
 done )
 }
 
-# ----------------------------------------------
-
 alias ngstart="sudo service nginx start"
 alias ngstop="sudo service nginx stop"
 alias ngcheck="sudo service nginx configtest"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# ctrl+r = history autocomplete
