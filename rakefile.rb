@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
+# Default install
 task :default do
-  # delete original config
+  # remove original configs
   system("rm ~/.zshrc")
-  system("git clone git@github.com:johnantoni/91.git ~/.91")
-  
-  # symlink configs
+
+  # configs
   system("ln -s ~/.dotfiles/.gemrc ~/.gemrc")
   system("ln -s ~/.dotfiles/.gitconfig ~/.gitconfig")
   system("ln -s ~/.dotfiles/.githelpers ~/.githelpers")
@@ -15,36 +15,40 @@ task :default do
   system("ln -s ~/.dotfiles/.zshrc ~/.zshrc")
   system("ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf")
 
-  # for the mongo database
+  # install 91 command set
+  system("git clone git@github.com:johnantoni/91.git ~/.91")
+
+  # mongo db
   system("mkdir ~/.dotfiles/local_db")
   system("mkdir ~/.bundle")
   system("ln -s ~/.dotfiles/.bundle_config ~/.bundle/config")
+
+  Rake::Task["update"].invoke
 end
 
-task :install do
-  # install vim from homebrew
-  system("brew install --HEAD https://raw.github.com/Homebrew/homebrew-dupes/master/vim.rb")
-
-  # test vim has ruby support
-  system("vim --version | grep ruby")
-
-  # install tmux
-  system("brew install tmux")
+# Update plugins
+task :update do
+  system("git pull && git submodule init && git submodule update && git submodule status")
 end
 
+# Install Rbenv
+task :rbenv do
+  system("cd ~ && git clone git://github.com/sstephenson/rbenv.git .rbenv")
+  system("cd ~ && git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build")
+  system("mkdir -p ~/.rbenv/plugins && cd ~/.rbenv/plugins && git clone https://github.com/sstephenson/rbenv-vars.git")
+end
+
+# Install support for OSX
+task :osx do
+  system("brew install --HEAD https://raw.github.com/Homebrew/homebrew-dupes/master/vim.rb") # vim
+  system("vim --version | grep ruby") # test ruby support
+  system("brew install tmux") # install tmux
+  system("brew install reattach-to-user-namespace") # install copy&paste fix
+end
+
+# Symlink Pictures to Google Drive
 task :link_pictures do
-  # symlink Pictures to google drive
-  # prerequisites: install google drive & sync it!
-
   system("sudo rm ~/Pictures") # remove Pictures dir
   system("ln -s Google\ Drive/pictures Pictures") # symlink new Pictures dir to google drive
 end
 
-task :rbenv do
-  # rbenv ~ https://github.com/sstephenson/rbenv
-  system("cd ~ && git clone git://github.com/sstephenson/rbenv.git .rbenv")
-  # ruby-build ~ https://github.com/sstephenson/ruby-build
-  system("cd ~ && git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build")
-  # rbenv-vars ~ https://github.com/sstephenson/rbenv-vars
-  system("mkdir -p ~/.rbenv/plugins && cd ~/.rbenv/plugins && git clone https://github.com/sstephenson/rbenv-vars.git")
-end
