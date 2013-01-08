@@ -18,7 +18,12 @@
     
     rbenv global 1.9.3-p327
 
-### ruby debugger
+### Error installing debugger-linecache in Ruby 1.9.3
+
+    bundle update debugger-linecache
+    bundle install
+
+### Error installing ruby debugger
 
     gem install debugger
     rbenv rehash
