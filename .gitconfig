@@ -39,6 +39,7 @@
 
     # remove submodule http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule
     rms = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
+	d = difftool
 
 [core]
   autocrlf = input
@@ -50,4 +51,6 @@
 #[push]
 #  default = simple
 [difftool]
-  prompt = false
+	prompt = false
+[diff]
+	tool = vimdiff
