@@ -177,7 +177,13 @@ done )
 
 alias ngstart="sudo service nginx start"
 alias ngstop="sudo service nginx stop"
+alias ngrestart="sudo service nginx restart"
 alias ngcheck="sudo service nginx configtest"
+
+alias ngrunning="ps aux | grep nginx"
+alias aprunning="ps aux | grep apach"
+
+alias kick="touch tmp/restart.txt" # passenger restart
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
