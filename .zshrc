@@ -111,6 +111,7 @@ alias jobstart="bundle exec rake jobs:work"
 
 alias solrstart="rake sunspot:solr:start"
 alias solrindex="rake sunspot:solr:reindex"
+alias webindex="heroku rake sunspot:reindex"
 
 alias m="mvim $*"
 alias vi="vim $*"
