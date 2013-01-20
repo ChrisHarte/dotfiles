@@ -172,6 +172,9 @@ function stopnginx(){
   sudo kill -QUIT $( cat /var/run/nginx.pid )
 }
 
+# stronger kill process
+alias shoot="kill -9 $@"
+
 alias kick="touch tmp/restart.txt" # passenger restart
 
 alias fontreset="fc-cache -vf" # linux, reset font cache
