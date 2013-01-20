@@ -1,4 +1,5 @@
 # ---------------------------------------------
+#
 # Oh my zsh integration
 ZSH=$HOME/.oh-my-zsh
 
@@ -50,8 +51,8 @@ export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
-# Use macvim for git commits
-export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+export VISUAL=vim
+export EDITOR=vim
 
 # Sudo support for rbenv
 function rbenvsudo(){
@@ -81,8 +82,6 @@ ttyctl -f
 # ----------------------------------------------
 alias reload="source ~/.zshrc"
 
-alias term="ssh ubuntu"
-
 alias tardir="tar -zcvf $0 $1"
 
 alias exe="chmod +x $*"
@@ -110,15 +109,10 @@ alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 alias jobstart="bundle exec rake jobs:work"
 
-alias h="heroku $*"
-alias hlog="tail logs > heroku logs --tail"
-
 alias solrstart="rake sunspot:solr:start"
 alias solrindex="rake sunspot:solr:reindex"
 
 alias m="mvim $*"
-
-alias nano="vim $*"
 alias vi="vim $*"
 
 alias emptymail="cat /dev/null > /var/mail/john"
@@ -126,26 +120,22 @@ alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
 alias flushdns="dscacheutil -flushcache"
 alias hosts="sudo nano /etc/hosts" # edit hosts
 
-alias p="ps aux | grep $*"
+alias check="ps aux | grep $*"
 
 alias con="grep -r'<<<<' *"
 
-alias localbrowser="open -a Google\ Chrome --args --disable-web-security"
-
-alias psqlocal="psql -h localhost $*"
-alias psqlcheck="ps -aef|grep 'postgres'" # check postgres is running
-
-alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
-alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
+#alias psqlocal="psql -h localhost $*"
+#alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
+#alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
 
 # recursive copy
 alias copy="cp -r $*"
 
 # disable / enable spotlight
-alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
-alias spoton="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
-alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
-alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
+#alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
+#alias spoton="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
+#alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
+#alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 
 # mirror site
 alias mirror-site='wget -m -k -K -E $@'
@@ -175,13 +165,9 @@ echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
 done )
 }
 
-alias ngstart="sudo service nginx start"
-alias ngstop="sudo service nginx stop"
-alias ngrestart="sudo service nginx restart"
-alias ngcheck="sudo service nginx configtest"
+alias ng="sudo service nginx $@"
 
-alias ngrunning="ps aux | grep nginx"
-alias aprunning="ps aux | grep apach"
+alias stopnginx="sudo kill -QUIT $( cat /var/run/nginx.pid )"
 
 alias kick="touch tmp/restart.txt" # passenger restart
 
