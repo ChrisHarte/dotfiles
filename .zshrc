@@ -167,7 +167,9 @@ done )
 
 alias ng="sudo service nginx $@"
 
-alias stopnginx="sudo kill -QUIT $( cat /var/run/nginx.pid )"
+function stopnginx(){
+  sudo kill -QUIT $( cat /var/run/nginx.pid )
+}
 
 alias kick="touch tmp/restart.txt" # passenger restart
 
