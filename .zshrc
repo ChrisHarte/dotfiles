@@ -179,6 +179,8 @@ alias kick="touch tmp/restart.txt" # passenger restart
 
 alias fontreset="fc-cache -vf" # linux, reset font cache
 
+alias poweroff="sudo shutdown -h -P" # power off machine
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
