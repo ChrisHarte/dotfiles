@@ -80,38 +80,23 @@ alias vim="stty stop '' -ixoff ; vim"
 ttyctl -f
 
 # ----------------------------------------------
+
+# ctrl+r = history autocomplete
+
 alias reload="source ~/.zshrc"
 
-alias tardir="tar -zcvf $0 $1"
-
-alias exe="chmod +x $*"
-
 alias free="free -m"
-
 alias la='ls -la'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
-
 alias cls="clear"
 alias hist="history"
-
-# check md5 tag for file
-alias verify="md5 $*"
-
 alias find="sudo find / -name $*"
-alias rehash="rbenv rehash"
 
-alias version="ruby --version"
-alias r=rails
-alias migrate="bundle exec rake db:migrate"
-alias routes="rake routes"
-alias t="ruby -Ilib:test $*"
-alias jobstart="bundle exec rake jobs:work"
-
-alias solrstart="rake sunspot:solr:start"
-alias solrindex="rake sunspot:solr:reindex"
-alias webindex="heroku rake sunspot:reindex"
+alias verify="md5 $*" # check md5 tag for file
+alias tardir="tar -zcvf $0 $1"
+alias exe="chmod +x $*"
 
 alias m="mvim $*"
 alias vi="vim $*"
@@ -121,16 +106,47 @@ alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
 alias flushdns="dscacheutil -flushcache"
 alias hosts="sudo nano /etc/hosts" # edit hosts
 
-alias check="ps aux | grep $*"
+alias concat="grep -r'<<<<' *"
+alias copy="cp -r $*" # recursive copy
+alias copyweb='wget -m -k -K -E $@' # mirror site
+alias fontreset="fc-cache -vf" # linux, reset font cache
 
-alias con="grep -r'<<<<' *"
+# ----------------------------------------------
 
 #alias psqlocal="psql -h localhost $*"
 #alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
 #alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
 
-# recursive copy
-alias copy="cp -r $*"
+# ----------------------------------------------
+
+alias rehash="rbenv rehash"
+alias r=rails
+alias migrate="bundle exec rake db:migrate"
+alias routes="rake routes"
+alias t="ruby -Ilib:test $*"
+alias jobstart="bundle exec rake jobs:work"
+
+alias startsolr="rake sunspot:solr:start"
+alias indexsolr="rake sunspot:solr:reindex"
+alias indexweb="heroku rake sunspot:reindex"
+
+# fully update the git repo you're in
+alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
+
+# ----------------------------------------------
+
+alias check="ps aux | grep $*"
+alias ng="sudo service nginx $@"
+
+function stopnginx(){
+  sudo kill -QUIT $( cat /var/run/nginx.pid )
+}
+
+alias shoot="kill -9 $@" # stronger kill process
+alias kick="touch tmp/restart.txt" # passenger restart
+alias poweroff="sudo shutdown -h -P +1 " # power off machine after 1 minute
+
+# ----------------------------------------------
 
 # disable / enable spotlight
 #alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
@@ -138,14 +154,7 @@ alias copy="cp -r $*"
 #alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 #alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 
-# mirror site
-alias mirror-site='wget -m -k -K -E $@'
-
-# start tunnels for ssl -> pow
-alias ssl="sudo tunnels"
-
-# Exists to fully update the git repo that you are sitting in...
-alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
+#alias ssl="sudo tunnels" # start tunnels for ssl -> pow
 
 # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
 alias killdock="Killall Dock"
@@ -155,33 +164,18 @@ function port-proxy(){
   echo $1 > ~/.pow/$2
 }
 
+# ----------------------------------------------
+
 # Print all 256 colors to terminal for testing
 aa_256 ()
 {
-( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;
-for i in {0..256};
-do
-o=00$i;
-echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
-done )
+  ( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;
+  for i in {0..256};
+  do
+  o=00$i;
+  echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
+  done )
 }
-
-alias ng="sudo service nginx $@"
-
-function stopnginx(){
-  sudo kill -QUIT $( cat /var/run/nginx.pid )
-}
-
-# stronger kill process
-alias shoot="kill -9 $@"
-
-alias kick="touch tmp/restart.txt" # passenger restart
-
-alias fontreset="fc-cache -vf" # linux, reset font cache
-
-alias poweroff="sudo shutdown -h -P" # power off machine
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-# ctrl+r = history autocomplete
