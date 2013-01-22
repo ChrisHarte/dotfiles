@@ -4,7 +4,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Plugins
-plugins=(git bundler brew pow gem rails3 rbenv)
+plugins=(git bundler gem rails3 rbenv)
 
 # Completion dots
 COMPLETION_WAITING_DOTS="true"
