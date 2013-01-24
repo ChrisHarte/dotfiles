@@ -144,7 +144,7 @@ function stopnginx(){
 
 alias shoot="kill -9 $@" # stronger kill process
 alias kick="touch tmp/restart.txt" # passenger restart
-alias poweroff="sudo shutdown -h -P +1 " # power off machine after 1 minute
+alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
 
 # ----------------------------------------------
 
