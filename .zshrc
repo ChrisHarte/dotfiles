@@ -126,9 +126,9 @@ alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 alias jobstart="bundle exec rake jobs:work"
 
-alias startsolr="rake sunspot:solr:start"
-alias indexsolr="rake sunspot:solr:reindex"
-alias indexweb="heroku rake sunspot:reindex"
+alias solrstart="rake sunspot:solr:start"
+alias solrindex="rake sunspot:solr:reindex"
+alias webindex="heroku rake sunspot:reindex"
 
 # fully update the git repo you're in
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
