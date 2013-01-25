@@ -87,6 +87,13 @@
     installie8 => curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="8" bash
     installie9 => curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="9" bash
 
+### Copy ISO to USB Stick
+  
+    diskutil list
+    diskutil unmountDisk /dev/disk1
+    sudo dd if=ubuntu-12.04.1-server-amd64.iso of=/dev/disk1 bs=8m
+    diskutil eject /dev/disk1
+
 ### Install Libv8 on OSX 10.8
 
     RUBYOPT=-rrubygems bundle install
