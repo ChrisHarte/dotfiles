@@ -93,6 +93,10 @@ alias duh='du -csh'
 alias cls="clear"
 alias hist="history"
 alias find="sudo find / -name $*"
+alias keygen="ssh-keygen -t rsa"
+
+# create/reattach last session
+alias reattach="tmux attach || tmux new"
 
 alias verify="md5 $*" # check md5 tag for file
 alias tardir="tar -zcvf $0 $1"
