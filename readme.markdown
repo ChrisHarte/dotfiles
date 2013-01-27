@@ -39,7 +39,7 @@
 
 ### Postgres & PG gem on Ubuntu
 
-    sudo aptitude install postgres9.1 libpq-dev
+    sudo aptitude install postgresql-9.1 libpq-dev
     
     sudo su postgres -c psql
     
