@@ -7,6 +7,12 @@
     
 ## Dev Machine Setup
 
+### Switch to ZSH
+
+    sudo aptitude install zsh
+    whereis zsh
+    chsh -s /bin/zsh
+
 ### Ubuntu RBENV
 #### https://gist.github.com/1200482
 
