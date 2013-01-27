@@ -10,7 +10,7 @@
 ### Ubuntu RBENV
 #### https://gist.github.com/1200482
 
-    sudo apt-get install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
+    sudo aptitude install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
     git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
     which openssl
     
@@ -31,7 +31,7 @@
 
 ### RMagick gem on Ubuntu (12.04)
 
-    sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
+    sudo aptitude install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
 
     gem install rmagick
     
