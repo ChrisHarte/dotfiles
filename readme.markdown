@@ -37,9 +37,14 @@
     
     rbenv rehash
 
-### PG gem on Ubuntu
+### Postgres & PG gem on Ubuntu
 
-    sudo aptitude install libpq-dev
+    sudo aptitude install postgres9.1 libpq-dev
+    
+    sudo su postgres -c psql
+    
+    postgres=# CREATE ROLE <username> SUPERUSER LOGIN PASSWORD '<yourpassword>';
+    postgres=# \q
     
     gem install pg
     rbenv rehash
