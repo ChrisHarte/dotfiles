@@ -24,4 +24,7 @@ rmdir -p bin Library share/man/man1 2> /dev/null
 rm -rf .git
 rm -rf ~/Library/Caches/Homebrew
 rm -rf ~/Library/Logs/Homebrew
+rm /Library/Caches/Homebrew/*
+rm ~/.rbenv/shims/passenger-config
 rm -rf /Library/Caches/Homebrew
+
