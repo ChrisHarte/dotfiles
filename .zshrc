@@ -146,8 +146,8 @@ function stopnginx(){
   sudo kill -QUIT $( cat /var/run/nginx.pid )
 }
 
-alias shoot="kill -9 $@" # stronger kill process
-alias kick="touch tmp/restart.txt" # passenger restart
+alias die="kill -9 $@" # stronger kill process
+alias kapow="touch tmp/restart.txt" # passenger/pow restart
 alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
 
 # ----------------------------------------------
