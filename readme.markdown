@@ -84,8 +84,6 @@
 
     brew install imagemagick jpeg libtiff jasper
 
-#### Symlink & libtool
-
 https://coderwall.com/p/wnomjg
 
     cd /usr/local/Cellar/imagemagick/6.8.0-10/lib   
