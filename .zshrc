@@ -139,6 +139,7 @@ alias git-pup="git pull && git submodule init && git submodule update && git sub
 
 # ----------------------------------------------
 
+alias raidstatus="sudo cat /proc/mdstat"
 alias check="ps aux | grep $*"
 alias ng="sudo service nginx $@"
 
