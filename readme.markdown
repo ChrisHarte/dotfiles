@@ -80,6 +80,24 @@
     dropbox stop
     /var/lib/dropbox/.dropbox-dist/dropboxd
 
+### ImageMagick on OSX (MiniMagick is recommended)
+
+    brew install imagemagick jpeg libtiff jasper
+
+#### Symlink & libtool
+
+https://coderwall.com/p/wnomjg
+
+    cd /usr/local/Cellar/imagemagick/6.8.0-10/lib   
+    ln -s libMagick++-Q16.7.dylib   libMagick++.dylib
+    ln -s libMagickCore-Q16.7.dylib libMagickCore.dylib
+    ln -s libMagickWand-Q16.7.dylib libMagickWand.dylib
+
+    brew uninstall libtool
+    brew install --fresh libtool
+    brew link libtool
+    brew cleanup
+
 ## Extras
 
 ### chkconfig
@@ -87,7 +105,6 @@
     sudo apt-get install chkconfig
     sudo chkconfig --add nginx    
     sudo chkconfig nginx on  
-
 
 ### VirtualBox
 
@@ -130,5 +147,3 @@ you can do 'time [command]' to measure the time it take to run something
     pg_dump -Fc --no-acl --no-owner -h localhost -U username dbname -f dbname.dump
 
     pg_restore -i -U username -d dbname -v dbname.dump
-    
-    
