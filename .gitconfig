@@ -42,7 +42,7 @@
 	d = difftool
 
 [core]
-  autocrlf = input
+  autocrlf = false
 [mergetool]
   keepBackup = true
   prompt = false
