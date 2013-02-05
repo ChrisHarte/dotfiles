@@ -117,15 +117,20 @@ alias fontreset="fc-cache -vf" # linux, reset font cache
 
 # ----------------------------------------------
 
-#alias psqlocal="psql -h localhost $*"
-#alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
-#alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
+# alias psqlocal="psql -h localhost $*"
+# alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
+# alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
 
 # ----------------------------------------------
 
 alias rehash="rbenv rehash"
+
+# The --binstubs option generates executables in your application's ./bin directory for gems in the bundle.
+# https://github.com/sstephenson/rbenv/wiki/Deploying-with-rbenv
+alias binstubs="bundle install --deployment --binstubs"
+
 alias r=rails
-alias migrate="bundle exec rake db:migrate"
+alias migrate="rake db:migrate"
 alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 alias jobstart="bundle exec rake jobs:work"
@@ -139,8 +144,10 @@ alias git-pup="git pull && git submodule init && git submodule update && git sub
 
 # ----------------------------------------------
 
-alias raidstatus="sudo cat /proc/mdstat"
-alias check="ps aux | grep $*"
+# check raid status
+alias mdstat="sudo cat /proc/mdstat"
+
+# check service
 alias ng="sudo service nginx $@"
 
 function stopnginx(){
