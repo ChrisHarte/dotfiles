@@ -43,6 +43,7 @@
 
 [core]
   autocrlf = false
+	excludesfile = /Users/johngriffiths/.gitignore
 [mergetool]
   keepBackup = true
   prompt = false
