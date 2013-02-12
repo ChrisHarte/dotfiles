@@ -15,6 +15,8 @@ task :default do
   system("ln -s ~/.dotfiles/.zshrc ~/.zshrc")
   system("ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf")
 
+  system("ln -s ~/.dotfiles/_rspec ~/.rspec")
+
   # install 91 command set
   system("git clone git@github.com:johnantoni/91.git ~/.91")
 
