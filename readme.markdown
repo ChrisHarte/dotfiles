@@ -19,6 +19,8 @@
     sudo aptitude install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
     git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
     
+    git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    
     which openssl
     => /usr/bin/openssl
     
