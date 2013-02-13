@@ -37,6 +37,12 @@
     rbenv rehash
     bundle install
 
+### ImageMagick on Ubuntu (12.04)
+
+    sudo apt-get install imagemagick
+
+    gem install mini_magick
+
 ### RMagick gem on Ubuntu (12.04)
 
     sudo aptitude install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
