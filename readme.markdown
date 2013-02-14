@@ -10,7 +10,11 @@
 ### Switch to ZSH
 
     sudo aptitude install zsh
+    
     whereis zsh
+    => /bin/zsh
+    
+    # set zsh as default
     chsh -s /bin/zsh
     
 #### Install oh-my-zsh
