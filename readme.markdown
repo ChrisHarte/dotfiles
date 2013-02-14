@@ -117,6 +117,11 @@ https://coderwall.com/p/wnomjg
 
 ## Extras
 
+### Easier deploys with RECAP
+
+https://tomafro.net/2012/12/deploying-harmonia-with-recap
+
+
 ### chkconfig
 
     sudo apt-get install chkconfig
