@@ -12,6 +12,8 @@
     sudo aptitude install zsh
     whereis zsh
     chsh -s /bin/zsh
+    
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 ### Ubuntu RBENV
 #### https://gist.github.com/1200482
