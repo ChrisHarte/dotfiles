@@ -13,9 +13,12 @@
     whereis zsh
     chsh -s /bin/zsh
     
+#### Install oh-my-zsh
+##### https://github.com/robbyrussell/oh-my-zsh
+
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-### Ubuntu RBENV
+### RBENV on Ubuntu 12.04
 #### https://gist.github.com/1200482
 
     sudo aptitude install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
