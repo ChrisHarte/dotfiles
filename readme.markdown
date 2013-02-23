@@ -87,6 +87,11 @@
     rbenv rehash
     gem install therubyracer execjs
 
+### Nokogiri - libxml2 is missing
+
+    sudo apt-get install libxml2 libxml2-dev libxslt1-dev
+    gem install nokogiri
+
 ### Java for Ubuntu
 
     sudo apt-get install openjdk-7-jre
