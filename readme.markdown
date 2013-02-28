@@ -122,6 +122,10 @@ https://coderwall.com/p/wnomjg
 
 ## Extras
 
+### MINT ~ Make Google Chrome the default browser
+
+    gconftool-2 --type string -s /desktop/gnome/url-handlers/http/command "chromium %s"
+
 ### Easier deploys with RECAP
 
 https://tomafro.net/2012/12/deploying-harmonia-with-recap
