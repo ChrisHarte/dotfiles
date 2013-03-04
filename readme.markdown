@@ -122,6 +122,30 @@ https://coderwall.com/p/wnomjg
 
 ## Extras
 
+### Ubuntu 12.04 + ATI 7700 (multi-monitor setup)
+
+1. Update to the latest kernel then goto Additional Drivers, install the ATI Recommended driver, with both monitors plugged in (hdmi to 1, displayport to 2).
+2. You may need to increase the overscan for the hdmi as there may be a black border round the screen, open AMD Catalyst Center and enable manual overscan then increase till screen fills entirely.
+3. Now to enable the Multi-Monitor feature you will have to run the Catalyst Control center in Administrator mode, via:
+
+    sudo amdcccle
+    
+4. Now "Display Manager", "Multi-Display" and select "Multi-display desktop with display(s) 2"
+5. Apply and you should be done.
+
+An alternate way is to wipe the initial xorg setup via:
+
+    sudo aticonfig --initial -f
+
+Then 
+
+    gksu amdcccle
+    
+To run the Catalyst Control center in Admin mode, but this second command does not seem to stick.
+
+    => Tested on Ubuntu 12.04.2 (server LTM edition with MATE desktop)
+    => Linux 3.2.0-38-generic #61-Ubuntu SMP Tue Feb 19 12:18:21 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+
 ### MINT ~ Make Google Chrome the default browser
 
     gconftool-2 --type string -s /desktop/gnome/url-handlers/http/command "chromium %s"
