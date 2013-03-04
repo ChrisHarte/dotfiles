@@ -87,6 +87,11 @@
     rbenv rehash
     gem install therubyracer execjs
 
+### Nokogiri - libxml2 is missing
+
+    sudo apt-get install libxml2 libxml2-dev libxslt1-dev
+    gem install nokogiri
+
 ### Java for Ubuntu
 
     sudo apt-get install openjdk-7-jre
@@ -116,6 +121,10 @@ https://coderwall.com/p/wnomjg
     brew cleanup
 
 ## Extras
+
+### MINT ~ Make Google Chrome the default browser
+
+    gconftool-2 --type string -s /desktop/gnome/url-handlers/http/command "chromium %s"
 
 ### Easier deploys with RECAP
 
