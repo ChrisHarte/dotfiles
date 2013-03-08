@@ -104,6 +104,8 @@
     dropbox stop
     /var/lib/dropbox/.dropbox-dist/dropboxd
 
+    echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+
 ### ImageMagick on OSX (MiniMagick is recommended)
 
     brew install imagemagick jpeg libtiff jasper
