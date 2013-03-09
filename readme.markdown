@@ -222,3 +222,9 @@ you can do 'time [command]' to measure the time it take to run something
 * [SEO Dashboard](https://www.google.com/analytics/web/template?uid=DdK8j7mjQfqWjRRh27QHQQ)
 
 * More at [customreportsharing.com](http://www.customreportsharing.com/)
+
+#### How To Add?
+
+* Login to Google Analytics
+* Go back to this [page](https://github.com/johnantoni/dotfiles#google-analytics)
+* Click one of the links above, you'll be redirected to your Google Analytics account where it will prompt you for the account to attach the report to.
