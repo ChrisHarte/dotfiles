@@ -122,9 +122,9 @@ https://coderwall.com/p/wnomjg
     brew link libtool
     brew cleanup
 
-## Extras
+## Ubuntu 12.04 Fixes
 
-### Ubuntu 12.04 + ATI 7700 (multi-monitor setup)
+### ATI 7700 (multi-monitor setup)
 
 1. Update to the latest kernel then goto Additional Drivers, install the ATI Recommended driver, with both monitors plugged in (hdmi to 1, displayport to 2).
 2. You may need to increase the overscan for the hdmi as there may be a black border round the screen, open AMD Catalyst Center and enable manual overscan then increase till screen fills entirely.
@@ -148,9 +148,28 @@ To run the Catalyst Control center in Admin mode, but this second command does n
     => Tested on Ubuntu 12.04.2 (server LTM edition with MATE desktop)
     => Linux 3.2.0-38-generic #61-Ubuntu SMP Tue Feb 19 12:18:21 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
 
-### MINT ~ Make Google Chrome the default browser
+### Graphics artifacts in Sublime Text 2 with ATI graphics card
+
+Run then restart,
+
+    sudo aticonfig --ovt=opengl
+
+### Ubuntu MINT ~ Make Google Chrome the default browser
 
     gconftool-2 --type string -s /desktop/gnome/url-handlers/http/command "chromium %s"
+
+### Re-enable Hibernate
+
+    gksu nano /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+
+Then copy & paste below into the file & save
+
+    [Enable Hibernate]
+    Identity=unix-user:*
+    Action=org.freedesktop.upower.hibernate
+    ResultActive=yes
+
+## Extras
 
 ### Easier deploys with RECAP
 
