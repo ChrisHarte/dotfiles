@@ -5,7 +5,7 @@
     cd ~/.dotfiles
     rake
     
-## Dev Machine Setup
+## Development
 
 ### Switch to ZSH
 
