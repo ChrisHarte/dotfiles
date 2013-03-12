@@ -91,6 +91,7 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
 alias c="clear"
+alias l='ls -G'
 alias hist="history"
 alias find="sudo find / -name $*"
 alias keygen="ssh-keygen -t rsa"
@@ -129,6 +130,7 @@ alias rehash="rbenv rehash"
 # https://github.com/sstephenson/rbenv/wiki/Deploying-with-rbenv
 alias binstubs="bundle install --deployment --binstubs"
 
+alias b="bundle"
 alias r=rails
 alias migrate="rake db:migrate"
 alias routes="rake routes"
