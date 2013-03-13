@@ -171,6 +171,10 @@ Then copy & paste below into the file & save
 
 ## Extras
 
+### Port forward 80 to 3000
+
+    sudo iptables -t nat -A OUTPUT -p tcp --dport 80 -d 127.0.0.1/8 -j REDIRECT --to-port 3000
+
 ### Easier deploys with RECAP
 
 https://tomafro.net/2012/12/deploying-harmonia-with-recap
