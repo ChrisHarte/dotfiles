@@ -175,6 +175,57 @@ Then copy & paste below into the file & save
 
     sudo iptables -t nat -A OUTPUT -p tcp --dport 80 -d 127.0.0.1/8 -j REDIRECT --to-port 3000
 
+To set this up so it's done automatically on boot,
+
+1. Backup your current port rules
+
+    sudo sh -c '/sbin/iptables-save > /etc/iptables.save'
+
+2. Create a new iptables file
+
+    sudo vim /etc/iptables.up.rules
+    
+3. Copy & paste this into the file
+
+    *nat 
+    -A OUTPUT -p tcp --dport 80 -d 127.0.0.1/8 -j REDIRECT --to-port 3000 
+    COMMIT
+
+4. Flush your current settings
+
+    sudo /sbin/iptables -F
+
+5. Import your new settings
+
+    sudo /sbin/iptables-restore < /etc/iptables.up.rules
+
+6. Check
+
+    sudo /sbin/iptables -L
+
+7. Now to make linux to use it on-boot do
+
+    sudo vim /etc/network/if-pre-up.d/iptables
+
+8. Copy and paste contents below into the file
+
+    #!/bin/sh
+    /sbin/iptables-restore < /etc/iptables.up.rules
+
+9. Save it, then make it executable
+
+    sudo chmod +x /etc/network/if-pre-up.d/iptables
+
+Now on-boot the new settings will be used.
+
+### Edit HOST file
+
+    sudo vim /etc/hosts
+    
+From there you can forward traffic to a local domain
+
+    0.0.0.0 site.dev
+
 ### Easier deploys with RECAP
 
 https://tomafro.net/2012/12/deploying-harmonia-with-recap
