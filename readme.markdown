@@ -177,15 +177,15 @@ Then copy & paste below into the file & save
 
 To set this up so it's done automatically on boot,
 
-1. Backup your current port rules
+1.  Backup your current port rules
 
-     sudo sh -c '/sbin/iptables-save > /etc/iptables.save'
+    sudo sh -c '/sbin/iptables-save > /etc/iptables.save'
 
-2. Create a new iptables file
+2.  Create a new iptables file
 
     sudo vim /etc/iptables.up.rules
     
-3. Copy & paste this into the file
+3.  Copy & paste this into the file
 
     *nat 
     -A OUTPUT -p tcp --dport 80 -d 127.0.0.1/8 -j REDIRECT --to-port 3000 
