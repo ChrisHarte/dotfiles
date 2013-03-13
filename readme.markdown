@@ -126,9 +126,9 @@ https://coderwall.com/p/wnomjg
 
 ### ATI 7700 (multi-monitor setup)
 
-1. Update to the latest kernel then goto Additional Drivers, install the ATI Recommended driver, with both monitors plugged in (hdmi to 1, displayport to 2).
-2. You may need to increase the overscan for the hdmi as there may be a black border round the screen, open AMD Catalyst Center and enable manual overscan then increase till screen fills entirely.
-3. Now to enable the Multi-Monitor feature you will have to run the Catalyst Control center in Administrator mode, via:
+* Update to the latest kernel then goto Additional Drivers, install the ATI Recommended driver, with both monitors plugged in (hdmi to 1, displayport to 2).
+* You may need to increase the overscan for the hdmi as there may be a black border round the screen, open AMD Catalyst Center and enable manual overscan then increase till screen fills entirely.
+* Now to enable the Multi-Monitor feature you will have to run the Catalyst Control center in Administrator mode, via:
 
     sudo amdcccle
     
