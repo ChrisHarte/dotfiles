@@ -179,7 +179,7 @@ To set this up so it's done automatically on boot,
 
 1. Backup your current port rules
 
-    sudo sh -c '/sbin/iptables-save > /etc/iptables.save'
+     sudo sh -c '/sbin/iptables-save > /etc/iptables.save'
 
 2. Create a new iptables file
 
