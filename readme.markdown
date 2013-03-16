@@ -174,6 +174,10 @@ Then copy & paste below into the file & save
 
 ## Extras
 
+### Self-hosted GIT via gitolite
+
+http://www.bigfastblog.com/gitolite-installation-step-by-step
+
 ### NGINX start/stop/etc
 
     sudo service nginx restart
