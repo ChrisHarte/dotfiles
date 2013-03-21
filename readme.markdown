@@ -292,6 +292,18 @@ you can do 'time [command]' to measure the time it take to run something
 
     pg_restore -i -U username -d dbname -v dbname.dump
 
+### Postgres Permissions
+
+    CREATE USER tony WITH PASSWORD 'password';
+    
+    ALTER USER tony WITH SUPERUSER;
+
+    CREATE DATABASE mark1;
+    
+    GRANT ALL PRIVILEGES ON DATABASE mark1 to tony;
+
+    \q
+
 ## Google Analytics
 
 ### Recommended Custom Reports
