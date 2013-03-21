@@ -292,6 +292,12 @@ you can do 'time [command]' to measure the time it take to run something
 
     pg_restore -i -U username -d dbname -v dbname.dump
 
+### Postgres Login (with PostgresApp)
+
+http://postgresapp.com/
+
+    psql -h localhost
+
 ### Postgres Permissions
 
     CREATE USER tony WITH PASSWORD 'password';
