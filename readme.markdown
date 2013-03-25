@@ -278,10 +278,6 @@ https://tomafro.net/2012/12/deploying-harmonia-with-recap
 
     rails g controller api/ --skip-javascripts --skip-stylesheets --skip-helpers
 
-### Start Mongo locally
-
-    mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest
-
 ### time [command]
 
 you can do 'time [command]' to measure the time it take to run something
@@ -339,3 +335,37 @@ http://postgresapp.com/
 ### CSS Links
 
 * http://cssarrowplease.com/
+
+## MongoDB
+
+### Backup
+
+    mongodump --host stark.mongohq.com --port 10011 --username tony --password notpassword1 --db mark1_db --out dumpdir
+    
+### Restore
+
+    mongorestore --host stark.mongohq --port 10011 --username tony --password notpassword1 --db mark1_db dumpdir
+
+### Start Mongo locally
+
+    mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest
+
+### Example Rails mongoid.yml
+
+    defaults: &defaults
+      host: localhost
+      identity_map_enabled: true
+    
+    development: 
+      <<: *defaults  
+      database: dev_db
+      port: 27017
+    
+    test:
+      <<: *defaults
+      database: test_db
+      port: 27017
+    
+    production:
+      <<: *defaults  
+      uri: 'mongodb://tony:notpassword1@stark.mongohq.com:10011/prod_db'
