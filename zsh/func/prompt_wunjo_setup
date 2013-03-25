@@ -5,9 +5,7 @@ zgitinit
 
 prompt_wunjo_help () {
   cat <<'EOF'
-
   prompt wunjo
-
 EOF
 }
 

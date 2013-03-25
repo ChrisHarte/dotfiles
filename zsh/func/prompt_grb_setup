@@ -6,9 +6,7 @@ zgitinit
 
 prompt_grb_help () {
   cat <<'EOF'
-
   prompt grb
-
 EOF
 }
 

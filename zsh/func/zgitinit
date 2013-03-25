@@ -244,5 +244,4 @@ zgitinit() {
 
 zgitinit
 zgit_info_update
-
 # vim:set ft=zsh:
