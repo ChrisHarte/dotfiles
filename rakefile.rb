@@ -26,6 +26,7 @@ task :default do
   system("ln -s ~/.dotfiles/.bundle_config ~/.bundle/config")
 
   Rake::Task["update"].invoke
+  Rake::Task["security_patch"].invoke
 end
 
 # Update plugins
@@ -54,3 +55,7 @@ task :link_pictures do
   system("ln -s Google\ Drive/pictures Pictures") # symlink new Pictures dir to google drive
 end
 
+# Compaudit on Linux
+task :security_patch
+  system("chmod -R 755 ~/.dotfiles/zsh")
+end
