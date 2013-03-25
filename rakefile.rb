@@ -56,6 +56,6 @@ task :link_pictures do
 end
 
 # Compaudit on Linux
-task :security_patch
+task :security_patch do
   system("chmod -R 755 ~/.dotfiles/zsh")
 end
