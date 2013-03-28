@@ -106,7 +106,7 @@
 
     echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 
-## OSX Fixes
+## OSX Fixes (mountain lion)
 
 ### ImageMagick Install on OSX (MiniMagick is recommended for rails)
 
