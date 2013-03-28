@@ -106,11 +106,15 @@
 
     echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 
-### ImageMagick on OSX (MiniMagick is recommended)
+## OSX Fixes
+
+### ImageMagick Install on OSX (MiniMagick is recommended for rails)
 
     brew install imagemagick jpeg libtiff jasper
 
 https://coderwall.com/p/wnomjg
+
+### ImageMagick fix #1 for OSX
 
     cd /usr/local/Cellar/imagemagick/6.8.0-10/lib   
     ln -s libMagick++-Q16.7.dylib   libMagick++.dylib
@@ -121,6 +125,12 @@ https://coderwall.com/p/wnomjg
     brew install --fresh libtool
     brew link libtool
     brew cleanup
+
+### ImageMagick fix #2 for OSX
+
+    brew uninstall imagemagick
+    brew cleanup --force -s
+    brew install imagemagick
 
 ## Ubuntu 12.04 Fixes
 
