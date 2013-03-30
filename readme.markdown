@@ -387,3 +387,23 @@ http://postgresapp.com/
       username: <%= ENV['MONGOID_USERNAME'] %>
       password: <%= ENV['MONGOID_PASSWORD'] %>
       database: <%= ENV['MONGOID_DATABASE'] %>
+
+### Shell
+
+#### open shell (default port 27017)
+
+    mongo
+
+#### list databases
+
+    show dbs
+
+#### connect to / create database
+
+    use db [name]
+
+If you connect to a database that doesn't exist then one will be temporarily created, but it won't be saved to till you write something in it.
+
+#### add user to database
+
+    db.addUser('username','password')
