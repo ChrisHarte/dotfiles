@@ -379,3 +379,11 @@ http://postgresapp.com/
     production:
       <<: *defaults  
       uri: 'mongodb://tony:notpassword1@stark.mongohq.com:10011/prod_db'
+
+    production:
+      <<: *defaults
+      host: <%= ENV['MONGOID_HOST'] %>
+      port: <%= ENV['MONGOID_PORT'] %>
+      username: <%= ENV['MONGOID_USERNAME'] %>
+      password: <%= ENV['MONGOID_PASSWORD'] %>
+      database: <%= ENV['MONGOID_DATABASE'] %>
