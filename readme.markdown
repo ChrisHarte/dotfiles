@@ -415,9 +415,9 @@ If you connect to a database that doesn't exist then one will be temporarily cre
 
     db.addUser('username','password')
 
-### Database Backup via S3
+## Database Backup via S3
 
-#### Setup Backup
+### Setup Backup
 
     gem install backup
     rehash
@@ -426,7 +426,7 @@ If you connect to a database that doesn't exist then one will be temporarily cre
     
     backup perform --trigger mydb
 
-#### Make it Routine
+### Make it Routine
 
 Setup routine backups via the Whenever gem
 
