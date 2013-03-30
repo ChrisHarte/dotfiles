@@ -356,6 +356,12 @@ http://postgresapp.com/
 
     mongorestore --host stark.mongohq --port 10011 --username tony --password notpassword1 --db mark1_db dumpdir
 
+Or
+
+    mongorestore --db local_db --drop dump/local_db
+
+When specifying --db and without --collection (restoring a whole database): - the given path must be a directory path - the directory must not contain any other files than .bson or .json
+
 ### Start Mongo locally
 
     mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest
@@ -393,6 +399,10 @@ http://postgresapp.com/
 #### open shell (default port 27017)
 
     mongo
+
+#### help
+
+    help
 
 #### list databases
 
