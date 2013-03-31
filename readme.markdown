@@ -452,3 +452,25 @@ Check what will be written to the crontab
 Update the crontab
 
     whenever --update-crontab
+
+## Postgres
+
+### Backup
+
+via Linux
+
+    pg_dump -Fc --no-acl --no-owner -h localhost -U [username] mydb > dump.sql
+
+via OSX & http://postgresapp.com/
+
+    /Applications/Postgres.app/Contents/MacOS/bin/pg_dump -Fc --no-acl --no-owner -h localhost -U [username] mydb > dump.sql
+
+### Restore
+
+via Linux
+
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d mydb dump.sql
+    
+via OSX & http://postgresapp.com/
+
+    /Applications/Postgres.app/Contents/MacOS/bin/pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d mydb dump.sql
