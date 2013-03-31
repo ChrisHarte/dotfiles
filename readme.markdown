@@ -292,32 +292,6 @@ https://tomafro.net/2012/12/deploying-harmonia-with-recap
 
 you can do 'time [command]' to measure the time it take to run something
 
-## PostGres
-
-### Postgres Backup / Restore
-
-    pg_dump -Fc --no-acl --no-owner -h localhost -U username dbname -f dbname.dump
-
-    pg_restore -i -U username -d dbname -v dbname.dump
-
-### Postgres Login (with PostgresApp)
-
-http://postgresapp.com/
-
-    psql -h localhost
-
-### Postgres Permissions
-
-    CREATE USER tony WITH PASSWORD 'password';
-    
-    ALTER USER tony WITH SUPERUSER;
-
-    CREATE DATABASE mark1;
-    
-    GRANT ALL PRIVILEGES ON DATABASE mark1 to tony;
-
-    \q
-
 ## Google Analytics
 
 ### Recommended Custom Reports
@@ -474,3 +448,19 @@ via Linux
 via OSX & http://postgresapp.com/
 
     /Applications/Postgres.app/Contents/MacOS/bin/pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d mydb dump.sql
+
+### Login
+
+    psql -h localhost
+
+### Permissions
+
+    CREATE USER tony WITH PASSWORD 'password';
+    
+    ALTER USER tony WITH SUPERUSER;
+
+    CREATE DATABASE mark1;
+    
+    GRANT ALL PRIVILEGES ON DATABASE mark1 to tony;
+
+    \q
