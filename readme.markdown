@@ -441,17 +441,25 @@ via OSX & http://postgresapp.com/
 
 ### Restore
 
-via Linux
-
     pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d mydb dump.sql
-    
+
+or
+
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] --port 5432 -d mydb dump.sql
+
 via OSX & http://postgresapp.com/
 
     /Applications/Postgres.app/Contents/MacOS/bin/pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d mydb dump.sql
 
 ### Login
 
+for postgres.app
+
     psql -h localhost
+
+or
+
+    psql -h localhost --port 5432 -U postgres
 
 ### Permissions
 
