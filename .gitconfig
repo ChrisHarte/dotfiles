@@ -49,9 +49,20 @@
   prompt = false
 [github]
   user = johnantoni
-#[push]
-#  default = simple
 [difftool]
 	prompt = false
 [diff]
-	tool = vimdiff
+  tool = vimdiff
+
+# git hooks
+[hooks "pre-commit"]
+  enabled = true
+  whitespace-rb = true
+[hooks "post-checkout"]
+  enabled = true
+  update-submodules-rb = true
+  check-bundle-rb = true
+[hooks "post-merge"]
+  enabled = true
+  update-submodules-rb = true
+  check-bundle-rb = true
