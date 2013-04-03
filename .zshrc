@@ -36,7 +36,7 @@ compinit
 # Path
 PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/.dotfiles/bin:$PATH
 # MacPorts
-PATH=$PATH:/opt/local/bin:/opt/local/sbin
+PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # NodeJS
 NODE_PATH=/usr/local/lib/node_modules
 
