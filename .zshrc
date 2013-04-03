@@ -1,5 +1,3 @@
-# ---------------------------------------------
-#
 # Oh my zsh integration
 ZSH=$HOME/.oh-my-zsh
 
@@ -12,7 +10,6 @@ COMPLETION_WAITING_DOTS="true"
 # Now load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# ---------------------------------------------
 # Load the zsh functions for the fancy grb prompt
 fpath=($fpath $HOME/.dotfiles/zsh/func)
 
@@ -74,57 +71,57 @@ export TERM=xterm-256color
 # sub - https://github.com/37signals/sub
 eval "$($HOME/.91/bin/91 init -)"
 
-# start tmux automatically
-# if [ "$TMUX" = "" ]; then tmux; fi
-
 # in terminal vim we want access to the Ctrl+ combinations
 alias vim="stty stop '' -ixoff ; vim"
+
 # `Frozing' tty, so after any command terminal settings will be restored
 ttyctl -f
 
 # ----------------------------------------------
+# Tools
+# ----------------------------------------------
 
 # ctrl+r = history autocomplete
-
 alias reload="source ~/.zshrc"
-
 alias free="free -m"
+alias find="sudo find / -name $*"
+alias verify="md5 $*" # check md5 tag for file
+alias tardir="tar -zcvf $0 $1"
+alias exe="chmod +x $*"
+alias emptymail="cat /dev/null > /var/mail/john"
+alias flushdns="dscacheutil -flushcache"
+alias hosts="sudo nano /etc/hosts" # edit hosts
+alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
+alias concat="grep -r'<<<<' *"
+alias copy="cp -r $*" # recursive copy
+alias copyweb='wget -m -k -K -E $@' # mirror site
+alias fontreset="fc-cache -vf" # linux, reset font cache
+alias raidstatus="sudo cat /proc/mdstat"
+alias ng="sudo service nginx $@"
+alias stop="pkill $@" # kill by process name
+alias die="kill -9 $@" # stronger kill process
+alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
+
+# start tmux automatically
+# if [ "$TMUX" = "" ]; then tmux; fi
+alias reattach="tmux attach || tmux new" # create/reattach last session
+
+# ----------------------------------------------
+# Shortcuts
+# ----------------------------------------------
+
 alias la='ls -la'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
 alias c="clear"
 alias l='ls -G'
-alias hist="history"
-alias find="sudo find / -name $*"
-alias keygen="ssh-keygen -t rsa"
-
-# create/reattach last session
-alias reattach="tmux attach || tmux new"
-
-alias verify="md5 $*" # check md5 tag for file
-alias tardir="tar -zcvf $0 $1"
-alias exe="chmod +x $*"
-
+alias h="history"
 alias m="mvim $*"
 alias vi="vim $*"
 
-alias emptymail="cat /dev/null > /var/mail/john"
-alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
-alias flushdns="dscacheutil -flushcache"
-alias hosts="sudo nano /etc/hosts" # edit hosts
-
-alias concat="grep -r'<<<<' *"
-alias copy="cp -r $*" # recursive copy
-alias copyweb='wget -m -k -K -E $@' # mirror site
-alias fontreset="fc-cache -vf" # linux, reset font cache
-
 # ----------------------------------------------
-
-# alias psqlocal="psql -h localhost $*"
-# alias psqldump="pg_dump -Fc --no-acl --no-owner -h localhost -U $0 -d $1 > $2.dump"
-# alias psqlrestore="pg_restore -i -U $0 -d $1 -v $2"
-
+# Development
 # ----------------------------------------------
 
 alias rehash="rbenv rehash"
@@ -144,25 +141,12 @@ alias solrstart="rake sunspot:solr:start"
 alias solrindex="rake sunspot:solr:reindex"
 alias webindex="heroku rake sunspot:reindex"
 
-# fully update the git repo you're in
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 
-# ----------------------------------------------
-
-# check raid status
-alias mdstat="sudo cat /proc/mdstat"
-
-# check service
-alias ng="sudo service nginx $@"
-
-function stopnginx(){
-  sudo kill -QUIT $( cat /var/run/nginx.pid )
-}
-
-alias die="kill -9 $@" # stronger kill process
 alias kapow="touch tmp/restart.txt" # passenger/pow restart
-alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
 
+# ----------------------------------------------
+# OSX
 # ----------------------------------------------
 
 # disable / enable spotlight
@@ -170,8 +154,6 @@ alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.
 alias spoton="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
 alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
-
-#alias ssl="sudo tunnels" # start tunnels for ssl -> pow
 
 # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
 alias killdock="Killall Dock"
@@ -182,6 +164,13 @@ function port-proxy(){
 }
 
 # ----------------------------------------------
+# Functions
+# ----------------------------------------------
+
+# Stop nginx
+function ngstop(){
+  sudo kill -QUIT $( cat /var/run/nginx.pid )
+}
 
 # Print all 256 colors to terminal for testing
 aa_256 ()
