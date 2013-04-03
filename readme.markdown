@@ -48,6 +48,29 @@
     rbenv rehash
     bundle install
 
+### Bundler params for specific gems
+
+Edit your bundler config:
+
+    vim ~/.bundle/config
+
+My standard is:
+
+    ---
+      BUNDLE_PATH: vendor/bundle
+
+This basically means that gems will be kept separately in a gemset for each project via the vendor/bundle directory, so not polluting the global gem set.
+
+Problem is our gem 'geoip-c' needs specific params to install correctly, so for this we add:
+
+      BUNDLE_BUILD__GEOIP-C: --with-geoip-dir=/opt/local
+
+Build with "bundle install" and we're done, this will apply the above to the geoip-c gem ala:
+
+      BUNDLE_BUILD__[gem name in uppercase]: --[params]
+
+You could also store a separate bundler configuration file per-project.
+
 ### ImageMagick on Ubuntu (12.04)
 
     sudo apt-get install imagemagick
