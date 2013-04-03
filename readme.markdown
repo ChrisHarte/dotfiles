@@ -472,3 +472,9 @@ or
     GRANT ALL PRIVILEGES ON DATABASE mark1 to tony;
 
     \q
+
+### MacPorts start / stop
+
+    sudo port load postgresql92-server
+    
+    sudo port unload postgresql92-server
