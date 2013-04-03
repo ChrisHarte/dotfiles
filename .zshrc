@@ -1,3 +1,7 @@
+# ---------------------------------------------------------
+# CONFIG
+# ---------------------------------------------------------
+
 # Oh my zsh integration
 ZSH=$HOME/.oh-my-zsh
 
@@ -36,6 +40,8 @@ PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/loca
 PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # NodeJS
 NODE_PATH=/usr/local/lib/node_modules
+# Heroku
+PATH=/usr/local/heroku/bin:$PATH
 
 # RBENV
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -77,9 +83,9 @@ alias vim="stty stop '' -ixoff ; vim"
 # `Frozing' tty, so after any command terminal settings will be restored
 ttyctl -f
 
-# ----------------------------------------------
-# Tools
-# ----------------------------------------------
+# ---------------------------------------------------------
+# ALIASES
+# ---------------------------------------------------------
 
 # ctrl+r = history autocomplete
 alias reload="source ~/.zshrc"
@@ -106,9 +112,9 @@ alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
 # if [ "$TMUX" = "" ]; then tmux; fi
 alias reattach="tmux attach || tmux new" # create/reattach last session
 
-# ----------------------------------------------
-# Shortcuts
-# ----------------------------------------------
+# ---------------------------------------------------------
+# SHORTCUTS
+# ---------------------------------------------------------
 
 alias la='ls -la'
 alias ls='ls -G'
@@ -120,34 +126,26 @@ alias h="history"
 alias m="mvim $*"
 alias vi="vim $*"
 
-# ----------------------------------------------
-# Development
-# ----------------------------------------------
+# ---------------------------------------------------------
+# DEVELOPMENT
+# ---------------------------------------------------------
 
 alias rehash="rbenv rehash"
-
-# The --binstubs option generates executables in your application's ./bin directory for gems in the bundle.
-# https://github.com/sstephenson/rbenv/wiki/Deploying-with-rbenv
-alias binstubs="bundle install --deployment --binstubs"
-
 alias b="bundle"
+alias binstubs="bundle install --deployment --binstubs" # generate executables in bundle
 alias r=rails
 alias migrate="rake db:migrate"
 alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 alias jobstart="bundle exec rake jobs:work"
-
 alias solrstart="rake sunspot:solr:start"
 alias solrindex="rake sunspot:solr:reindex"
-alias webindex="heroku rake sunspot:reindex"
-
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
-
 alias kapow="touch tmp/restart.txt" # passenger/pow restart
 
-# ----------------------------------------------
+# ---------------------------------------------------------
 # OSX
-# ----------------------------------------------
+# ---------------------------------------------------------
 
 # disable / enable spotlight
 alias spotoff="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
@@ -155,17 +153,16 @@ alias spoton="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.met
 alias spothide="sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 alias spotshow="sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search && killall SystemUIServer"
 
-# Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
-alias killdock="Killall Dock"
+alias killdock="Killall Dock" # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
+
+# ---------------------------------------------------------
+# FUNCTIONS
+# ---------------------------------------------------------
 
 # Port proxy'ing for Pow => port-proxy 3501 my-app-dirname
 function port-proxy(){
   echo $1 > ~/.pow/$2
 }
-
-# ----------------------------------------------
-# Functions
-# ----------------------------------------------
 
 # Stop nginx
 function ngstop(){
@@ -182,6 +179,3 @@ aa_256 ()
   echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
   done )
 }
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
