@@ -48,6 +48,29 @@
     rbenv rehash
     bundle install
 
+### Bundler params for specific gems
+
+Edit your bundler config:
+
+    vim ~/.bundle/config
+
+My standard is:
+
+    ---
+      BUNDLE_PATH: vendor/bundle
+
+This basically means that gems will be kept separately in a gemset for each project via the vendor/bundle directory, so not polluting the global gem set.
+
+Problem is our gem 'geoip-c' needs specific params to install correctly, so for this we add:
+
+      BUNDLE_BUILD__GEOIP-C: --with-geoip-dir=/opt/local
+
+Build with "bundle install" and we're done, this will apply the above to the geoip-c gem ala:
+
+      BUNDLE_BUILD__[gem name in uppercase]: --[params]
+
+You could also store a separate bundler configuration file per-project.
+
 ### ImageMagick on Ubuntu (12.04)
 
     sudo apt-get install imagemagick
@@ -292,32 +315,6 @@ https://tomafro.net/2012/12/deploying-harmonia-with-recap
 
 you can do 'time [command]' to measure the time it take to run something
 
-## PostGres
-
-### Postgres Backup / Restore
-
-    pg_dump -Fc --no-acl --no-owner -h localhost -U username dbname -f dbname.dump
-
-    pg_restore -i -U username -d dbname -v dbname.dump
-
-### Postgres Login (with PostgresApp)
-
-http://postgresapp.com/
-
-    psql -h localhost
-
-### Postgres Permissions
-
-    CREATE USER tony WITH PASSWORD 'password';
-    
-    ALTER USER tony WITH SUPERUSER;
-
-    CREATE DATABASE mark1;
-    
-    GRANT ALL PRIVILEGES ON DATABASE mark1 to tony;
-
-    \q
-
 ## Google Analytics
 
 ### Recommended Custom Reports
@@ -452,3 +449,55 @@ Check what will be written to the crontab
 Update the crontab
 
     whenever --update-crontab
+
+## Postgres
+
+### Backup
+
+via Linux
+
+    pg_dump -Fc --no-acl --no-owner -h localhost -U [username] mydb > dump.sql
+
+via OSX & http://postgresapp.com/
+
+    /Applications/Postgres.app/Contents/MacOS/bin/pg_dump -Fc --no-acl --no-owner -h localhost -U [username] mydb > dump.sql
+
+### Restore
+
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d mydb dump.sql
+
+or
+
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] --port 5432 -d mydb dump.sql
+
+via OSX & http://postgresapp.com/
+
+    /Applications/Postgres.app/Contents/MacOS/bin/pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d mydb dump.sql
+
+### Login
+
+for postgres.app
+
+    psql -h localhost
+
+or
+
+    psql -h localhost --port 5432 -U postgres
+
+### Permissions
+
+    CREATE USER tony WITH PASSWORD 'password';
+    
+    ALTER USER tony WITH SUPERUSER;
+
+    CREATE DATABASE mark1;
+    
+    GRANT ALL PRIVILEGES ON DATABASE mark1 to tony;
+
+    \q
+
+### MacPorts start / stop
+
+    sudo port load postgresql92-server
+    
+    sudo port unload postgresql92-server
