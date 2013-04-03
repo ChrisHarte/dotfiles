@@ -131,6 +131,11 @@ You could also store a separate bundler configuration file per-project.
 
 ## OSX Fixes (mountain lion)
 
+### Use another mac as a second monitor (target display mode)
+
+1. Connect your macbook to the external display (imac) via thunderbolt cable
+2. On the iMac press Command+F2, this will reset the display and have the Macbook take over the iMac as a second monitor.
+
 ### ImageMagick Install on OSX (MiniMagick is recommended for rails)
 
     brew install imagemagick jpeg libtiff jasper
