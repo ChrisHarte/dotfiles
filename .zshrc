@@ -121,6 +121,7 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
 alias c="clear"
+alias cls="clear" # because im proper old school
 alias l='ls -G'
 alias h="history"
 alias m="mvim $*"
@@ -142,6 +143,9 @@ alias solrstart="rake sunspot:solr:start"
 alias solrindex="rake sunspot:solr:reindex"
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 alias kapow="touch tmp/restart.txt" # passenger/pow restart
+
+alias psqlload="sudo port load postgresql92-server"
+alias psqlunload="sudo port unload postgresql92-server"
 
 # ---------------------------------------------------------
 # OSX
