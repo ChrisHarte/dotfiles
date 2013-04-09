@@ -20,8 +20,7 @@ task :default do
   # install 91 command set
   system("git clone git@github.com:johnantoni/91.git ~/.91")
 
-  # mongo db
-  system("mkdir ~/.dotfiles/local_db")
+  # bundler config
   system("mkdir ~/.bundle")
   system("ln -s ~/.dotfiles/.bundle_config ~/.bundle/config")
 
