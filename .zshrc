@@ -144,8 +144,9 @@ alias solrindex="rake sunspot:solr:reindex"
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 alias kapow="touch tmp/restart.txt" # passenger/pow restart
 
-alias psqlload="sudo port load postgresql92-server"
-alias psqlunload="sudo port unload postgresql92-server"
+function portsql(){
+  sudo port $1 postgresql92-server
+}
 
 # ---------------------------------------------------------
 # OSX
