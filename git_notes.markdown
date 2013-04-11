@@ -21,6 +21,9 @@ then
 
     git ri origin/master
 
+    origin = remote
+    master = branch
+
 will give you:
 
     pick 8374d8e Change all the "Bar"s to "Foo"s
