@@ -565,4 +565,4 @@ When you do do a rebase, here's how it goes:
 
     **git push origin master**
     
-Note: because of the [default=nothing] setting in .gitconfig, you will always have to specify the ref to push/pull with rather than use the default. it's safer this way http://technosorcery.net/blog/2011/12/15/making-git-push-a-little-smarter-slash-safer/
+Note: because of the [default=nothing] setting in .gitconfig, you will always have to specify the ref to push with rather than use the default. it's safer this way http://technosorcery.net/blog/2011/12/15/making-git-push-a-little-smarter-slash-safer/
