@@ -548,10 +548,7 @@ When you do do a rebase, here's how it goes:
 
 1. First you perform the rebase, specifying which remote to use and/or the branch to reference. 
 
-
-    git ri origin/master
-    or 
-    git rebase origin/master --interactive
+    **git ri origin/master** or **git rebase origin/master --interactive**
 
 2. Next git will open your editor of choice specified from .gitconfig, in this vim
 3. You will now see a list of your local commits, in ascending order (first to last).
@@ -562,5 +559,4 @@ When you do do a rebase, here's how it goes:
 8. Save and quit again ":wq!"
 9. You should finally see this message confirming the rebase has gone correctly,
 
-
-    Successfully rebased and updated refs/heads/master.
+    **Successfully rebased and updated refs/heads/master.**
