@@ -548,10 +548,9 @@ When you do do a rebase, here's how it goes:
 
 1. First you perform the rebase, specifying which remote to use and/or the branch to reference. 
 
+
     git ri origin/master
-    
     or 
-    
     git rebase origin/master --interactive
 
 2. Next git will open your editor of choice specified from .gitconfig, in this vim
@@ -562,5 +561,6 @@ When you do do a rebase, here's how it goes:
 7. VIM will re-open and you'll now see all the commit messages from the squashed commits.
 8. Save and quit again ":wq!"
 9. You should finally see this message confirming the rebase has gone correctly,
+
 
     Successfully rebased and updated refs/heads/master.
