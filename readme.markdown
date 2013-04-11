@@ -560,3 +560,9 @@ When you do do a rebase, here's how it goes:
 9. You should finally see this message confirming the rebase has gone correctly,
 
     **Successfully rebased and updated refs/heads/master.**
+
+10. You still need to push your changes to the remote repo, do this with
+
+    **git push origin master**
+    
+Note: because of the [default=nothing] setting in .gitconfig, you will always have to specify the ref to push/pull with rather than use the default. it's safer this way http://technosorcery.net/blog/2011/12/15/making-git-push-a-little-smarter-slash-safer/
