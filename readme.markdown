@@ -506,3 +506,61 @@ or
     sudo port load postgresql92-server
     
     sudo port unload postgresql92-server
+
+alias added for this
+
+   portsql [unload/load]
+   
+# GIT
+
+## Rebase
+
+Filters are included to help with rebasing using http://technosorcery.net/blog/2010/02/07/fun-with-the-upcoming-1-7-release-of-git-rebase---interactive---autosquash/
+
+Basically for any commit you are doing that you know you will want to squash, put 'squash!' at the beginning of the commit.
+
+Now when you go to rebase,
+
+    git ri origin/master
+    
+It will use those comments to mark them as 'squash'able automatically, any others will be marked with pick as usual.
+
+Note, if you exit out of the editor (in this case vim) without saving git will still try to perform the rebase to revert this do:
+
+    git reset --soft
+    
+You'll now be ready to redo the rebase.
+
+### Abort
+
+If you screw up the rebase and need to abort the rebase do:
+
+    git rebase --abort
+
+### rebase origin & rebase origin/master
+
+git rebase origin means "rebase from the tracking branch of origin"
+git rebase origin/master means "rebase from the branch master of origin"
+
+### play-by-play
+
+When you do do a rebase, here's how it goes:
+
+1. First you perform the rebase, specifying which remote to use and/or the branch to reference. 
+
+    git ri origin/master
+    
+    or 
+    
+    git rebase origin/master --interactive
+
+2. Next git will open your editor of choice specified from .gitconfig, in this vim
+3. You will now see a list of your local commits, in ascending order (first to last).
+4. We can change 'pick' to 'squash' if you want to squash any of the commits into one larger commit (tidying up the repo history), let's do that.
+5. Remember though you cannot assign 'squash' to all of the commits, you need one to squash into so we'll leave the first one.
+6. Save and quit ":wq!"
+7. VIM will re-open and you'll now see all the commit messages from the squashed commits.
+8. Save and quit again ":wq!"
+9. You should finally see this message confirming the rebase has gone correctly,
+
+    Successfully rebased and updated refs/heads/master.
