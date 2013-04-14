@@ -107,6 +107,7 @@ alias ng="sudo service nginx $@"
 alias stop="pkill $@" # kill by process name
 alias die="kill -9 $@" # stronger kill process
 alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
+alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 
 # start tmux automatically
 # if [ "$TMUX" = "" ]; then tmux; fi
@@ -127,6 +128,7 @@ alias h="history"
 alias m="mvim $*"
 alias vi="vim $*"
 
+
 # ---------------------------------------------------------
 # DEVELOPMENT
 # ---------------------------------------------------------
@@ -139,13 +141,14 @@ alias migrate="rake db:migrate"
 alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 alias worker="bundle exec rake jobs:work"
-alias solrstart="rake sunspot:solr:start"
-alias solrindex="rake sunspot:solr:reindex"
-alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 alias kapow="touch tmp/restart.txt" # passenger/pow restart
 
 function portsql(){
   sudo port $1 postgresql92-server
+}
+
+function solr(){
+  sudo rake sunspot:solr:$1
 }
 
 # ---------------------------------------------------------
