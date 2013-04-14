@@ -148,7 +148,7 @@ function portsql(){
 }
 
 function solr(){
-  sudo rake sunspot:solr:$1
+  rake sunspot:solr:$1
 }
 
 # ---------------------------------------------------------
