@@ -537,23 +537,17 @@ If you screw up the rebase and need to abort the rebase do:
 
     git rebase --abort
 
-### rebase origin & rebase origin/master
-
-git rebase origin means "rebase from the tracking branch of origin"
-git rebase origin/master means "rebase from the branch master of origin"
-
 ### play-by-play
 
 When you do do a rebase, here's how it goes:
 
-1. First you perform the rebase, specifying which remote to use and/or the branch to reference. 
+1. First you perform the rebase, specifying the ref and branch. 
 
     **git ri origin/master** or **git rebase origin/master --interactive**
 
 2. Next git will open your editor of choice specified from .gitconfig, in this vim
 3. You will now see a list of your local commits, in ascending order (first to last).
-4. We can change 'pick' to 'squash' if you want to squash any of the commits into one larger commit (tidying up the repo history), let's do that.
-5. Remember though you cannot assign 'squash' to all of the commits, you need one to squash into so we'll leave the first one.
+4. All will be marked with the 'pick' command, change as appropriate.
 6. Save and quit ":wq!"
 7. VIM will re-open and you'll now see all the commit messages from the squashed commits.
 8. Save and quit again ":wq!"
@@ -561,8 +555,39 @@ When you do do a rebase, here's how it goes:
 
     **Successfully rebased and updated refs/heads/master.**
 
-10. You still need to push your changes to the remote repo, do this with
+10. You still need to push your changes
 
     **git push origin master**
     
 Note: because of the [default=nothing] setting in .gitconfig, you will always have to specify the ref to push with rather than use the default. it's safer this way http://technosorcery.net/blog/2011/12/15/making-git-push-a-little-smarter-slash-safer/
+
+### rebase commands
+
+    p, pick = use commit
+    r, reword = use commit, but edit the commit message
+    e, edit = use commit, but stop for amending
+    s, squash = use commit, but meld into previous commit
+    f, fixup = like "squash", but discard this commit's log message
+    x, exec = run command (the rest of the line) using shell
+
+## Notes
+
+    git push --set-upstream origin my-new-feature
+    # --set-upstream sets what ref we'll be pushing to so we don't have to specify it all the time.)
+    #   this won't have any effect as we've used [default=nothing] so we have to specify the ref for each push
+    
+    git pull --rebase
+    # doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log thus forcing them to do a pull before they commit even though you haven't committed anything.
+    # using --rebase will do a pull but not add that merge message and thus force others to pull needlessly.
+
+    git stash
+    # stash your un-committed changes
+    
+    git stash pop
+    # restore your stashed changes
+    
+    git stash list
+    # list all stashed changes
+    
+    git stash pop[1]
+    # restore stashed change at location 1
