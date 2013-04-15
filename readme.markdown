@@ -521,7 +521,7 @@ Basically for any commit you are doing that you know you will want to squash, pu
 
 Now when you go to rebase,
 
-    git ri origin/master
+    git ri <branch-name>
     
 It will use those comments to mark them as 'squash'able automatically, any others will be marked with pick as usual.
 
@@ -572,22 +572,43 @@ Note: because of the [default=nothing] setting in .gitconfig, you will always ha
 
 ## Notes
 
-### git push --set-upstream origin my-new-feature
-*--set-upstream* sets what ref we'll be pushing to so we don't have to specify it all the time. 
-this won't have any effect as we've used [default=nothing] so we have to specify the ref for each push
+    git push --set-upstream origin <branch-name>
+*--set-upstream* sets what ref we'll be pushing to so we don't have to specify every time. 
+This won't have any effect as we've used [default=nothing] in our .gitconfig so we'll have to specify the ref on each push.
     
-### git pull --rebase
-doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log thus forcing them to do a pull before they commit even though you haven't committed anything.
-using --rebase will do a pull but not add that merge message and thus force others to pull needlessly.
+    git pull --rebase
+Doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log thus forcing them to do a pull before they commit even though you haven't committed anything.
+Using --rebase will do a pull but not add that merge message and thus force others to pull needlessly.
 
-### git stash
-stash your un-committed changes
+    git stash
+Stash your un-committed changes
     
-### git stash pop
-restore your stashed changes
+    git stash pop
+Restore your stashed changes
     
-### git stash list
-list all stashed changes
+    git stash list
+List all stashed changes
     
-### git stash pop[1]
-restore stashed change at location 1
+    git stash pop[1]
+Restore stashed change at location 1
+
+    git merge --ff-only
+Refuse to merge and exit with a non-zero status unless the current HEAD is already up-to-date or the merge can be resolved as a fast-forward.
+
+    git branch -d <branch-name>
+Delete local branch
+
+    git push origin --delete <branch-name>
+Delete remote branch
+
+    git ri <branch-name>
+Start interactive rebase
+
+    git rebase --abort
+Abort rebase
+
+    git reset --soft
+Does not touch the index file nor the working tree at all (but resets the head to <commit>, just like all modes do). This leaves all your changed files "Changes to be committed", as git status would put it.
+
+    git reset --hard
+Resets the index and working tree. Any changes to tracked files in the working tree since <commit> are discarded.
