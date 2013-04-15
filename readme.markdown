@@ -572,22 +572,22 @@ Note: because of the [default=nothing] setting in .gitconfig, you will always ha
 
 ## Notes
 
-    git push --set-upstream origin my-new-feature
-    # --set-upstream sets what ref we'll be pushing to so we don't have to specify it all the time.)
-    #   this won't have any effect as we've used [default=nothing] so we have to specify the ref for each push
+### git push --set-upstream origin my-new-feature
+*--set-upstream* sets what ref we'll be pushing to so we don't have to specify it all the time. 
+this won't have any effect as we've used [default=nothing] so we have to specify the ref for each push
     
-    git pull --rebase
-    # doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log thus forcing them to do a pull before they commit even though you haven't committed anything.
-    # using --rebase will do a pull but not add that merge message and thus force others to pull needlessly.
+### git pull --rebase
+doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log thus forcing them to do a pull before they commit even though you haven't committed anything.
+using --rebase will do a pull but not add that merge message and thus force others to pull needlessly.
 
-    git stash
-    # stash your un-committed changes
+### git stash
+stash your un-committed changes
     
-    git stash pop
-    # restore your stashed changes
+### git stash pop
+restore your stashed changes
     
-    git stash list
-    # list all stashed changes
+### git stash list
+list all stashed changes
     
-    git stash pop[1]
-    # restore stashed change at location 1
+### git stash pop[1]
+restore stashed change at location 1
