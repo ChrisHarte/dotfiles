@@ -615,3 +615,7 @@ Resets the index and working tree. Any changes to tracked files in the working t
 
 ### git reset --hard HEAD~3
 Rewind branch 3 commits back, destroying those commits
+
+## Links
+
+http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
