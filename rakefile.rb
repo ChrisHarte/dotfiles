@@ -14,8 +14,9 @@ task :default do
   system("ln -s ~/.dotfiles/.pryrc ~/.pryrc")
   system("ln -s ~/.dotfiles/.zshrc ~/.zshrc")
   system("ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf")
+  system("ln -s ~/.dotfiles/.irbrc ~/.irbrc")
 
-  system("ln -s ~/.dotfiles/_rspec ~/.rspec")
+  system("ln -s ~/.dotfiles/.rspec_config ~/.rspec")
 
   # install 91 command set
   system("git clone git@github.com:johnantoni/91.git ~/.91")
