@@ -15,7 +15,7 @@
     fa = fetch --all
     ff = merge --ff-only
     noff = merge --no-ff
-    up = pull --rebase
+    pu = pull --rebase
     pullff = pull --ff-only
     b = branch
     ba = branch -a
