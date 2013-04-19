@@ -1,3 +1,4 @@
 ---
-  BUNDLE_PATH: vendor/bundle
-  BUNDLE_BUILD__GEOIP-C: --with-geoip-dir=/opt/local
+BUNDLE_PATH: vendor/bundle
+BUNDLE_DISABLE_SHARED_GEMS: "1"
+BUNDLE_BUILD__GEOIP-C: --with-geoip-dir=/opt/local
