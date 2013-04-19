@@ -24,5 +24,5 @@ function portsql(){
 }
 
 function solr(){
-  rake sunspot:solr:$1
+  bundle exec rake sunspot:solr:$1
 }
