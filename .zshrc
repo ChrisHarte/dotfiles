@@ -92,6 +92,13 @@ alias vim="stty stop '' -ixoff ; vim"
 # `Frozing' tty, so after any command terminal settings will be restored
 ttyctl -f
 
+# VI-mode
+# http://www.techrepublic.com/blog/opensource/using-vi-key-bindings-in-bash-and-zsh/193
+bindkey -v
+
+# 10ms for key sequences
+KEYTIMEOUT=1
+
 source $HOME/.dotfiles/zsh/aliases.sh
 source $HOME/.dotfiles/zsh/functions.sh
 
