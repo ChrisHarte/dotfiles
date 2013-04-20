@@ -1,0 +1,184 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle, required! 
+Bundle 'gmarik/vundle'
+
+" my bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'mileszs/ack.vim'
+
+Bundle 'tpope/vim-unimpaired'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'chrisbra/NrrwRgn'
+" Bundle 'vim-scripts/ZoomWin'
+Bundle 'skalnik/vim-vroom'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-endwise'
+Bundle 'mattn/gist-vim'
+Bundle 'johnantoni/nginx-vim-syntax'
+Bundle 'johnantoni/vim-powerline'
+Bundle 'johnantoni/grb256'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-cucumber'
+Bundle 'johnantoni/vim-slim'
+Bundle 'groenewege/vim-less'
+Bundle 'tpope/vim-haml'
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+
+filetype plugin indent on     " required!
+
+" -------------------------------------------
+
+let mapleader=","
+
+compiler ruby " Enable compiler support for ruby
+
+:set wrap " wrap lines
+:set linebreak
+:set nolist  " list disables linebreak
+
+let g:netrw_cursorline = 0
+
+set hidden " allow unsaved background buffers and remember marks/undo for them
+set number " show line numbers
+set history=10000 " remember more commands and search history
+
+"display tabs and trailing spaces
+set list
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+
+" tab size
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set laststatus=2 " Enables the status line at the bottom of Vim
+set showmatch
+set incsearch
+set hlsearch
+
+set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
+set cursorline " highlight current line
+
+set cmdheight=2
+set switchbuf=useopen
+set numberwidth=5
+set showtabline=2
+
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=10
+set winminheight=10
+set winheight=999
+
+set shell=zsh " use ZSH
+set grepprg=ack " use Ack instead of grep
+
+set scrolloff=3 " keep more context when scrolling off the end of a buffer
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set showcmd " display incomplete commands
+
+syntax on " Enable highlighting for syntax
+
+filetype plugin indent on " load indent files, to automatically do language-dependent indenting.
+
+set wildmode=list:longest,full " use emacs-style tab completion when selecting files, etc
+set wildmenu " make tab completion for files/buffers act like bash
+
+"set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
+
+:set vb " no annoying sound on errors
+set timeoutlen=500 " Don't wait so long for the next keypress (particularly in leader situations)
+set tags=./tags; " Set the tag file search order
+
+" no need for backups with git/svn/etc.
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Highlight the status line
+highlight StatusLine ctermfg=blue ctermbg=yellow
+
+:set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+" Set gutter background to black
+highlight SignColumn ctermbg=black
+
+augroup vimrcEx
+  " Clear all autocmds in the group
+  autocmd!
+  autocmd FileType text setlocal textwidth=78
+
+  " Jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  "for ruby, autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,haml,coffee set ai sw=2 sts=2 et
+  autocmd FileType python set sw=4 sts=4 et
+
+  "don't remember file position for git commits
+  autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
+  autocmd! BufRead,BufNewFile *.lock setfiletype ruby
+  autocmd! BufRead,BufNewFile *.pill setfiletype ruby
+  autocmd! BufRead,BufNewFile *.json_builder setfiletype ruby
+
+  "for haml_coffee_assets ~ https://github.com/netzpirat/haml_coffee_assets
+  autocmd! BufRead,BufNewFile *.hamlc setfiletype haml
+
+  autocmd BufNewFile,BufRead *.mobile.erb let b:eruby_subtype='html'
+  autocmd BufNewFile,BufRead *.mobile.erb set filetype=eruby
+
+  " Set up some useful Rails.vim bindings for working with Backbone.js
+  autocmd User Rails Rnavcommand template    app/assets/templates               -glob=**/*  -suffix=.jst.ejs
+  autocmd User Rails Rnavcommand jmodel      app/assets/javascripts/models      -glob=**/*  -suffix=.coffee
+  autocmd User Rails Rnavcommand jview       app/assets/javascripts/views       -glob=**/*  -suffix=.coffee
+  autocmd User Rails Rnavcommand jcollection app/assets/javascripts/collections -glob=**/*  -suffix=.coffee
+  autocmd User Rails Rnavcommand jrouter     app/assets/javascripts/routers     -glob=**/*  -suffix=.coffee
+  autocmd User Rails Rnavcommand jspec       spec/javascripts                   -glob=**/*  -suffix=.coffee
+
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+
+  autocmd! BufRead,BufNewFile *.conf setfiletype nginx
+
+  autocmd BufWritePre *.rb :%s/\s\+$//e " Remove trailing whitespace on save for ruby files.
+  autocmd filetype svn,*commit* setlocal spell "spell check when writing commit logs
+augroup END
+
+source ~/.dotfiles/vim-config/keymaps.vim
+source ~/.dotfiles/vim-config/functions.vim
+
+:set t_Co=256
+:set background=dark
+let g:Powerline_symbols='fancy'
+
+if has("gui_running")
+  set lines=90 columns=200
+  set mouse=a "get full mouse support
+  :color solarized
+  :set guifont=Menlo:h13
+else
+  :color grb256
+  :set guifont=Menlo:h12
+endif
