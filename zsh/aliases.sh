@@ -41,6 +41,7 @@ alias rehash="rbenv rehash"
 alias b="bundle"
 alias binstubs="bundle install --deployment --binstubs" # generate executables in bundle
 alias r="bundle exec rails"
+alias rc="bundle exec rails console"
 alias migrate="bundle exec rake db:migrate"
 alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
