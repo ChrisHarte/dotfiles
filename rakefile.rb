@@ -4,6 +4,9 @@
 task :default do
   # remove original configs
   system("rm ~/.zshrc")
+  
+  # create .vim dir
+  system("mkdir ~/.vim")
 
   # configs
   system("ln -s ~/.dotfiles/.gemrc ~/.gemrc")
