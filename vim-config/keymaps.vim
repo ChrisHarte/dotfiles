@@ -4,8 +4,8 @@
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 
-" ACK
-map <leader>a :Ack<space>
+" Silver Searcher
+map <leader>a :Ag<space>
 
 " BufferGator
 map <leader>b :BuffergatorToggle<cr> " toggle view

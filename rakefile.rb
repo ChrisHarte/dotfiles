@@ -4,7 +4,7 @@
 task :default do
   # remove original configs
   system("rm ~/.zshrc")
-  
+
   # create .vim dir
   system("mkdir ~/.vim")
 
@@ -20,6 +20,7 @@ task :default do
   system("ln -s ~/.dotfiles/.irbrc ~/.irbrc")
   system("ln -s ~/.dotfiles/.vimrc ~/.vimrc")
   system("ln -s ~/.dotfiles/.rspec ~/.rspec")
+  system("ln -s ~/.dotfiles/.agignore ~/.agignore")
 
   # install 91 command set
   system("git clone git@github.com:johnantoni/91.git ~/.91")
