@@ -1,10 +1,10 @@
 ## Install
 
-1. git clone
+*. git clone
 
     git clone git@github.com:johnantoni/dotfiles.git ~/.dotfiles
 
-2. install zsh
+*. install zsh
 
     sudo aptitude install zsh
     
