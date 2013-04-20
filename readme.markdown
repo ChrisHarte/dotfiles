@@ -14,16 +14,16 @@
     # set zsh as default
     chsh -s /bin/zsh    
 
-3. install oh-my-zsh
+*. install oh-my-zsh
 
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-4. setup
+*. setup
 
     cd ~/.dotfiles
     rake
 
-5. install vundle + plugins
+*. install vundle + plugins
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
