@@ -1,10 +1,12 @@
 ## Install
 
-*. git clone
+1. git clone
+
 
     git clone git@github.com:johnantoni/dotfiles.git ~/.dotfiles
 
-*. install zsh
+2. install zsh
+
 
     sudo aptitude install zsh
     
@@ -14,16 +16,19 @@
     # set zsh as default
     chsh -s /bin/zsh    
 
-*. install oh-my-zsh
+3. install oh-my-zsh
+
 
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-*. setup
+4. setup
+
 
     cd ~/.dotfiles
     rake
 
-*. install vundle + plugins
+5. install vundle + plugins
+
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
