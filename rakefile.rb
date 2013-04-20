@@ -15,7 +15,7 @@ task :default do
   system("ln -s ~/.dotfiles/.zshrc ~/.zshrc")
   system("ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf")
   system("ln -s ~/.dotfiles/.irbrc ~/.irbrc")
-
+  system("ln -s ~/.dotfiles/.vimrc ~/.vimrc")
   system("ln -s ~/.dotfiles/.rspec ~/.rspec")
 
   # install 91 command set
