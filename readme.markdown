@@ -1,13 +1,10 @@
 ## Install
 
+1. git clone
+
     git clone git@github.com:johnantoni/dotfiles.git ~/.dotfiles
 
-    cd ~/.dotfiles
-    rake
-    
-## Development
-
-### Switch to ZSH
+2. install zsh
 
     sudo aptitude install zsh
     
@@ -15,12 +12,23 @@
     => /bin/zsh
     
     # set zsh as default
-    chsh -s /bin/zsh
-    
-#### Install oh-my-zsh
-##### https://github.com/robbyrussell/oh-my-zsh
+    chsh -s /bin/zsh    
+
+3. install oh-my-zsh
 
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+4. setup
+
+    cd ~/.dotfiles
+    rake
+
+5. install vundle + plugins
+
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim +BundleInstall +qall
+
+## Development
 
 ### RBENV on Ubuntu 12.04
 #### https://gist.github.com/1200482
