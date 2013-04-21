@@ -585,8 +585,7 @@ Note: because of the [default=nothing] setting in .gitconfig, you will always ha
 This won't have any effect as we've used [default=nothing] in our .gitconfig so we'll have to specify the ref on each push.
     
 ### git pull --rebase
-Doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log thus forcing them to do a pull before they commit even though you haven't committed anything.
-Using --rebase will do a pull but not add that merge message and thus force others to pull needlessly.
+Doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log messing up the log history. Using --rebase will do a pull then rebase and keep the log clean.
 
 ### git stash
 Stash your un-committed changes
