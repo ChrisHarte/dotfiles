@@ -204,7 +204,7 @@ if has("gui_running")
   :set guifont=Menlo:h13
   set background=dark
 else
-  " for iterm2 use ~/dotfiles/terminal-colors/solarized_dark.itermcolors
+  " grb256 is better with pastel in iterm2
   :color grb256
   :set guifont=Menlo:h12
   set background=dark
