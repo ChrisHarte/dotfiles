@@ -628,15 +628,17 @@ Rewind branch 3 commits back, destroying those commits
 
 http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
 
-# OSX Tips
+# OSX
 
-## Take screenshots
+## Tips
+
+### Take screenshots
 
     Command + Shift + 4
     
 Install something like (Orbit)[http://orbitapp.net/] to send your screenshots automatically to the web.
     
-## Take measurements
+### Take measurements
 
     Command + Shift + 4 then use the mouse to click-and-drag to see dimensions then ESC to avoid taking a screenshot.
     
