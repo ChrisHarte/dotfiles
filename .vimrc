@@ -201,8 +201,10 @@ if has("gui_running")
   :set guifont=Menlo:h13
   set background=dark
 else
-  :color grb256
-  :set guifont=Menlo:h12
+  let g:solarized_termtrans = 1
+  colorscheme solarized
+  " :color grb256
+  " :set guifont=Menlo:h12
   set background=dark " set background to dark
 endif
 
