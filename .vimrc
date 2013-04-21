@@ -56,7 +56,7 @@ set scrolloff=3 " keep more context when scrolling off the end of a buffer
 set laststatus=2  " Always show status line.
 set cmdheight=2
 set nofoldenable " Say no to code folding...
-set relativenumber " show relative line number to where you are (+1, -1)
+" set relativenumber " show relative line number to where you are (+1, -1)
 set t_Co=256 " enable 256 colors
 
 set autoindent
