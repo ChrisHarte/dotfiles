@@ -57,6 +57,8 @@ set laststatus=2  " Always show status line.
 set cmdheight=2
 set nofoldenable " Say no to code folding...
 set relativenumber " show relative line number to where you are (+1, -1)
+set t_Co=256 " enable 256 colors
+set background=dark " set background to dark
 
 set autoindent
 set showmatch
@@ -187,8 +189,6 @@ augroup END
 source ~/.dotfiles/vim-config/keymaps.vim
 source ~/.dotfiles/vim-config/functions.vim
 
-set t_Co=256
-set background=dark
 let g:Powerline_symbols='fancy'
 
 if has("gui_running")
