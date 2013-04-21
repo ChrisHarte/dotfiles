@@ -58,7 +58,6 @@ set cmdheight=2
 set nofoldenable " Say no to code folding...
 set relativenumber " show relative line number to where you are (+1, -1)
 set t_Co=256 " enable 256 colors
-set background=dark " set background to dark
 
 set autoindent
 set showmatch
@@ -202,16 +201,13 @@ let g:Powerline_symbols='fancy'
 "else
 "  :color grb256
 "  :set guifont=Menlo:h12
+" set background=dark " set background to dark
 "endif
 
-  if has('gui_macvim')
-    set transparency=0
-  endif
+colorscheme solarized
 
-  if !has('gui_running') && $TERM_PROGRAM == 'Apple_Terminal'
-    let g:solarized_termcolors = &t_Co
-    let g:solarized_termtrans = 1
-    colorscheme solarized
-  endif
-
-  call togglebg#map("<F2>")
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
