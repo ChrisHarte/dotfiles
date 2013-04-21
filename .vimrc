@@ -203,7 +203,7 @@ if has("gui_running")
 else
   let g:solarized_termcolors=16
   let g:solarized_termtrans = 1
-  colorscheme solarized
+  :colors solarized
   " :color grb256
   " :set guifont=Menlo:h12
   set background=dark " set background to dark
