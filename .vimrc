@@ -194,15 +194,15 @@ source ~/.dotfiles/vim-config/functions.vim
 
 let g:Powerline_symbols='fancy'
 
-if has("gui_running")
-  set lines=90 columns=200
-  set mouse=a "get full mouse support
-  :color solarized
-  :set guifont=Menlo:h13
-else
-  :color grb256
-  :set guifont=Menlo:h12
-endif
+"if has("gui_running")
+"  set lines=90 columns=200
+"  set mouse=a "get full mouse support
+"  :color solarized
+"  :set guifont=Menlo:h13
+"else
+"  :color grb256
+"  :set guifont=Menlo:h12
+"endif
 
 if colors_name == 'solarized'
   if has('gui_macvim')
