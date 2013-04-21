@@ -90,9 +90,6 @@ set showmatch
 set incsearch " allow incremental search
 set hlsearch
 
-" Make the omnicomplete text readable
-:highlight PmenuSel ctermfg=black
-
 set wrap " wrap long lines
 set linebreak " don't break words when wrapping lines
 set nolist  " list disables linebreak
