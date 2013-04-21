@@ -4,7 +4,7 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle, required! 
+" let Vundle manage Vundle, required!
 Bundle 'gmarik/vundle'
 
 " my bundles
@@ -56,8 +56,6 @@ set scrolloff=3 " keep more context when scrolling off the end of a buffer
 set laststatus=2  " Always show status line.
 set cmdheight=2
 set nofoldenable " Say no to code folding...
-" set relativenumber " show relative line number to where you are (+1, -1)
-set t_Co=256 " enable 256 colors
 
 set autoindent
 set showmatch
@@ -107,7 +105,7 @@ set timeoutlen=500 " Don't wait so long for the next keypress (particularly in l
 " set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
 set vb " no annoying sound on errors
 
-" We have to have a winheight bigger than we want to set winminheight. But if we 
+" We have to have a winheight bigger than we want to set winminheight. But if we
 " set winheight to be huge before winminheight, the winminheight set will fail.
 set winwidth=84
 set winheight=10
@@ -135,12 +133,15 @@ highlight StatusLine ctermfg=blue ctermbg=yellow
 " Set gutter background to black
 highlight SignColumn ctermbg=black
 
+" Remove underline on cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
 let g:netrw_cursorline = 0
 
 filetype plugin indent on " load indent files, to automatically do language-dependent indenting.
 
 " Format xml files
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null" 
+au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 augroup vimrcEx
   " Clear all autocmds in the group
@@ -193,6 +194,8 @@ source ~/.dotfiles/vim-config/functions.vim
 
 let g:Powerline_symbols='fancy'
 
+set t_Co=256 " enable 256 colors
+
 if has("gui_running")
   set transparency=0
   set lines=90 columns=200
@@ -201,16 +204,7 @@ if has("gui_running")
   :set guifont=Menlo:h13
   set background=dark
 else
-  let g:solarized_termcolors=16
-  let g:solarized_termtrans = 1
-  :colors solarized
-  " :color grb256
-  " :set guifont=Menlo:h12
-  set background=dark " set background to dark
-endif
-
-if !has('gui_running') && $TERM_PROGRAM == 'Apple_Terminal'
-  let g:solarized_termcolors = &t_Co
-  let g:solarized_termtrans = 1
-  colorscheme solarized
+  :color grb256
+  :set guifont=Menlo:h12
+  set background=dark
 endif
