@@ -8,6 +8,9 @@ task :default do
   # create .vim dir
   system("mkdir ~/.vim")
 
+  # create tmp dir
+  system("mkdir ~/.tmp")
+
   # configs
   system("ln -s ~/.dotfiles/.gemrc ~/.gemrc")
   system("ln -s ~/.dotfiles/.gitconfig ~/.gitconfig")
