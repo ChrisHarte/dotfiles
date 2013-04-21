@@ -115,7 +115,7 @@ set winheight=999
 set wildmenu " make tab completion for files/buffers act like bash
 set wildmode=list:longest,full " use emacs-style tab completion when selecting files, etc
 
-" keep backups, just in case
+" keep backups, just in case. remember to create ~/.tmp dir!
 set swapfile
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
