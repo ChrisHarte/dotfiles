@@ -89,8 +89,8 @@ set tags=./tags; " Set the tag file search order
 " make the omnicomplete text readable
 :highlight PmenuSel ctermfg=black
 
-set completeopt = menu,menuone,longest " complete options (disable preview scratch window)
-set pumheight = 15 " limit popup menu height
+set completeopt=menu,menuone,longest " complete options (disable preview scratch window)
+set pumheight=15 " limit popup menu height
 
 set showmatch
 set incsearch " allow incremental search
