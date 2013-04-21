@@ -204,7 +204,6 @@ let g:Powerline_symbols='fancy'
 "  :set guifont=Menlo:h12
 "endif
 
-if colors_name == 'solarized'
   if has('gui_macvim')
     set transparency=0
   endif
@@ -216,4 +215,3 @@ if colors_name == 'solarized'
   endif
 
   call togglebg#map("<F2>")
-endif
