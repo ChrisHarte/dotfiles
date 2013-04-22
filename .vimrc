@@ -127,6 +127,53 @@ set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c
 
 " -------------------------------------------
 
+map <leader>s :w!<CR>
+map <leader>w :w!<CR>
+map <leader>W :wq!<CR>
+map <leader>q :q!<CR>
+map <leader>Q :qa!<CR>
+map <leader>e :edit %%
+map <leader>v :view %%
+map <leader>ec :CtrlP app/controllers<cr>
+map <leader>ea :CtrlP app<cr>
+map <leader>em :CtrlP app/models<cr>
+map <leader>ev :CtrlP app/views<cr>
+
+map <Leader>h <C-W>h
+map <Leader>j <C-W>j
+map <Leader>k <C-W>k
+map <Leader>l <C-W>l
+
+" fix typos
+command! Q q
+nnoremap ; :
+nnoremap <Leader><Leader> :
+
+" ctr+s save
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+
+" type jj quickly to exit insert mode
+imap jj <Esc>
+" ctrl+l goto end of line insert mode
+imap <C-l> <esc>$a
+
+" move up/down long lines
+nmap k gk
+nmap j gj
+
+" if a file needs sudo access to write, make it so
+cnoreabbrev <expr> w!!
+                \((getcmdtype() == ':' && getcmdline() == 'w!!')
+                \?('!sudo tee % >/dev/null'):('w!!'))
+
+nmap <silent> ,/ :nohlsearch<CR> " clear search buffer
+
+" open files in directory of current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" -------------------------------------------
+
 " highlight the status line
 highlight StatusLine ctermfg=blue ctermbg=yellow
 
@@ -189,7 +236,7 @@ augroup vimrcEx
   autocmd filetype svn,*commit* setlocal spell "spell check when writing commit logs
 augroup END
 
-source ~/.dotfiles/vim-config/keymaps.vim
+source ~/.dotfiles/vim-config/plugins.vim
 source ~/.dotfiles/vim-config/functions.vim
 
 let g:Powerline_symbols='fancy'
