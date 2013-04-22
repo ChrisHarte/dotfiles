@@ -34,6 +34,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on   " required!
 
