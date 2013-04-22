@@ -29,6 +29,7 @@ alias c="clear"
 alias cls="clear" # because im proper old school
 alias l='ls -G'
 alias h="history"
+alias q="exit"
 
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"

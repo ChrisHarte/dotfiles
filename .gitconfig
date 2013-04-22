@@ -19,6 +19,7 @@
     pullff = pull --ff-only
     b = branch
     ba = branch -a
+    pom = git push origin master
 
     undo = "reset --soft HEAD~1"
 
