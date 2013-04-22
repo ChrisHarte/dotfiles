@@ -521,6 +521,12 @@ alias added for this
    
 # GIT
 
+## TIG (text-mode interface for git)
+
+    brew install tig
+
+https://github.com/jonas/tig
+
 ## Rebase
 
 Filters are included to help with rebasing using http://technosorcery.net/blog/2010/02/07/fun-with-the-upcoming-1-7-release-of-git-rebase---interactive---autosquash/
