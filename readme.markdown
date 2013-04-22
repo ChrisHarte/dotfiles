@@ -586,6 +586,12 @@ Note: because of the [default=nothing] setting in .gitconfig, you will always ha
 
 ## Notes
 
+### git r
+show current branch history
+
+### git ra
+show all history
+
 ### git push --set-upstream origin <branch-name>
 *--set-upstream* sets what ref we'll be pushing to so we don't have to specify every time. 
 This won't have any effect as we've used [default=nothing] in our .gitconfig so we'll have to specify the ref on each push.
