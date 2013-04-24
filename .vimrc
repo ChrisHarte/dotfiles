@@ -48,7 +48,10 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set history=500 " keep 500 lines of command line history
 
 set ruler  	" show the cursor position all the time
-set cursorline " highlight current line
+set cursorcolumn cursorline " highlight current line
+
+:highlight CursorColumn ctermbg=16
+
 set number " show line numbers
 set numberwidth=5 " change the width of the gutter column used for numbering
 set showtabline=2 " show tab line
