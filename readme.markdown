@@ -641,6 +641,12 @@ Search committed code in a git repo http://stackoverflow.com/questions/2928584/h
 ### git blame [file]
 See commit history for file.
 
+### git branch -a
+See both local and remote branches
+
+### git branch -r
+See remote branches
+
 ## Fetching remote branches
 
     git fetch origin [branch]
