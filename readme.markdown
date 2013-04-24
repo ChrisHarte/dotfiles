@@ -644,6 +644,9 @@ See commit history for file.
 ### git branch -a
 See both local and remote branches
 
+### git branch -l
+See local branches
+
 ### git branch -r
 See remote branches
 
