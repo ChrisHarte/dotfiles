@@ -128,6 +128,9 @@ set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c
 
 " -------------------------------------------
 
+map <leader>bi :!bundle<CR>rehash<CR>
+map <leader>rm :Rake db:migrate<CR>
+
 map <leader>s :w!<CR>
 map <leader>w :w!<CR>
 map <leader>W :wq!<CR>

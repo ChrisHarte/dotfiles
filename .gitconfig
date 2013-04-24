@@ -1,6 +1,6 @@
 [user]
-  name = John Griffiths
-  email = john@johnantoni.com
+	name = John Griffiths
+	email = john@johnantoni.com
 [diff]
 [color]
     ui = auto
@@ -59,7 +59,7 @@
 [github]
   user = johnantoni
 [mergetool]
-  keepBackup = true
+	keepBackup = true
   prompt = false
 [difftool]
   prompt = false
