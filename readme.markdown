@@ -638,6 +638,14 @@ Rewind branch 3 commits back, destroying those commits
 ### git grep [search term]
 Search committed code in a git repo http://stackoverflow.com/questions/2928584/how-to-grep-search-committed-code-in-the-git-history
 
+### git blame [file]
+See commit history for file.
+
+## Fetching remote branches
+
+    git fetch origin [branch]
+    git co [branch]
+
 ## Links
 
 http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
