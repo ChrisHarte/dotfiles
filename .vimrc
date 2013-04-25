@@ -26,7 +26,6 @@ Bundle 'mattn/gist-vim'
 Bundle 'johnantoni/nginx-vim-syntax'
 Bundle 'johnantoni/vim-powerline'
 Bundle 'johnantoni/grb256'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
 Bundle 'johnantoni/vim-slim'
@@ -41,93 +40,6 @@ filetype plugin indent on   " required!
 compiler ruby " Enable compiler support for ruby
 syntax on " Enable highlighting for syntax
 let mapleader=","
-
-" -------------------------------------------
-
-set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set history=500 " keep 500 lines of command line history
-
-set ruler  	" show the cursor position all the time
-set cursorcolumn cursorline " highlight current line
-
-:highlight CursorColumn ctermbg=16
-
-set number " show line numbers
-set numberwidth=5 " change the width of the gutter column used for numbering
-set showtabline=2 " show tab line
-set showcmd  	" display incomplete commands
-set scrolloff=3 " keep more context when scrolling off the end of a buffer
-set laststatus=2  " Always show status line.
-set cmdheight=2
-set nofoldenable " Say no to code folding...
-
-set autoindent
-set showmatch
-set autoread
-set wmh=0
-set viminfo+=!
-set guioptions-=T
-set et
-
-set autoindent " always set autoindenting on
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅   "display tabs and trailing spaces
-set sw=2
-set softtabstop=2 " how many columns text is indented with the reindent operations
-set tabstop=2 " set tab width to 2 spaces
-set shiftwidth=2 " set number of space characters used for indentation
-set expandtab " convert tabs to spaces
-set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
-set smarttab
-
-set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
-set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
-
-set hidden " allow unsaved background buffers and remember marks/undo for them
-set switchbuf=useopen,usetab " allow buffers to use open window/tab
-
-set tags=./tags; " Set the tag file search order
-
-" make the omnicomplete text readable
-:highlight Pmenu ctermbg=238 gui=bold
-
-set completeopt=menu,menuone,longest " complete options (disable preview scratch window)
-set pumheight=15 " limit popup menu height
-
-set showmatch
-set incsearch " allow incremental search
-set hlsearch
-
-set wrap " wrap long lines
-set linebreak " don't break words when wrapping lines
-set nolist  " list disables linebreak
-
-" (Hopefully) removes the delay when hitting esc in insert mode
-set ttimeout
-set ttimeoutlen=1
-set timeoutlen=500 " Don't wait so long for the next keypress (particularly in leader situations)
-
-" set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
-set vb " no annoying sound on errors
-
-" We have to have a winheight bigger than we want to set winminheight. But if we
-" set winheight to be huge before winminheight, the winminheight set will fail.
-set winwidth=84
-set winheight=10
-set winminheight=10
-set winheight=999
-
-set wildmenu " make tab completion for files/buffers act like bash
-set wildmode=list:longest,full " use emacs-style tab completion when selecting files, etc
-
-" keep backups (remember to create ~/.tmp dir)
-set swapfile
-set backupdir=~/.tmp
-set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
-
-set shell=zsh " use ZSH
-set grepprg=ag " Use Silver Searcher instead of grep
-
-set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " -------------------------------------------
 
@@ -151,18 +63,17 @@ map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 
-" fix typos
+map <Leader>vi :tabe ~/.vimrc<CR>
+
 command! Q q
 nnoremap ; :
 nnoremap <Leader><Leader> :
 
-" ctr+s save
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
-" type jj quickly to exit insert mode
 imap jj <Esc>
-" ctrl+l goto end of line insert mode
+" ctrl+l goto end of line
 imap <C-l> <esc>$a
 
 " move up/down long lines
@@ -181,14 +92,87 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " -------------------------------------------
 
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set history=500 " keep 500 lines of command line history
+set ruler  	" show the cursor position all the time
+set cursorcolumn cursorline " highlight current line
+set number " show line numbers
+set numberwidth=5 " change the width of the gutter column used for numbering
+set showtabline=2 " show tab line
+set showcmd  	" display incomplete commands
+set scrolloff=3 " keep more context when scrolling off the end of a buffer
+set laststatus=2  " Always show status line.
+set cmdheight=2
+set nofoldenable " Say no to code folding...
+set autoindent
+set showmatch
+set autoread
+set wmh=0
+set viminfo+=!
+set guioptions-=T
+set et
+set autoindent " always set autoindenting on
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅   "display tabs and trailing spaces
+set sw=2
+set softtabstop=2 " how many columns text is indented with the reindent operations
+set tabstop=2 " set tab width to 2 spaces
+set shiftwidth=2 " set number of space characters used for indentation
+set expandtab " convert tabs to spaces
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+set smarttab
+set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
+set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
+set hidden " allow unsaved background buffers and remember marks/undo for them
+set switchbuf=useopen,usetab " allow buffers to use open window/tab
+set tags=./tags; " Set the tag file search order
+set completeopt=menu,menuone,longest " complete options (disable preview scratch window)
+set pumheight=15 " limit popup menu height
+set showmatch
+set incsearch " allow incremental search
+set hlsearch
+set wrap " wrap long lines
+set linebreak " don't break words when wrapping lines
+set nolist  " list disables linebreak
+
+" (Hopefully) removes the delay when hitting esc in insert mode
+set ttimeout
+set ttimeoutlen=1
+set timeoutlen=500 " Don't wait so long for the next keypress (particularly in leader situations)
+
+" set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
+set vb " no annoying sound on errors
+
+" We have to have a winheight bigger than we want to set winminheight. But if we
+" set winheight to be huge before winminheight, the winminheight set will fail.
+set winwidth=84
+set winheight=10
+set winminheight=10
+set winheight=999
+
+set wildmenu " make tab completion for files/buffers act like bash
+set wildmode=list:longest,full " use emacs-style tab completion when selecting files, etc
+
+set swapfile
+set backupdir=~/.tmp
+set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
+set shell=zsh " use ZSH
+set grepprg=ag " Use Silver Searcher instead of grep
+
+set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
 " highlight the status line
 highlight StatusLine ctermfg=blue ctermbg=yellow
 
 " Set gutter background to black
 highlight SignColumn ctermbg=black
 
+" make the omnicomplete text readable
+:highlight Pmenu ctermbg=238 gui=bold
+
+:highlight CursorColumn ctermbg=16
+
 " Remove underline on cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLine cterm=NONE ctermbg=black ctermfg=white
 
 let g:netrw_cursorline = 0
 
@@ -250,16 +234,14 @@ let g:Powerline_symbols='fancy'
 
 set t_Co=256 " enable 256 colors
 
+:color grb256
+set background=dark
+
 if has("gui_running")
   set transparency=0
   set lines=90 columns=200
   set mouse=a "get full mouse support
-  :color solarized
   :set guifont=Menlo:h13
-  set background=dark
 else
-  " grb256 is better with pastel in iterm2
-  :color grb256
   :set guifont=Menlo:h12
-  set background=dark
 endif
