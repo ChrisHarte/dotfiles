@@ -31,6 +31,8 @@ alias l='ls -G'
 alias h="history"
 alias q="exit"
 
+alias cdp="cd ~/projects"
+
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 alias reattach="tmux attach || tmux new" # create/reattach last session

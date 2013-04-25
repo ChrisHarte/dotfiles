@@ -34,6 +34,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on   " required!
 
@@ -44,22 +45,31 @@ let mapleader=","
 " -------------------------------------------
 
 map <leader>d dd
-map <leader>bi :!bundle<CR>
+map <Leader>bb :!bundle install<cr>
+nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
+map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
+map <Leader>cu :Tabularize /\|<CR>
 map <leader>q :q!<CR>
-"map <leader>e :edit %%
-"map <leader>v :view %%
 map <leader>ec :CtrlP app/controllers<cr>
 map <leader>ea :CtrlP app<cr>
 map <leader>em :CtrlP app/models<cr>
 map <leader>ev :CtrlP app/views<cr>
+map <Leader>gac :Gcommit -m -a ""<LEFT>
+map <Leader>gc :Gcommit -m ""<LEFT>
+map <Leader>gs :Gstatus<CR>
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+map <Leader>ra :%s/
+map <Leader>sc :sp db/schema.rb<cr>
+map <Leader>so :so %<cr>
+map <Leader>vi :tabe ~/.vimrc<CR>
+map <Leader>w <C-w>w
+map <Leader>x :exec getline(".")<cr>
 
+" Navigate splits
 map <Leader>h <C-W>h
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
-
-map <Leader>vi :tabe ~/.vimrc<CR>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -71,10 +81,13 @@ command! Q q
 nnoremap ; :
 nnoremap <Leader><Leader> :
 
+" ctrl save
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
+" exit insert mode
 imap jj <Esc>
+
 " ctrl+l goto end of line
 imap <C-l> <esc>$a
 
