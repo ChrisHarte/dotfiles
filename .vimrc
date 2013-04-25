@@ -43,20 +43,16 @@ let mapleader=","
 
 " -------------------------------------------
 
-map <leader>bi :!bundle<CR>rehash<CR>
-map <leader>rm :Rake db:migrate<CR>
-
-map <leader>s :w!<CR>
-map <leader>w :w!<CR>
-map <leader>W :wq!<CR>
+map <leader>d dd
+map <leader>bi :!bundle<CR>
 map <leader>q :q!<CR>
-map <leader>Q :qa!<CR>
-map <leader>e :edit %%
-map <leader>v :view %%
+"map <leader>e :edit %%
+"map <leader>v :view %%
 map <leader>ec :CtrlP app/controllers<cr>
 map <leader>ea :CtrlP app<cr>
 map <leader>em :CtrlP app/models<cr>
 map <leader>ev :CtrlP app/views<cr>
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 map <Leader>h <C-W>h
 map <Leader>j <C-W>j
@@ -64,6 +60,12 @@ map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 
 map <Leader>vi :tabe ~/.vimrc<CR>
+
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 command! Q q
 nnoremap ; :
@@ -86,9 +88,6 @@ cnoreabbrev <expr> w!!
                 \?('!sudo tee % >/dev/null'):('w!!'))
 
 nmap <silent> ,/ :nohlsearch<CR> " clear search buffer
-
-" open files in directory of current file
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " -------------------------------------------
 
@@ -135,9 +134,7 @@ set linebreak " don't break words when wrapping lines
 set nolist  " list disables linebreak
 
 " (Hopefully) removes the delay when hitting esc in insert mode
-set ttimeout
-set ttimeoutlen=1
-set timeoutlen=500 " Don't wait so long for the next keypress (particularly in leader situations)
+set timeoutlen=500 ttimeoutlen=-1
 
 " set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
 set vb " no annoying sound on errors
