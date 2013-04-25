@@ -19,7 +19,8 @@ nmap _= :call Preserve("normal gg=G")<CR>
 
 
 " ---------------------------------------------------------
-" stop indenting when pasting to vim in osx (causes delay)
+" stop indenting when pasting to vim in osx
+" (bad as causes delay when switching modes)
 " ---------------------------------------------------------
 if &term =~ "xterm.*"
     let &t_ti = &t_ti . "\e[?2004h"
