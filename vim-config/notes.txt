@@ -1,3 +1,6 @@
+" tab to open tag list dropdown on insert mode
+inoremap <Tab> <C-P>
+
 " ---------------------------------------------------------
 " strip trailing whitespace
 " http://vimcasts.org/episodes/tidying-whitespace
