@@ -57,6 +57,7 @@ map <leader>ev :CtrlP app/views<cr>
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
+map <Leader>np :set nopaste<CR>
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 map <Leader>ra :%s/
 map <Leader>sc :sp db/schema.rb<cr>
