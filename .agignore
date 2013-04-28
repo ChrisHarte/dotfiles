@@ -1,0 +1,11 @@
+log
+vendor
+tmp
+doc
+coverage
+*.min.js
+*.json
+*.xml
+*.log
+*.tmp
+*.sql
