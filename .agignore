@@ -2,7 +2,11 @@ log
 vendor
 tmp
 doc
+rdoc
 coverage
+Gemfile.lock
+.gitkeep
+.git/*
 *.min.js
 *.json
 *.xml
@@ -11,5 +15,3 @@ coverage
 *.sql
 *.dump
 *.backup
-Gemfile.lock
-.gitkeep
