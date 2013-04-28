@@ -10,3 +10,5 @@ coverage
 *.tmp
 *.sql
 *.dump
+*.backup
+Gemfile.lock
