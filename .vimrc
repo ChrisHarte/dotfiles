@@ -59,7 +59,10 @@ map <Leader>ra :%s/
 map <Leader>sc :sp db/schema.rb<cr>
 map <Leader>so :so %<cr>
 map <Leader>vi :tabe ~/.vimrc<CR>
+
+" toggle splits
 map <Leader>w <C-w>w
+
 map <Leader>x :exec getline(".")<cr>
 map <leader>q :q!<CR>
 map <leader>sn :e ~/Dropbox/notes/snippets.rb<CR>

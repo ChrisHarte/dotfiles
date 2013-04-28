@@ -5,13 +5,8 @@ doc
 rdoc
 coverage
 Gemfile.lock
+dump
+solr
 .gitkeep
-.git/*
+.git
 *.min.js
-*.json
-*.xml
-*.log
-*.tmp
-*.sql
-*.dump
-*.backup
