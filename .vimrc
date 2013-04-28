@@ -35,6 +35,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
+Bundle 'tpope/vim-markdown'
 
 filetype plugin indent on   " required!
 
@@ -61,6 +62,11 @@ map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <leader>q :q!<CR>
+map <leader>sn :e ~/Dropbox/notes/snippets.rb<CR>
+map <leader>rn :e ~/.dotfiles/readme.md<CR>
+
+" clipboard registers
+map <leader>cl :reg<CR>
 
 map <Leader>h :CommandT<CR>
 map <Leader>j :CommandT app/assets/javascripts<CR>
@@ -72,10 +78,6 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" Let's be reasonable, shall we?
-nmap k gk
-nmap j gj
-
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
@@ -85,6 +87,9 @@ map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 command! Q q
 nnoremap ; :
 nnoremap <Leader><Leader> :
+
+" new tab
+map <C-t> <esc>:tabnew<CR>
 
 " ctrl save
 map <C-s> <esc>:w<CR>
