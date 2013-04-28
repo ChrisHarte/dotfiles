@@ -178,7 +178,8 @@ set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
 set shell=zsh " use ZSH
 set grepprg=ag " Use Silver Searcher instead of grep
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,solr/**,log/**,*.psd,*.PSD,.git/**,.gitkeep,*.ico,*.ICO,backup/**
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,solr/**,log/**,*.psd,*.PSD,.git/**,.gitkeep
+set wildignore+=*.ico,*.ICO,backup/**,*.sql,*.dump,*.tmp,*.min.js,Gemfile.lock
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**
 
 " use current dir

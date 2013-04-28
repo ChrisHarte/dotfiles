@@ -19,3 +19,4 @@ let g:buffergator_suppress_keymaps = 1 " suppress BufferGator default mapping
 " Command-T
 let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
+let g:CommandTMatchWindowReverse=1
