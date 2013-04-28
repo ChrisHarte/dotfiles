@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'rking/ag.vim'
@@ -35,6 +34,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
+Bundle 'wincent/Command-T'
 
 filetype plugin indent on   " required!
 
@@ -49,11 +49,6 @@ map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
 map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>cu :Tabularize /\|<CR>
-map <leader>q :q!<CR>
-map <leader>ec :CtrlP app/controllers<cr>
-map <leader>ea :CtrlP app<cr>
-map <leader>em :CtrlP app/models<cr>
-map <leader>ev :CtrlP app/views<cr>
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
@@ -65,12 +60,21 @@ map <Leader>so :so %<cr>
 map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
+map <leader>q :q!<CR>
 
-" Navigate splits
-map <Leader>h <C-W>h
-map <Leader>j <C-W>j
-map <Leader>k <C-W>k
-map <Leader>l <C-W>l
+map <Leader>h :CommandT<CR>
+map <Leader>j :CommandT app/assets/javascripts<CR>
+map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
+
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" Let's be reasonable, shall we?
+nmap k gk
+nmap j gj
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -168,6 +172,9 @@ set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
 set shell=zsh " use ZSH
 set grepprg=ag " Use Silver Searcher instead of grep
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,solr/**,log/**,*.psd,*.PSD,.git/**,.gitkeep,*.ico,*.ICO,backup/**
+set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**
 
 set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 

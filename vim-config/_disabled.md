@@ -1,3 +1,38 @@
+" Navigate splits
+map <Leader>h <C-W>h
+map <Leader>j <C-W>j
+map <Leader>k <C-W>k
+map <Leader>l <C-W>l
+
+
+" CTRL-P
+map <leader>ec :CtrlP app/controllers<cr>
+map <leader>ea :CtrlP app<cr>
+map <leader>em :CtrlP app/models<cr>
+map <leader>ev :CtrlP app/views<cr>
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$|vendor\/bundle$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$\|\.gitkeep$\|\Gemfile.lock$\|.DS_Store',
+  \ }
+
+map <leader>t :CtrlPMixed<ENTER>
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1 " make dotfiles searchable
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_max_height = 50
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_user_command = 'find %s -type f'
+
+" https://github.com/kien/ctrlp.vim/issues/160 selections open in new tab
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': ['<c-t>'],
+  \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+  \ }
+
+
+## Functions
+
 " tab to open tag list dropdown on insert mode
 inoremap <Tab> <C-P>
 

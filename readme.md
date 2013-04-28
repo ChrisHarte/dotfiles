@@ -7,12 +7,12 @@
 2) install zsh
 
     sudo aptitude install zsh
-    
+
     whereis zsh
     => /bin/zsh
-    
+
     # set zsh as default
-    chsh -s /bin/zsh    
+    chsh -s /bin/zsh
 
 3) install oh-my-zsh
 
@@ -30,19 +30,28 @@
 
 ## Development
 
+### Install Command-T (vim)
+
+first install command-t plugin, then:
+
+    cd ~/.vim/bundle/command-t/ruby/command-t
+    rbenv local system
+    ruby extconf.rb
+    make && sudo make install
+
 ### RBENV on Ubuntu 12.04
 #### https://gist.github.com/1200482
 
     sudo aptitude install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
     git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
-    
+
     git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-    
+
     which openssl
     => /usr/bin/openssl
-    
+
     CONFIGURE_OPTS=--with-openssl-dir=/usr/bin rbenv install 1.9.3-p374
-    
+
     rbenv global 1.9.3-p374
 
 ### Error installing debugger-linecache in Ruby 1.9.3
@@ -87,21 +96,21 @@ You could also store a separate bundler configuration file per-project.
 
 ### RMagick gem on Ubuntu (12.04)
 
-    sudo aptitude install graphicsmagick-libmagick-dev-compat libmagickwand-dev 
+    sudo aptitude install graphicsmagick-libmagick-dev-compat libmagickwand-dev
 
     gem install rmagick
-    
+
     rbenv rehash
 
 ### Postgres & PG gem on Ubuntu
 
     sudo aptitude install postgresql-9.1 libpq-dev
-    
+
     sudo su postgres -c psql
-    
+
     postgres=# CREATE ROLE <username> SUPERUSER LOGIN PASSWORD '<yourpassword>';
     postgres=# \q
-    
+
     gem install pg
     rbenv rehash
 
@@ -152,7 +161,7 @@ https://coderwall.com/p/wnomjg
 
 ### ImageMagick fix #1 for OSX
 
-    cd /usr/local/Cellar/imagemagick/6.8.0-10/lib   
+    cd /usr/local/Cellar/imagemagick/6.8.0-10/lib
     ln -s libMagick++-Q16.7.dylib   libMagick++.dylib
     ln -s libMagickCore-Q16.7.dylib libMagickCore.dylib
     ln -s libMagickWand-Q16.7.dylib libMagickWand.dylib
@@ -179,7 +188,7 @@ https://coderwall.com/p/wnomjg
 3) Now to enable the Multi-Monitor feature you will have to run the Catalyst Control center in Administrator mode, via:
 
     sudo amdcccle
-    
+
 4) Now "Display Manager", "Multi-Display" and select "Multi-display desktop with display(s) 2"
 
 5) Apply and you should be done.
@@ -188,10 +197,10 @@ An alternate way is to wipe the initial xorg setup via:
 
     sudo aticonfig --initial -f
 
-Then 
+Then
 
     gksu amdcccle
-    
+
 To run the Catalyst Control center in Admin mode, but this second command does not seem to stick.
 
     => Tested on Ubuntu 12.04.2 (server LTM edition with MATE desktop)
@@ -227,7 +236,7 @@ http://www.bigfastblog.com/gitolite-installation-step-by-step
 ### NGINX start/stop/etc
 
     sudo service nginx restart
-    
+
     Usage: nginx {start|stop|restart|reload|force-reload|status|configtest}
 
 ### Port forward 80 to 3000
@@ -243,11 +252,11 @@ To set this up so it's done automatically on boot,
 2)  Create a new iptables file
 
     sudo vim /etc/iptables.up.rules
-    
+
 3)  Copy & paste this into the file
 
-    *nat 
-    -A OUTPUT -p tcp --dport 80 -d 127.0.0.1/8 -j REDIRECT --to-port 3000 
+    *nat
+    -A OUTPUT -p tcp --dport 80 -d 127.0.0.1/8 -j REDIRECT --to-port 3000
     COMMIT
 
 4) Flush your current settings
@@ -280,7 +289,7 @@ Now on-boot the new settings will be used.
 ### Edit HOST file
 
     sudo vim /etc/hosts
-    
+
 From there you can forward traffic to a local domain
 
     0.0.0.0 site.dev
@@ -293,8 +302,8 @@ https://tomafro.net/2012/12/deploying-harmonia-with-recap
 ### chkconfig
 
     sudo apt-get install chkconfig
-    sudo chkconfig --add nginx    
-    sudo chkconfig nginx on  
+    sudo chkconfig --add nginx
+    sudo chkconfig nginx on
 
 ### VirtualBox
 
@@ -306,7 +315,7 @@ https://tomafro.net/2012/12/deploying-harmonia-with-recap
     installie9 => curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="9" bash
 
 ### Copy ISO to USB Stick
-  
+
     diskutil list
     diskutil unmountDisk /dev/disk1
     sudo dd if=ubuntu-12.04.1-server-amd64.iso of=/dev/disk1 bs=8m
@@ -361,7 +370,7 @@ you can do 'time [command]' to measure the time it take to run something
 ### Backup
 
     mongodump --host stark.mongohq.com --port 10011 --username tony --password notpassword1 --db mark1_db --out dumpdir
-    
+
 ### Restore
 
     mongorestore --host stark.mongohq --port 10011 --username tony --password notpassword1 --db mark1_db dumpdir
@@ -381,17 +390,17 @@ When specifying --db and without --collection (restoring a whole database): - th
     defaults: &defaults
       host: localhost
       identity_map_enabled: true
-    
-    development: 
-      <<: *defaults  
+
+    development:
+      <<: *defaults
       database: dev_db
       port: 27017
-    
+
     test:
       <<: *defaults
       database: test_db
       port: 27017
-    
+
     production:
       <<: *defaults
       host: <%= ENV['MONGOID_HOST'] %>
@@ -431,9 +440,9 @@ If you connect to a database that doesn't exist then one will be temporarily cre
 
     gem install backup
     rehash
-    
+
     backup generate:model -t mydb --databases=mongodb --compressors=gzip --storages=s3
-    
+
     backup perform --trigger mydb
 
 ### Make it Routine
@@ -442,23 +451,23 @@ Setup routine backups via the Whenever gem
 
 https://github.com/meskyanichi/backup/wiki/automatic-backups
 
-    mkdir config 
-    
+    mkdir config
+
     gem install whenever
     rehash
-    
+
     wheneverize
-    
+
 Open the config/schedule.rb file and add the following:
 
     every 1.day, :at => '4:30 am' do
       command "backup perform -t mydb"
     end
-    
+
 Check what will be written to the crontab
 
     whenever
-    
+
 Update the crontab
 
     whenever --update-crontab
@@ -500,11 +509,11 @@ or
 ### Permissions
 
     CREATE USER tony WITH PASSWORD 'password';
-    
+
     ALTER USER tony WITH SUPERUSER;
 
     CREATE DATABASE mark1;
-    
+
     GRANT ALL PRIVILEGES ON DATABASE mark1 to tony;
 
     \q
@@ -512,13 +521,13 @@ or
 ### MacPorts start / stop
 
     sudo port load postgresql92-server
-    
+
     sudo port unload postgresql92-server
 
 alias added for this
 
    portsql [unload/load]
-   
+
 # GIT
 
 ## TIG (text-mode interface for git)
@@ -536,13 +545,13 @@ Basically for any commit you are doing that you know you will want to squash, pu
 Now when you go to rebase,
 
     git ri <branch-name>
-    
+
 It will use those comments to mark them as 'squash'able automatically, any others will be marked with pick as usual.
 
 Note, if you exit out of the editor (in this case vim) without saving git will still try to perform the rebase to revert this do:
 
     git reset --soft
-    
+
 You'll now be ready to redo the rebase.
 
 ### Abort
@@ -555,7 +564,7 @@ If you screw up the rebase and need to abort the rebase do:
 
 When you do do a rebase, here's how it goes:
 
-1. First you perform the rebase, specifying the ref and branch. 
+1. First you perform the rebase, specifying the ref and branch.
 
     **git ri origin/master** or **git rebase origin/master --interactive**
 
@@ -572,7 +581,7 @@ When you do do a rebase, here's how it goes:
 10. You still need to push your changes
 
     **git push origin master**
-    
+
 Note: because of the [default=nothing] setting in .gitconfig, you will always have to specify the ref to push with rather than use the default. it's safer this way http://technosorcery.net/blog/2011/12/15/making-git-push-a-little-smarter-slash-safer/
 
 ### rebase commands
@@ -593,21 +602,21 @@ show current branch history
 show all history
 
 ### git push --set-upstream origin <branch-name>
-*--set-upstream* sets what ref we'll be pushing to so we don't have to specify every time. 
+*--set-upstream* sets what ref we'll be pushing to so we don't have to specify every time.
 This won't have any effect as we've used [default=nothing] in our .gitconfig so we'll have to specify the ref on each push.
-    
+
 ### git pull --rebase
 Doing 'git pull' is fine but if you're working on a branch others are actively using this will add a merge message to the log messing up the log history. Using --rebase will do a pull then rebase and keep the log clean.
 
 ### git stash
 Stash your un-committed changes
-    
+
 ### git stash pop
 Restore your stashed changes
-    
+
 ### git stash list
 List all stashed changes
-    
+
 ### git stash pop[1]
 Restore stashed change at location 1
 
@@ -666,10 +675,10 @@ http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
 ### Take screenshots
 
     Command + Shift + 4
-    
+
 Install something like (Orbit)[http://orbitapp.net/] to send your screenshots automatically to the web.
-    
+
 ### Take measurements
 
     Command + Shift + 4 then use the mouse to click-and-drag to see dimensions then ESC to avoid taking a screenshot.
-    
+
