@@ -176,6 +176,9 @@ set grepprg=ag " Use Silver Searcher instead of grep
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,solr/**,log/**,*.psd,*.PSD,.git/**,.gitkeep,*.ico,*.ICO,backup/**
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**
 
+" use current dir
+set autochdir
+
 set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " highlight the status line
