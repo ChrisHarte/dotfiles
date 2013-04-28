@@ -12,3 +12,4 @@ coverage
 *.dump
 *.backup
 Gemfile.lock
+.gitkeep
