@@ -30,6 +30,7 @@ alias cls="clear" # because im proper old school
 alias l='ls -G'
 alias h="history"
 alias q="exit"
+alias v="vim $*"
 
 alias cdp="cd ~/projects"
 
