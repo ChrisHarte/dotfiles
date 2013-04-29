@@ -101,6 +101,9 @@ imap <C-s> <esc>:w<CR>
 " exit insert mode
 imap jj <Esc>
 
+imap ll <esc>:w<CR>
+nmap <leader>ll :w<CR>
+
 " ctrl+l goto end of line
 imap <C-l> <esc>$a
 
@@ -198,6 +201,8 @@ highlight SignColumn ctermbg=black
 
 " make the omnicomplete text readable
 :highlight Pmenu ctermbg=238 gui=bold
+
+hi Search ctermbg=156 ctermfg=16
 
 :highlight CursorColumn ctermbg=16
 
