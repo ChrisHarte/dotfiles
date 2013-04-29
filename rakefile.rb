@@ -24,6 +24,7 @@ task :default do
   system("ln -s ~/.dotfiles/.vimrc ~/.vimrc")
   system("ln -s ~/.dotfiles/.rspec ~/.rspec")
   system("ln -s ~/.dotfiles/.agignore ~/.agignore")
+  system("ln -s ~/.dotfiles/.tigrc ~/.tigrc")
 
   # install 91 command set
   system("git clone git@github.com:johnantoni/91.git ~/.91")
