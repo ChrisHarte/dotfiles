@@ -1,0 +1,10 @@
+#color default           white   black
+# Diff colors
+color diff-header       yellow  default
+color diff-index        green    default
+color diff-chunk        magenta default
+# A strange looking cursor line
+color cursor            green     default underline
+# UI colors
+color title-blur        cyan  grey  
+color title-focus       cyan  grey    bold
