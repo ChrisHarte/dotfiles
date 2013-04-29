@@ -20,3 +20,5 @@ let g:buffergator_suppress_keymaps = 1 " suppress BufferGator default mapping
 let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
 let g:CommandTMatchWindowReverse=1
+let g:CommandTMaxFiles=20000
+let g:CommandTCancelMap=['<C-q>', '<C-c>']

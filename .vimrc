@@ -54,8 +54,6 @@ map <Leader>cu :Tabularize /\|<CR>
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
-map <Leader>np :set nopaste<CR>
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 map <Leader>ra :%s/
 map <Leader>sc :sp db/schema.rb<cr>
 map <Leader>so :so %<cr>
@@ -108,6 +106,8 @@ nmap <leader>ll :w<CR>
 " ctrl+l goto end of line
 imap <C-l> <esc>$a
 
+nmap <C-c> :q<CR>
+
 " move up/down long lines
 nmap k gk
 nmap j gj
@@ -119,10 +119,13 @@ cnoreabbrev <expr> w!!
 
 nmap <silent> ,/ :nohlsearch<CR> " clear search buffer
 
+set pastetoggle=<F2>
+
 " -------------------------------------------
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=500 " keep 500 lines of command line history
+set undolevels=500 " keep our undo history vast
 set ruler  	" show the cursor position all the time
 set cursorcolumn cursorline " highlight current line
 set number " show line numbers
