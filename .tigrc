@@ -6,5 +6,5 @@ color diff-chunk        magenta default
 # A strange looking cursor line
 color cursor            green     default underline
 # UI colors
-color title-blur        cyan  grey  
-color title-focus       cyan  grey    bold
+color title-blur        white  grey  
+color title-focus       white  grey    bold
