@@ -36,6 +36,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
+Bundle 'jsahlen/vim-ir_black'
 
 filetype plugin indent on   " required!
 
@@ -267,9 +268,7 @@ source ~/.dotfiles/vim-config/functions.vim
 
 let g:Powerline_symbols='fancy'
 
-set t_Co=256 " enable 256 colors
-
-:color grb256
+set t_Co=256
 set background=dark
 
 if has("gui_running")
@@ -277,6 +276,8 @@ if has("gui_running")
   set lines=90 columns=200
   set mouse=a "get full mouse support
   :set guifont=Menlo:h13
+  :color ir_black
 else
   :set guifont=Menlo:h12
+  :color grb256
 endif
