@@ -4,6 +4,8 @@ map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 
+map <Leader>np :set nopaste<CR>
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " CTRL-P
 map <leader>ec :CtrlP app/controllers<cr>
