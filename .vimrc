@@ -37,6 +37,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
 Bundle 'jsahlen/vim-ir_black'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on   " required!
 
@@ -192,9 +193,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,solr/**,log/**,*.psd,*.PSD,.git/**,.git
 set wildignore+=*.ico,*.ICO,backup/**,*.sql,*.dump,*.tmp,*.min.js,Gemfile.lock
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**
 
-" use current dir
-set autochdir
-
 set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " highlight the status line
@@ -281,6 +279,5 @@ if has("gui_running")
   :set guifont=Menlo:h13
   :color ir_black
 else
-  :set guifont=Menlo:h12
   :color grb256
 endif
