@@ -674,7 +674,8 @@ http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
 
 ### Take screenshots
 
-    Command + Shift + 4
+    Command + Shift + 3  (full screen)
+    Command + Shift + 4  (selective)
 
 Install something like (Orbit)[http://orbitapp.net/] to send your screenshots automatically to the web.
 
@@ -682,3 +683,29 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
 
     Command + Shift + 4 then use the mouse to click-and-drag to see dimensions then ESC to avoid taking a screenshot.
 
+# VIM
+
+    v               visual mode
+    Shift + V       visual line
+        c           copy
+        p           paste
+        d           delete
+
+    i               insert mode
+    a               insert mode after cursor
+    jj              exit insert mode
+
+    ,h              search by filename (commandt)
+    ,a              search by content (silver searcher)
+    ,n              file tree (nerdtree)
+    
+    " + a + p       paste from top register (last copy/cut)
+    :reg            show top 10 registers
+    
+    ctrl + l        goto end of line (insert mode)
+    
+    ctrl + h        goto left split
+    ctrl + j        goto bottom split
+    ctrl + k        goto top split
+    ctrl + l        goto right split
+    
