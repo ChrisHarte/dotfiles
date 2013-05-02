@@ -38,6 +38,7 @@ Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
 Bundle 'jsahlen/vim-ir_black'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'therubymug/vim-pyte'
 
 filetype plugin indent on   " required!
 
@@ -50,7 +51,7 @@ let mapleader=","
 map <leader>d dd
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
-map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
+
 map <Leader>cu :Tabularize /\|<CR>
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
@@ -65,8 +66,10 @@ map <Leader>w <C-w>w
 
 map <Leader>x :exec getline(".")<cr>
 map <leader>q :q!<CR>
-map <leader>sn :e ~/Dropbox/notes/snippets.rb<CR>
-map <leader>rn :e ~/.dotfiles/readme.md<CR>
+
+nmap <Leader>nn :e ~/Dropbox/notes/coding-notes.txt<cr>
+nmap <leader>ns :e ~/Dropbox/notes/snippets.rb<CR>
+nmap <leader>nr :e ~/.dotfiles/readme.md<CR>
 
 " clipboard registers
 map <leader>cl :reg<CR>
@@ -101,9 +104,6 @@ imap <C-s> <esc>:w<CR>
 " exit insert mode
 imap jj <Esc>
 
-imap ll <esc>:w<CR>
-nmap <leader>ll :w<CR>
-
 " ctrl+l goto end of line
 imap <C-l> <esc>$a
 
@@ -120,8 +120,11 @@ cnoreabbrev <expr> w!!
 
 nmap <silent> ,/ :nohlsearch<CR> " clear search buffer
 
+" toggle paste formatting off/on
 set pastetoggle=<F2>
 
+" indent entire file
+map <F7> mzgg=G`z<CR>
 " -------------------------------------------
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
@@ -168,7 +171,7 @@ set linebreak " don't break words when wrapping lines
 set nolist  " list disables linebreak
 
 " (Hopefully) removes the delay when hitting esc in insert mode
-set timeoutlen=500 ttimeoutlen=-1
+set timeoutlen=1000 ttimeoutlen=-1
 
 " set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
 set vb " no annoying sound on errors
@@ -271,13 +274,11 @@ let g:Powerline_symbols='fancy'
 
 set t_Co=256
 set background=dark
+:color grb256
 
 if has("gui_running")
   set transparency=0
   set lines=90 columns=200
-  set mouse=a "get full mouse support
+  set mouse=a
   :set guifont=Menlo:h13
-  :color ir_black
-else
-  :color grb256
 endif

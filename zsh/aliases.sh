@@ -52,6 +52,7 @@ alias t="ruby -Ilib:test $*"
 alias worker="bundle exec rake jobs:work"
 alias kapow="touch tmp/restart.txt" # passenger/pow restart
 alias rake="bundle exec rake $*"
+alias devlog="tail -f log/development.log"
 
 # OSX
 alias killdock="Killall Dock" # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1

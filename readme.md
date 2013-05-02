@@ -708,4 +708,17 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
     ctrl + j        goto bottom split
     ctrl + k        goto top split
     ctrl + l        goto right split
-    
+   
+    [[              goto top of file
+    ]]              goto bottom of file
+
+    ctrl + 0        goto beginning of line (normal)
+    ctrl + $        goto end of line (normal)
+
+    F1              toggle paste formatting off/on
+    F7              indent entire file based on file-type
+
+# OSX Terminal
+
+    ctrl + shift [  back one tab
+    ctrl + shift ]  forward one tab

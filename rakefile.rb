@@ -26,6 +26,9 @@ task :default do
   system("ln -s ~/.dotfiles/.agignore ~/.agignore")
   system("ln -s ~/.dotfiles/.tigrc ~/.tigrc")
 
+  # make terminal faster
+  system("touch ~/.hushlogin")
+
   # install 91 command set
   system("git clone git@github.com:johnantoni/91.git ~/.91")
 
