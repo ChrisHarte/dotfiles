@@ -5,7 +5,7 @@
 [color]
     ui = auto
 [alias]
-    st = status
+    s = status
     co = checkout
     ci = commit
     civ = commit --no-verify

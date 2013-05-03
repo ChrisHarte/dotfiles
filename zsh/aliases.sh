@@ -27,18 +27,19 @@ alias ll='ls -lG'
 alias duh='du -csh'
 alias c="clear"
 alias cls="clear" # because im proper old school
-alias l='ls -G'
 alias h="history"
 alias q="exit"
-alias v="vim $*"
-
-alias cdp="cd ~/projects"
+alias v=vim
+alias vi=vim
+alias m=mvim
 
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 alias reattach="tmux attach || tmux new" # create/reattach last session
-alias m="mvim $*"
-alias vi="vim $*"
+alias s="git s"
+alias rr="git r"
+alias l="git r"
+alias diff="git di"
 
 # RAILS
 alias rehash="rbenv rehash"
@@ -52,7 +53,7 @@ alias t="ruby -Ilib:test $*"
 alias worker="bundle exec rake jobs:work"
 alias kapow="touch tmp/restart.txt" # passenger/pow restart
 alias rake="bundle exec rake $*"
-alias devlog="tail -f log/development.log"
+alias log="tail -n 1000 log/development.log"
 
 # OSX
 alias killdock="Killall Dock" # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1
