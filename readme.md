@@ -148,6 +148,15 @@ You could also store a separate bundler configuration file per-project.
 
 ## OSX Fixes (mountain lion)
 
+### 'default' POW symlink
+
+To make your host address point to a specific POW instance rather than the standard pow error message
+create a symlink in your ~/.pow directory called 'default' that points to your chosen app directory.
+
+That way when your open virtualbox and point to your machine's ip address it will goto that app instead.
+
+    ln -s ~/projects/myapp ~/.pow/default
+
 ### Use another mac as a second monitor (target display mode)
 
 1. Connect your macbook to the external display (imac) via thunderbolt cable
