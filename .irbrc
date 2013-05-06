@@ -115,8 +115,6 @@ extend_console 'pm', true, false do
   end
 end
 
-# Loaded when we fire up the Rails console
-# among other things I put the current environment in the prompt
 extend_console 'rails', (ENV.include?('RAILS_ENV') || (defined?(Rails) && !Rails.env.nil?)), false do
   rails_env = ENV['RAILS_ENV'] || Rails.env
   rails_root = File.basename(Dir.pwd)
@@ -131,44 +129,6 @@ extend_console 'rails', (ENV.include?('RAILS_ENV') || (defined?(Rails) && !Rails
   }
 
   IRB.conf[:PROMPT_MODE] = :RAILS
-
-  #Redirect log to STDOUT, which means the console itself
-  IRB.conf[:IRB_RC] = Proc.new do
-    logger = Logger.new(STDOUT)
-    begin
-      ActiveRecord::Base.logger = logger
-      ActiveRecord::Base.instance_eval { alias :[] :find }
-    rescue
-      nil
-    end
-    ActiveResource::Base.logger = logger
-  end
-
-  ### RAILS SPECIFIC HELPER METHODS
-  # TODO: DRY this out
-  def log_ar_to (stream)
-    ActiveRecord::Base.logger = expand_logger stream
-    reload!
-  end
-
-  def log_ac_to (stream)
-    logger = expand_logger stream
-    ActionController::Base.logger = expand_logger stream
-    reload!
-  end
-
-  def expand_log_file(name)
-    "log/#{name.to_s}.log"
-  end
-
-  def expand_logger(name)
-    if name.is_a? Symbol
-      logger = expand_log_file name
-    else
-      logger = name
-    end
-    Logger.new logger
-  end
 end
 
 extend_console 'interactive_editor' do

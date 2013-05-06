@@ -39,6 +39,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'jsahlen/vim-ir_black'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'therubymug/vim-pyte'
+Bundle 'msanders/snipmate.vim'
+Bundle 'rodjek/vim-puppet'
 
 filetype plugin indent on   " required!
 

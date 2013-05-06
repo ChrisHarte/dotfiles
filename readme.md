@@ -664,6 +664,13 @@ See remote branches
     git fetch origin [branch]
     git co [branch]
 
+## Tracking remote branches
+
+    git fetch
+    git branch -a
+    git branch --track new-feature origin/new-feature
+    git co new-feature
+
 ## Links
 
 http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
@@ -711,6 +718,9 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
    
     [[              goto top of file
     ]]              goto bottom of file
+
+    shift + [       go up 1 paragraph/block
+    shift + ]       go down 1 paragraph/block
 
     ctrl + 0        goto beginning of line (normal)
     ctrl + $        goto end of line (normal)

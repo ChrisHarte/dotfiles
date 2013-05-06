@@ -23,6 +23,7 @@ alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
 alias free="free -m"
 alias la='ls -la'
 alias ls='ls -G'
+alias l=ls
 alias ll='ls -lG'
 alias duh='du -csh'
 alias c="clear"
@@ -38,7 +39,6 @@ alias git-pup="git pull && git submodule init && git submodule update && git sub
 alias reattach="tmux attach || tmux new" # create/reattach last session
 alias s="git s"
 alias rr="git r"
-alias l="git r"
 alias diff="git di"
 
 # RAILS
