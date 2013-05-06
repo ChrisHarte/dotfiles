@@ -37,7 +37,7 @@ alias m=mvim
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 alias reattach="tmux attach || tmux new" # create/reattach last session
-alias s="git s"
+alias s="git st"
 alias rr="git r"
 alias diff="git di"
 
