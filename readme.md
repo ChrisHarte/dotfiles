@@ -34,10 +34,14 @@
 
 first install command-t plugin, then:
 
-    cd ~/.vim/bundle/command-t/ruby/command-t
+    cd ~/.vim/bundle/Command-T/ruby/command-t
     rbenv local system
     ruby extconf.rb
     make && sudo make install
+
+if you get an error regarding mkmf not found do:
+
+    sudo aptitude install ruby1.9.1-dev
 
 ### RBENV on Ubuntu 12.04
 #### https://gist.github.com/1200482
