@@ -11,7 +11,7 @@ alias find="sudo find / -name $*"
 
 # KEYS
 alias hosts="sudo nano /etc/hosts" # edit hosts
-alias keygen="cd ~/.ssh && ssh-keygen -t dsa"
+alias keygen="cd ~/.ssh && ssh-keygen -t rsa"
 alias verify="md5 $*" # check md5 tag for file
 
 # POWER
