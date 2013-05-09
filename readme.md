@@ -242,6 +242,10 @@ Then copy & paste below into the file & save
 
 ## Extras
 
+### Add Linux user to Group (ubuntu/debian)
+
+    usermod -a -G [group] [username]
+
 ### Self-hosted GIT via gitolite
 
 http://www.bigfastblog.com/gitolite-installation-step-by-step
