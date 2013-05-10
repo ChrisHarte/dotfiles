@@ -18,6 +18,11 @@
 
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
+3.1) install ruby (if you don't have it)
+
+    sudo aptitude install ruby1.9.1-full
+    sudo gem install rake
+
 4) setup
 
     cd ~/.dotfiles
@@ -44,9 +49,9 @@ if you get an error regarding mkmf not found do:
     sudo aptitude install ruby1.9.1-dev
 
 ### RBENV on Ubuntu 12.04
-#### https://gist.github.com/1200482
 
     sudo aptitude install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
+    
     git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
 
     git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
