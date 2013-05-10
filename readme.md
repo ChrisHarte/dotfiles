@@ -65,9 +65,9 @@ if you get an error regarding mkmf not found do:
     
 ### Install Ruby with OPENSSL
 
-    CONFIGURE_OPTS=--with-openssl-dir=/usr/bin rbenv install 1.9.3-p374
+    CONFIGURE_OPTS=--with-openssl-dir=/usr/bin rbenv install 2.0.0-p0
 
-    rbenv global 1.9.3-p374
+    rbenv global 2.0.0-p0
 
 ### Error installing debugger-linecache in Ruby 1.9.3
 
