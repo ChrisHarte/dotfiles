@@ -35,6 +35,10 @@
 
 ## Development
 
+### VIM with Ruby support
+
+    sudo apt-get install vim-nox
+
 ### Install Command-T (vim)
 
 first install command-t plugin, then:
