@@ -190,7 +190,16 @@ https://coderwall.com/p/wnomjg
     brew cleanup --force -s
     brew install imagemagick
 
-## Ubuntu 12.04 Fixes
+## Ubuntu 12.04
+
+### Set Locale
+
+    sudo apt-get install language-pack-en-base
+    sudo dpkg-reconfigure locales
+
+### Add Linux user to Group (ubuntu/debian)
+
+    usermod -a -G [group] [username]
 
 ### ATI 7700 (multi-monitor setup)
 
@@ -241,10 +250,6 @@ Then copy & paste below into the file & save
     ResultActive=yes
 
 ## Extras
-
-### Add Linux user to Group (ubuntu/debian)
-
-    usermod -a -G [group] [username]
 
 ### Self-hosted GIT via gitolite
 
