@@ -52,6 +52,12 @@ if you get an error regarding mkmf not found do:
 
     sudo aptitude install ruby1.9.1-dev
 
+### PhantomJS
+
+    brew update && brew install phantomjs
+    
+more [here](http://phantomjs.org/download.html)
+
 ### RBENV on Ubuntu 12.04
 
     sudo aptitude install libreadline-dev zlib1g-dev openssl libssl0.9.8 libssl-dev
