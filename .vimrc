@@ -40,7 +40,7 @@ Bundle 'jsahlen/vim-ir_black'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'therubymug/vim-pyte'
 Bundle 'msanders/snipmate.vim'
-Bundle 'rodjek/vim-puppet'
+Bundle 'hallettj/jslint.vim'
 
 filetype plugin indent on   " required!
 

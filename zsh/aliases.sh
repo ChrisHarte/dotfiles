@@ -40,6 +40,8 @@ alias reattach="tmux attach || tmux new" # create/reattach last session
 alias s="git st"
 alias rr="git r"
 alias diff="git di"
+alias lint="jshint app/assets/javascripts"
+alias js=jshint
 
 # RAILS
 alias rehash="rbenv rehash"

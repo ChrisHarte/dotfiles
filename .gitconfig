@@ -1,9 +1,6 @@
 [user]
 	name = John Griffiths
 	email = john@johnantoni.com
-[diff]
-[color]
-    ui = auto
 [alias]
     s = status
     st = status
@@ -22,14 +19,9 @@
     ba = branch -a
     pom = push origin master
 
-    undo = "reset --soft HEAD~1"
-
     fixup = !sh -c 'git commit --fixup=$1' -
     squash = !sh -c 'git commit --squash=$1' -
     ri = rebase --interactive --autosquash
-
-    # remove submodule http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule
-    # rms = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
 
     # diff
     d = difftool
@@ -57,8 +49,25 @@
 [core]
   autocrlf = input
   excludesfile = /Users/johngriffiths/.gitignore
+  whitespace = error,trailing-space,cr-at-eol,-blank-at-eof,tab-in-indent
+  pager = /usr/bin/less -XRS -x4
+[color]
+  ui = true
+[color "diff"]
+  whitespace = red reverse
 [github]
   user = johnantoni
+[sendemail]
+  multiedit = true
+  supresscc = self
+[pack]
+  threads = 0
+[branch]
+  autosetuprebase = always
+[filemerge]
+  executable = vimdiff
+[merge]
+  tool = vimdiff
 [mergetool]
 	keepBackup = true
   prompt = false
@@ -81,3 +90,7 @@
   templatedir = ~/.dotfiles/git_template
 [push]
   default = nothing
+[tig]
+  show-date = relative
+  line-graphics = utf8
+  tab-size = 4

@@ -11,6 +11,9 @@ plugins=(git rbenv)
 # Completion dots
 COMPLETION_WAITING_DOTS="true"
 
+# Disable autocorrect on enter
+unsetopt correct_all
+
 # Now load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 

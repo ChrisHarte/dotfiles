@@ -727,6 +727,11 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
 
     Command + Shift + 4 then use the mouse to click-and-drag to see dimensions then ESC to avoid taking a screenshot.
 
+### OSX Terminal
+
+    ctrl + shift [  back one tab
+    ctrl + shift ]  forward one tab
+
 # VIM
 
     v               visual mode
@@ -765,7 +770,11 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
     F1              toggle paste formatting off/on
     F7              indent entire file based on file-type
 
-# OSX Terminal
+# Development Gotchas
 
-    ctrl + shift [  back one tab
-    ctrl + shift ]  forward one tab
+* Always check for an MIT licence or some kind of ok before you pull in a new plugin.
+* Log any new plugins with tech in case issues arise.
+* Run js thru jslint to sanity check the code, missing ; or otherwise.
+* Time box your work. If you can't solve it in 1 hour, spike it.
+* Planning poker is king, estimate new work/features so there's less chance of overrunning on budget/estimates.
+
