@@ -2,7 +2,6 @@
 	name = John Griffiths
 	email = john@johnantoni.com
 [alias]
-    s = status
     st = status
     co = checkout
     ci = commit

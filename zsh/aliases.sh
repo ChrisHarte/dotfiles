@@ -26,10 +26,10 @@ alias ls='ls -G'
 alias l=ls
 alias ll='ls -lG'
 alias duh='du -csh'
-alias c="clear"
-alias cls="clear" # because im proper old school
-alias h="history"
-alias q="exit"
+alias c=clear
+alias cls=clear
+alias h=history
+alias q=exit
 alias v=vim
 alias vi=vim
 alias m=mvim
@@ -37,11 +37,6 @@ alias m=mvim
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
 alias reattach="tmux attach || tmux new" # create/reattach last session
-alias s="git st"
-alias rr="git r"
-alias diff="git di"
-alias lint="jshint app/assets/javascripts"
-alias js=jshint
 
 # RAILS
 alias rehash="rbenv rehash"
