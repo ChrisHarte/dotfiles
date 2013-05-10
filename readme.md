@@ -59,6 +59,12 @@ if you get an error regarding mkmf not found do:
     which openssl
     => /usr/bin/openssl
 
+### List Ruby versions available
+
+    rbenv install -l
+    
+### Install Ruby with OPENSSL
+
     CONFIGURE_OPTS=--with-openssl-dir=/usr/bin rbenv install 1.9.3-p374
 
     rbenv global 1.9.3-p374
