@@ -41,9 +41,8 @@
     
     # list files changed
     ds = diff --stat=160,120
-
     # verbose history
-    dh = diff HEAD~1
+    dh1 = diff HEAD~1
 
     # list
     head = !git l -1
