@@ -33,6 +33,7 @@ alias q=exit
 alias v=vim
 alias vi=vim
 alias m=mvim
+alias ch="rm $HISTFILE"
 
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"

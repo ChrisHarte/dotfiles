@@ -2,32 +2,48 @@
 	name = John Griffiths
 	email = john@johnantoni.com
 [alias]
+    s = status
     st = status
     co = checkout
+    commit = commit --verbose
     ci = commit
-    civ = commit --no-verify
+    cp = cherry-pick
     amend = commit --amend
     aa = add --all
     fo = fetch origin
     fa = fetch --all
     ff = merge --ff-only
     noff = merge --no-ff
+    pom = push origin master
     pu = pull --rebase
     pullff = pull --ff-only
-    b = branch
     ba = branch -a
-    pom = push origin master
 
+    # rebase interactive
     fixup = !sh -c 'git commit --fixup=$1' -
     squash = !sh -c 'git commit --squash=$1' -
     ri = rebase --interactive --autosquash
 
-    # diff
-    d = difftool
-    di = diff
-    dc = diff --cached
+    # log
+    p-log = log --patch --parents
+    f-log = whatchanged --graph --parents
+    q-log = log --no-merges --graph --pretty=format:'%Cred%h%Creset - %C(green)%aN%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset'
+    m-log = log --graph --pretty=format:'%Cred%h%Creset - %C(green)%aN%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset'
+    c-log = !sh -c 'git q-log --cherry-mark HEAD..$@' -
+    s-log = stash list --pretty=format:'%Cred%gd - %h%Creset - %C(green)%aN%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset'
+
+    # find
+    grep-all = !sh -c 'git rev-list --all | xargs git grep \"${1}\"' -
+    igrep = grep --no-index
+    
+    # identify user
+    whois    = !sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' -
+    
+    # list files changed
     ds = diff --stat=160,120
-    dh1 = diff HEAD~1
+
+    # verbose history
+    dh = diff HEAD~1
 
     # list
     head = !git l -1
