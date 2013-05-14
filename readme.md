@@ -788,3 +788,6 @@ Notes [http://amjith.blogspot.ca/2008/08/quick-and-dirty-vimdiff-tutorial.html](
 * Time box your work. If you can't solve it in 1 hour, spike it.
 * Planning poker is king, estimate new work/features so there's less chance of overrunning on budget/estimates.
 
+# HTML
+
+* [http://html5doctor.com/legend-not-such-a-legend-anymore/](http://html5doctor.com/legend-not-such-a-legend-anymore/)
