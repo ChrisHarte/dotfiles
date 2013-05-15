@@ -93,6 +93,7 @@ map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 command! Q q
+command! W w
 nnoremap ; :
 nnoremap <Leader><Leader> :
 
