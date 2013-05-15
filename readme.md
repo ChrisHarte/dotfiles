@@ -802,6 +802,10 @@ First you can't use display:none and second no matter what you do the text will 
 The solution is to place that content inside a user-editable mailchimp region with mc:edit tag, then go into "Edit Layout" select the text and click the "Text Color" button in the tinymce editor then click 'more options in the color popup and specify the hex value of the color you want.
 This way mailchimp won't ignore your styling and will make the text invisible.
 
+    <div mc:edit="std_preheader_content">
+        my custom subject line
+    </div>
+
 ## Email Links appearing in the default styling in your web-based email client
 
     *|EMAIL|*
