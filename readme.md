@@ -825,3 +825,13 @@ Another caveat is email links generated from mailchimp's email tag, these will b
 ## Can't view this email in...
 
     Can't see images? &nbsp;<a href="*|ARCHIVE|*" target="_blank">View this email in a web browser</a>
+
+## IF ARCHIVE PAGE
+
+To display something different on the web-version of your email surround it inside these tags:
+
+    *| IF:ARCHIVE_PAGE |*
+      content for archive page
+    *| ELSE: |*
+      content for email version
+    *| END:IF |*
