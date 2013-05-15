@@ -792,9 +792,9 @@ Notes [http://amjith.blogspot.ca/2008/08/quick-and-dirty-vimdiff-tutorial.html](
 
 * [http://html5doctor.com/legend-not-such-a-legend-anymore/](http://html5doctor.com/legend-not-such-a-legend-anymore/)
 
-# Mailchimp Problems to Watch For
+# MAILCHIMP
 
-## Hiding content in an email
+## (BUG) Hiding content in an email
 
 To hide content in an email (e.g. to affect the preview box in gmail) the obvious answer is to change the text color to be the background color, but there's a problem.
 First you can't use display:none and second no matter what you do the text will still be visible, mailchimp breaks like that.
@@ -806,7 +806,7 @@ This way mailchimp won't ignore your styling and will make the text invisible.
         my custom subject line
     </div>
 
-## Email Links appearing in the default styling in your web-based email client
+## (BUG) Email Links appearing in the default styling in your web-based email client
 
     *|EMAIL|*
     
