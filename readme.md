@@ -802,6 +802,8 @@ First you can't use display:none and second no matter what you do the text will 
 The solution is to place that content inside a user-editable mailchimp region with mc:edit tag, then go into "Edit Layout" select the text and click the "Text Color" button in the tinymce editor then click 'more options in the color popup and specify the hex value of the color you want.
 This way mailchimp won't ignore your styling and will make the text invisible.
 
-## *Email* Links appearing in the default styling in your web-based email client
+## Email Links appearing in the default styling in your web-based email client
 
-Another caveat is email links generated from mailchimp's *Email* tag, try as you might you'll never get those links to be another color other than the email client's default. 
+    *|EMAIL|*
+    
+Another caveat is email links generated from mailchimp's email tag, these will be rendered outside your email styling and so will take on the default link style from the email client you are using.
