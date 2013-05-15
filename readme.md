@@ -811,3 +811,17 @@ This way mailchimp won't ignore your styling and will make the text invisible.
     *|EMAIL|*
     
 Another caveat is email links generated from mailchimp's email tag, these will be rendered outside your email styling and so will take on the default link style from the email client you are using.
+
+## MC:TAGS
+
+    *|EMAIL|*               send-to email address
+    mc:edit="std_...."      editable area (wrap inside tables rather than div's)
+    *|ARCHIVE|*             archive link (view email in web browser)
+
+## Unsubscribe Links
+
+    <a href="*|UNSUB|*">unsubscribe</a> 
+
+## Can't view this email in...
+
+    Can't see images? &nbsp;<a href="*|ARCHIVE|*" target="_blank">View this email in a web browser</a>
