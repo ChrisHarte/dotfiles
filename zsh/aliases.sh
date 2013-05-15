@@ -23,6 +23,7 @@ alias poweroff="sudo shutdown -h -P +0" # power off machine after 0 minutes
 alias free="free -m"
 alias la='ls -la'
 alias ls='ls -G'
+alias dir=ls
 alias l=ls
 alias ll='ls -lG'
 alias duh='du -csh'
