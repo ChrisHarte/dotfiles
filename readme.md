@@ -776,6 +776,8 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
     F1              toggle paste formatting off/on
     F7              indent entire file based on file-type
 
+    g + g + = + G   reformat entire page (gg jump to top of page, = select from top to bottom, G reformat)
+
 ## VIM DIFF
 
 Notes [http://amjith.blogspot.ca/2008/08/quick-and-dirty-vimdiff-tutorial.html](http://amjith.blogspot.ca/2008/08/quick-and-dirty-vimdiff-tutorial.html)
@@ -840,3 +842,8 @@ To display something different on the web-version of your email surround it insi
 
 * [Email Design Guidelines](http://www.campaignmonitor.com/resources/will-it-work/guidelines/)
 
+# Windows 7
+
+Windows 7 requires at least 5.88 GB disk space to install, any lower and it will refuse to install.
+
+Also Windows 7 does not play nicely with dual boot hard disks (e.g. one for linux / one for windows) and will want to install on the bigger drive regardless. Best option there is to disconnect to Linux drive before you install Windows.
