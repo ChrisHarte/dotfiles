@@ -835,3 +835,8 @@ To display something different on the web-version of your email surround it insi
     *| ELSE: |*
       content for email version
     *| END:IF |*
+
+## Email Guides
+
+* [Email Design Guidelines](http://www.campaignmonitor.com/resources/will-it-work/guidelines/)
+
