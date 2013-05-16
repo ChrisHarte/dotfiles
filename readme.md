@@ -776,6 +776,8 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
     F1              toggle paste formatting off/on
     F7              indent entire file based on file-type
 
+    g + g + = + G   reformat entire page (gg jump to top of page, = select from top to bottom, G reformat)
+
 ## VIM DIFF
 
 Notes [http://amjith.blogspot.ca/2008/08/quick-and-dirty-vimdiff-tutorial.html](http://amjith.blogspot.ca/2008/08/quick-and-dirty-vimdiff-tutorial.html)
