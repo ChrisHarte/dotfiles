@@ -217,7 +217,7 @@ hi Search ctermbg=156 ctermfg=16
 " Remove underline on cursorline
 hi CursorLine cterm=NONE ctermbg=black ctermfg=white
 
-let g:netrw_cursorline = 0
+let g:netrw_cursor = 0
 
 filetype plugin indent on " load indent files, to automatically do language-dependent indenting.
 

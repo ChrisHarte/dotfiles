@@ -764,8 +764,8 @@ Install something like (Orbit)[http://orbitapp.net/] to send your screenshots au
     ctrl + k        goto top split
     ctrl + l        goto right split
    
-    [[              goto top of file
-    ]]              goto bottom of file
+    [[ or gg        goto top of file
+    ]] or shift+gg  goto bottom of file
 
     shift + [       go up 1 paragraph/block
     shift + ]       go down 1 paragraph/block
@@ -789,6 +789,14 @@ Notes [http://amjith.blogspot.ca/2008/08/quick-and-dirty-vimdiff-tutorial.html](
 * Run js thru jslint to sanity check the code, missing ; or otherwise.
 * Time box your work. If you can't solve it in 1 hour, spike it.
 * Planning poker is king, estimate new work/features so there's less chance of overrunning on budget/estimates.
+
+# Testing
+
+    rake db:migrate         migrate database
+    rake test:prepare       rebuild test database from scratch
+    rake test               run all tests
+    rake test:recent        run recently changed tests
+    rake test:uncommitted   run any uncommitted tests (git or svn)
 
 # HTML Problems to Watch For
 
@@ -838,9 +846,22 @@ To display something different on the web-version of your email surround it insi
       content for email version
     *| END:IF |*
 
+## Getting text like mysite.com to not be converted into a link by the email client
+
+There's two ways to do this,
+
+* split the mysite. & com into two elements wrapped in span tags.
+* convert mysite.com into unicode, the email client will translate it into text and not be able to translate that into an identifiable url. 
+
+### Unicode Converters
+
+[http://www.pinnacledisplays.com/unicode-converter.htm](http://www.pinnacledisplays.com/unicode-converter.htm)
+[http://www.branah.com/unicode-converter](http://www.branah.com/unicode-converter)
+
 ## Email Guides
 
 * [Email Design Guidelines](http://www.campaignmonitor.com/resources/will-it-work/guidelines/)
+* [CSS Inliner](http://beaker.mailchimp.com/inline-css)
 
 # Windows 7
 
