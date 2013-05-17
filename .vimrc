@@ -37,6 +37,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
 Bundle 'jsahlen/vim-ir_black'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'therubymug/vim-pyte'
 Bundle 'msanders/snipmate.vim'
@@ -134,7 +135,7 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set history=500 " keep 500 lines of command line history
 set undolevels=500 " keep our undo history vast
 set ruler  	" show the cursor position all the time
-set cursorcolumn cursorline " highlight current line
+set cursorline " highlight current line
 set number " show line numbers
 set numberwidth=5 " change the width of the gutter column used for numbering
 set showtabline=2 " show tab line
@@ -201,22 +202,6 @@ set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**
 
 set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
-" highlight the status line
-highlight StatusLine ctermfg=blue ctermbg=yellow
-
-" Set gutter background to black
-highlight SignColumn ctermbg=black
-
-" make the omnicomplete text readable
-:highlight Pmenu ctermbg=238 gui=bold
-
-hi Search ctermbg=156 ctermfg=16
-
-:highlight CursorColumn ctermbg=16
-
-" Remove underline on cursorline
-hi CursorLine cterm=NONE ctermbg=black ctermfg=white
-
 let g:netrw_cursor = 0
 
 filetype plugin indent on " load indent files, to automatically do language-dependent indenting.
@@ -276,12 +261,31 @@ source ~/.dotfiles/vim-config/functions.vim
 let g:Powerline_symbols='fancy'
 
 set t_Co=256
-set background=dark
-:color grb256
+set background=light
+
+let g:solarized_termcolors=256
+colorscheme solarized
 
 if has("gui_running")
   set transparency=0
   set lines=90 columns=200
   set mouse=a
-  :set guifont=Menlo:h13
 endif
+
+" highlight the status line
+hi StatusLine ctermfg=blue ctermbg=yellow
+
+" Set gutter background to black
+hi SignColumn ctermbg=black
+
+" make the omnicomplete text readable
+hi Pmenu ctermbg=238 gui=bold
+
+" autocomplete
+hi Search ctermbg=156 ctermfg=16
+
+" vertical line color
+hi CursorColumn ctermbg=16
+
+" horizontal line color
+hi CursorLine cterm=NONE ctermbg=white 

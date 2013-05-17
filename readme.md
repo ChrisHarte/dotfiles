@@ -853,6 +853,8 @@ There's two ways to do this,
 * split the mysite. & com into two elements wrapped in span tags.
 * convert mysite.com into unicode, the email client will translate it into text and not be able to translate that into an identifiable url. 
 
+Please note option 2 isn't a surefire win as some email clients (ipad, outlook latest) will make it into a link regardless of your efforts.
+
 ### Unicode Converters
 
 [http://www.pinnacledisplays.com/unicode-converter.htm](http://www.pinnacledisplays.com/unicode-converter.htm)

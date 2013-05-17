@@ -26,6 +26,7 @@ promptinit
 prompt grb
 
 # Colors
+#export CLICOLOR=1
 autoload -U colors
 colors
 setopt prompt_subst
