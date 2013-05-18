@@ -39,3 +39,8 @@
     rbenv local system
     ruby extconf.rb
     make && sudo make install
+
+7) install pygmentize for syntax highlighting
+
+    sudo easy_install Pygments
+
