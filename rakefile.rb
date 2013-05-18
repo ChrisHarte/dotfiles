@@ -49,6 +49,7 @@ end
 # https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme
 task :zsh_powerline do
   system("ln -f ~/.dotfiles/zsh/powerline.zsh-theme ~/.oh-my-zsh/themes/powerline.zsh-theme")
+  system("ln -f ~/.dotfiles/zsh/agnoster-light.zsh-theme ~/.oh-my-zsh/themes/agnoster-light.zsh-theme")
 end
 
 # Install Rbenv
