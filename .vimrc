@@ -23,8 +23,6 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-endwise'
 Bundle 'mattn/gist-vim'
 Bundle 'johnantoni/nginx-vim-syntax'
-Bundle 'johnantoni/vim-powerline'
-Bundle 'johnantoni/grb256'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
 Bundle 'johnantoni/vim-slim'
@@ -37,11 +35,14 @@ Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
 Bundle 'jsahlen/vim-ir_black'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'therubymug/vim-pyte'
 Bundle 'msanders/snipmate.vim'
 Bundle 'hallettj/jslint.vim'
+Bundle 'johnantoni/grb256'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'stephenmckinney/vim-solarized-powerline'
 
 filetype plugin indent on   " required!
 
@@ -258,34 +259,18 @@ augroup END
 source ~/.dotfiles/vim-config/plugins.vim
 source ~/.dotfiles/vim-config/functions.vim
 
-let g:Powerline_symbols='fancy'
-
 set t_Co=256
 set background=light
 
 let g:solarized_termcolors=256
 colorscheme solarized
 
+let g:Powerline_symbols='fancy'
+let g:Powerline_theme='short'
+let g:Powerline_colorscheme='solarized256_light'
+
 if has("gui_running")
   set transparency=0
   set lines=90 columns=200
   set mouse=a
 endif
-
-" highlight the status line
-hi StatusLine ctermfg=blue ctermbg=yellow
-
-" Set gutter background to black
-hi SignColumn ctermbg=black
-
-" make the omnicomplete text readable
-hi Pmenu ctermbg=238 gui=bold
-
-" autocomplete
-hi Search ctermbg=156 ctermfg=16
-
-" vertical line color
-hi CursorColumn ctermbg=16
-
-" horizontal line color
-hi CursorLine cterm=NONE ctermbg=white 
