@@ -22,6 +22,10 @@ setopt menucomplete
 autoload compinit
 compinit
 
+# Load colors
+# autoload -U colors
+# colors
+
 # Path
 PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/.dotfiles/bin:$PATH
 # MacPorts

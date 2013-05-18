@@ -35,6 +35,7 @@ alias v=vim
 alias vi=vim
 alias m=mvim
 alias ch="rm $HISTFILE"
+alias cat='pygmentize'
 
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"

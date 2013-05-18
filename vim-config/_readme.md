@@ -34,3 +34,22 @@ Press f5 to clear the ctrl-p cache, vendor/bundle is excluded by default
 
 Once the buffergator navigator is open you can close a buffer by using the arrow keys to navigate to it and hitting 'x' to close it
 
+# custom color settings
+
+    " highlight the status line
+    hi StatusLine ctermfg=blue ctermbg=yellow
+
+    " Set gutter background to black
+    hi SignColumn ctermbg=white
+
+    " make the omnicomplete text readable
+    hi Pmenu ctermbg=238 gui=bold
+
+    " autocomplete
+    hi Search ctermbg=156 ctermfg=16
+
+    " vertical line color
+    hi CursorColumn ctermbg=16
+
+    " horizontal line color
+    hi CursorLine cterm=NONE ctermbg=white
