@@ -45,6 +45,12 @@ task :update do
   system("git pull && git submodule init && git submodule update && git submodule status")
 end
 
+# Install Powerline ZSH Theme
+# https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme
+task :zsh_powerline do
+  system("ln -f ~/.dotfiles/zsh/powerline.zsh-theme ~/.oh-my-zsh/themes/powerline.zsh-theme")
+end
+
 # Install Rbenv
 task :rbenv do
   system("cd ~ && git clone git://github.com/sstephenson/rbenv.git .rbenv")

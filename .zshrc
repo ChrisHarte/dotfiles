@@ -1,7 +1,3 @@
-# ---------------------------------------------------------
-# CONFIG
-# ---------------------------------------------------------
-
 # Oh my zsh integration
 ZSH=$HOME/.oh-my-zsh
 
@@ -26,7 +22,6 @@ promptinit
 prompt grb
 
 # Colors
-#export CLICOLOR=1
 autoload -U colors
 colors
 setopt prompt_subst
@@ -61,8 +56,8 @@ chpwd() {
   ls -lrthG
 }
 
-# Save a ton of history
-export HISTSIZE=20000
+# Save history
+export HISTSIZE=10000
 export HISTFILE=~/.zsh_history
 export SAVEHIST=$HISTSIZE
 
