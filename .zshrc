@@ -4,6 +4,8 @@ ZSH=$HOME/.oh-my-zsh
 # Plugins
 plugins=(git rbenv)
 
+ZSH_THEME="powerline"
+
 # Completion dots
 COMPLETION_WAITING_DOTS="true"
 
@@ -12,19 +14,6 @@ unsetopt correct_all
 
 # Now load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-# Load the zsh functions for the fancy grb prompt
-fpath=($fpath $HOME/.dotfiles/zsh/func)
-
-# Setup prompt
-autoload -U promptinit
-promptinit
-prompt grb
-
-# Colors
-autoload -U colors
-colors
-setopt prompt_subst
 
 # Show completion on first TAB
 setopt menucomplete
@@ -47,7 +36,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Unbreak broken, non-colored terminal
-export TERM='xterm-color'
+export TERM='xterm-256color'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
@@ -78,8 +67,7 @@ function rbenvsudo(){
 # tmux
 alias tmux="TERM=screen-256color-bce tmux"
 
-# full 256 colors in terminal
-# run "tput colors" to check
+# full 256 colors in terminal (run "tput colors" to check)
 export TERM=xterm-256color
 
 # sub - https://github.com/37signals/sub
