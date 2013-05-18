@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Plugins
-plugins=(git rbenv colorize)
+plugins=(git rbenv)
 
 ZSH_THEME="agnoster-light"
 
