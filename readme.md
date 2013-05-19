@@ -51,13 +51,16 @@ we like speed and zeus is the bomb at this, it's built to run outside bundler so
     cd ~
     gem install zeus
 
-Start Zeus (doesn't have to be in your app dir)
+Next cd to your app dir
+
+    cd ~/projects/myapp
+
+Start Zeus
 
     zeus start
 
-Go into your app dir and run one of the commands (e.g. your rails server)
+And run one of the commands (e.g. your rails server)
 
-    cd ~/projects/myapp
     zeus server
 
 Your app will now boot in less than a second, quicker than rails server, not as simpler as pow but still quicker for restarts.
