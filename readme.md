@@ -44,3 +44,27 @@
 
     sudo easy_install Pygments
 
+8) use zeus instead of pow
+
+we like speed and zeus is the bomb at this, it's built to run outside bundler so there's NO need to install it in your Gemfile. So:
+
+    cd ~
+    gem install zeus
+
+Start Zeus (doesn't have to be in your app dir)
+
+    zeus start
+
+Go into your app dir and run one of the commands (e.g. your rails server)
+
+    cd ~/projects/myapp
+    zeus server
+
+Your app will now boot in less than a second, quicker than rails server, not as simpler as pow but still quicker for restarts.
+
+If you do kill zeus accidentally and it gives you error .zeus.sock error messages you can fix this by finding and deleting the sock file
+
+    locate zeus.sock
+    => ~/.zeus.sock
+    rm ~/.zeus.sock
+
