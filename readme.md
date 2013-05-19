@@ -59,6 +59,10 @@ Start Zeus
 
     zeus start
 
+or shorthand
+
+    zeus s
+
 And run one of the commands (e.g. your rails server)
 
     zeus server
