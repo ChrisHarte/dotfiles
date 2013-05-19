@@ -18,6 +18,10 @@ When specifying --db and without --collection (restoring a whole database): - th
 
     mongod run --dbpath ~/.dotfiles/local_db --bind_ip 127.0.0.1 --rest
 
+### Start Mongo on bootup (ubuntu)
+
+    sudo update-rc.d mongodb defaults
+
 ### Example Rails mongoid.yml
 
     defaults: &defaults
@@ -66,3 +70,4 @@ If you connect to a database that doesn't exist then one will be temporarily cre
 #### add user to database
 
     db.addUser('username','password')
+
