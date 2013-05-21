@@ -25,6 +25,7 @@ task :default do
   system("ln -s ~/.dotfiles/.rspec ~/.rspec")
   system("ln -s ~/.dotfiles/.agignore ~/.agignore")
   system("ln -s ~/.dotfiles/.tigrc ~/.tigrc")
+  system("ln -s ~/.dotfiles/.rdebugrc ~/.rdebugrc")
 
   # make terminal faster
   system("touch ~/.hushlogin")
