@@ -112,6 +112,12 @@ imap jj <Esc>
 " ctrl+l goto end of line
 imap <C-l> <esc>$a
 
+" press dash twice for an underscore
+imap -- _
+
+" press ctrl+l for a hash rocket =>
+imap <C-l> <Space>=><Space>
+
 nmap <C-c> :q<CR>
 
 " move up/down long lines
