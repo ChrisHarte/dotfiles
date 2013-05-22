@@ -59,13 +59,11 @@ Start Zeus
 
     zeus start
 
-or shorthand
-
-    zeus s
-
 And run one of the commands (e.g. your rails server)
 
     zeus server
+    -- or shorthand
+    zeus s
 
 Your app will now boot in less than a second, quicker than rails server, not as simpler as pow but still quicker for restarts.
 
@@ -75,3 +73,7 @@ If you do kill zeus accidentally and it gives you error .zeus.sock error message
     => ~/.zeus.sock
     rm ~/.zeus.sock
 
+You can run rake commands and the generators the same with
+
+    rails g model ...   => zeus g model ...
+    rake db:migrate     => zeus rake db:migrate
