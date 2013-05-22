@@ -137,3 +137,45 @@ end
 
 # Show results of all extension-loading
 puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
+
+# -----------------------------
+# useful rails 3 specific helpers https://gist.github.com/HotFusionMan/5606317
+
+private
+def genericize_path_helper_hash(path_helper_hash)
+  # maps a path helper hash into a genericized form so it's easier to match another such hash against
+  path_helper_hash.delete_if { |key, value| key != :action && key != :controller }
+end
+ 
+public
+ 
+def recognize_route(path)
+  # Converts a URL path String into a Hash showing the Rails routing for it.
+  (@named_routes ||= Rails.application.routes).recognize_path(path)
+end
+alias :recognize_path :recognize_route
+ 
+def path_helper_for(path)
+  # Returns the name of the path helper method that can generate the path String given as argument.
+  @hash_for__regexp ||= /\Ahash_for_/
+  @hash_for__path_helper_method_names ||= Rails.application.routes.named_routes.helpers.map(&:to_s).select { |helper_name| helper_name =~ @hash_for__regexp }
+  @path_helper_hash_to_path_helper_name_map ||= @hash_for__path_helper_method_names.inject({}) { |h, name| h[genericize_path_helper_hash(app.__send__(name))] = name[9..-1] ; h }
+ 
+  @path_helper_hash_to_path_helper_name_map[genericize_path_helper_hash(recognize_path(path))]
+end
+ 
+if Rails.env == 'test'
+  # From http://www.particlewave.com/2012/07/14/using-factorygirl-with-the-rails-console/ :
+  def irb_enable_factory_girl
+    require 'factory_girl_rails'
+ 
+    Dir.glob('spec/factories/**/*.rb').each do |pathname|
+      begin
+        FactoryGirl.load pathname
+      rescue FactoryGirl::DuplicateDefinitionError
+      end
+    end
+ 
+    puts 'Now you can call FactoryGirl.{build|build_stubbed|create} methods in this console session.'
+  end
+end
