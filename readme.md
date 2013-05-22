@@ -77,3 +77,4 @@ You can run rake commands and the generators the same with
 
     rails g model ...   => zeus g model ...
     rake db:migrate     => zeus rake db:migrate
+    rails console       => zeus console / zeus c
