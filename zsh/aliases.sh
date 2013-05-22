@@ -8,6 +8,7 @@ alias exe="chmod +x $*"
 alias concat="grep -r'<<<<' *"
 alias copy="cp -r $*" # recursive copy
 alias find="sudo find / -name $*"
+alias crush="optipng -o 7" 
 
 # KEYS
 alias hosts="sudo nano /etc/hosts" # edit hosts
