@@ -1,10 +1,10 @@
 ## Install
 
-### 1) git clone
+### 1. git clone
 
     git clone git@github.com:johnantoni/dotfiles.git ~/.dotfiles
 
-2) install zsh
+### 2. install zsh
 
     sudo aptitude install zsh
 
@@ -14,37 +14,37 @@
     # set zsh as default
     chsh -s /bin/zsh
 
-3) install oh-my-zsh
+### 3. install oh-my-zsh
 
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-3.1) install ruby (if you don't have it)
+### 3.1. install ruby (if you don't have it)
 
     sudo aptitude install ruby1.9.1-full
     sudo gem install rake
 
-4) setup
+### 4. setup
 
     cd ~/.dotfiles
     rake
 
-5) install vundle + plugins
+### 5. install vundle + plugins
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
 
-6) compile command-t
+### 6. compile command-t
 
     cd ~/.vim/bundle/Command-T/ruby/command-t
     rbenv local system
     ruby extconf.rb
     make && sudo make install
 
-7) install pygmentize for syntax highlighting
+### 7. install pygmentize for syntax highlighting
 
     sudo easy_install Pygments
 
-8) use zeus instead of pow
+### 8. use zeus instead of pow
 
 we like speed and zeus is the bomb at this, it's built to run outside bundler so there's NO need to install it in your Gemfile. So:
 
