@@ -1,6 +1,6 @@
 ## Install
 
-1) git clone
+### 1) git clone
 
     git clone git@github.com:johnantoni/dotfiles.git ~/.dotfiles
 
