@@ -10,7 +10,6 @@ Bundle 'gmarik/vundle'
 " my bundles
 Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'rking/ag.vim'
@@ -21,7 +20,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'skalnik/vim-vroom'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-endwise'
-Bundle 'mattn/gist-vim'
 Bundle 'johnantoni/nginx-vim-syntax'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
@@ -31,15 +29,12 @@ Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
-Bundle 'jsahlen/vim-ir_black'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'therubymug/vim-pyte'
 Bundle 'msanders/snipmate.vim'
 Bundle 'hallettj/jslint.vim'
-Bundle 'johnantoni/grb256'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
@@ -73,7 +68,7 @@ map <leader>q :q!<CR>
 
 nmap <Leader>nn :e ~/Dropbox/notes/coding-notes.txt<cr>
 nmap <leader>ns :e ~/Dropbox/notes/snippets.rb<CR>
-nmap <leader>nr :e ~/.dotfiles/readme.md<CR>
+nmap <leader>nv :e ~/.dotfiles/pages/howto_vim.md<CR>
 
 " clipboard registers
 map <leader>cl :reg<CR>
@@ -172,6 +167,7 @@ set gdefault " assume the /g flag on :s substitutions to replace all matches in 
 set hidden " allow unsaved background buffers and remember marks/undo for them
 set switchbuf=useopen,usetab " allow buffers to use open window/tab
 set tags=./tags; " Set the tag file search order
+set iskeyword-=_ " use _ as a word_separator
 set completeopt=menu,menuone,longest " complete options (disable preview scratch window)
 set pumheight=15 " limit popup menu height
 set showmatch
