@@ -69,6 +69,7 @@ map <leader>q :q!<CR>
 nmap <Leader>nn :e ~/Dropbox/notes/coding-notes.txt<cr>
 nmap <leader>ns :e ~/Dropbox/notes/snippets.rb<CR>
 nmap <leader>nv :e ~/.dotfiles/pages/howto_vim.md<CR>
+nmap <leader>nt :e ~/.dotfiles/pages/howto_tmux.md<CR>
 
 " clipboard registers
 map <leader>cl :reg<CR>
