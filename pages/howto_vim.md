@@ -201,3 +201,6 @@ http://stackoverflow.com/questions/8957523/how-to-simplify-copy-and-paste-in-vim
 
     highlight what you want then run :TComment to comment it out
 
+## vim-multiple-cursors
+
+    this plugin automatically maps to your C-n & C-p combinations, bad if you use those for jumping around grep results 

@@ -12,12 +12,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'skalnik/vim-vroom'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-endwise'
 Bundle 'johnantoni/nginx-vim-syntax'
@@ -28,11 +26,9 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'terryma/vim-multiple-cursors'
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'therubymug/vim-pyte'
 Bundle 'msanders/snipmate.vim'
 Bundle 'hallettj/jslint.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -112,7 +108,7 @@ imap <C-l> <esc>$a
 imap -- _
 
 " press ctrl+l for a hash rocket =>
-imap <C-l> <Space>=><Space>
+" imap <C-l> <Space>=><Space>
 
 nmap <C-c> :q<CR>
 
@@ -132,6 +128,11 @@ set pastetoggle=<F2>
 
 " indent entire file
 map <F7> mzgg=G`z<CR>
+
+map <leader>a :grep<space>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
 " -------------------------------------------
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
