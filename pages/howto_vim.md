@@ -16,6 +16,7 @@
 
     " + a + p       paste from top register (last copy/cut)
     :reg            show top 10 registers
+    " + 3 + p       paste from register 3
 
     ctrl + l        goto end of line (insert mode)
 
