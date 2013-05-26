@@ -2,24 +2,33 @@
 
 ## keys
 
-    prefix+s          view sessions 
+    ctrl+a s          view sessions 
   
-    prefix+[number]   jump to screen
+    ctrl+a [number]   jump to screen
 
-    prefix+{          move to left
+    ctrl+a {          move to left
 
-    prefix+"          split horizontal
-    prefix+%          split vertical
+    ctrl+a "          split horizontal
+    ctrl+a %          split vertical
 
-    Ctrl+a " - split pane horizontally.
-    Ctrl+a % - split pane vertically.
-    Ctrl+a arrow key - switch pane.
+    ctrl+a !          break current pane into a new window
+
+    ctrl+a ?          show help
+
+    ctrl+a "          split pane horizontally.
+    ctrl+a %          split pane vertically.
+    ctrl+a [up]       switch pane.
     
-    Ctrl+a c - (c)reate a new window.
-    Ctrl+a n - move to the (n)ext window.
-    Ctrl+a p - move to the (p)revious window.
+    ctrl+a &          kill a misbehaving screen
+    ctrl+a d          close it leaving the window intact
+    
+    tmux a            re-attach the existing sessions
 
-    tmux kill-server    # close tmux
+    ctrl+a c          (c)reate a new window.
+    ctrl+a n          move to the (n)ext window.
+    ctrl+a p          move to the (p)revious window.
+
+    tmux kill-server  close tmux
 
 ## notes
 
