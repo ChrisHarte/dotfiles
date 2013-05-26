@@ -8,6 +8,7 @@ alias crush="optipng -o 7"
 alias hosts="sudo nano /etc/hosts" # edit hosts
 
 alias free="free -m"
+alias df="df -h"
 alias la='ls -la'
 alias ls='ls -G'
 alias dir=ls

@@ -22,10 +22,6 @@ setopt menucomplete
 autoload compinit
 compinit
 
-# Load colors
-# autoload -U colors
-# colors
-
 # Path
 PATH=/usr/local/bin:/usr/local/lib/node:/usr/local/sbin:/usr/local/var:/usr/local/share/npm/bin:/usr/local/share/npm/bin:$HOME/.dotfiles/bin:$PATH
 # MacPorts
@@ -70,6 +66,7 @@ function rbenvsudo(){
 
 # tmux
 alias tmux="TERM=screen-256color-bce tmux"
+[[ -s "$HOME/.tmuxinator/scripts/tmuxinator" ]] && source "$HOME/.tmuxinator/scripts/tmuxinator"
 
 # full 256 colors in terminal (run "tput colors" to check)
 export TERM=xterm-256color
@@ -100,7 +97,6 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
-# disable oh-my-zsh update prompts (breaks concentration)
+# disable oh-my-zsh update prompts, upgrade with upgrade_oh_my_zsh
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
-# update manually with => upgrade_oh_my_zsh

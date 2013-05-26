@@ -62,10 +62,10 @@ map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <leader>q :q!<CR>
 
-nmap <Leader>nn :e ~/Dropbox/notes/coding-notes.txt<cr>
-nmap <leader>ns :e ~/Dropbox/notes/snippets.rb<CR>
-nmap <leader>nv :e ~/.dotfiles/pages/howto_vim.md<CR>
-nmap <leader>nt :e ~/.dotfiles/pages/howto_tmux.md<CR>
+nmap <Leader>sn :e ~/Dropbox/notes/coding-notes.txt<cr>
+nmap <leader>sn :e ~/Dropbox/notes/snippets.rb<CR>
+nmap <leader>sv :e ~/.dotfiles/pages/howto_vim.md<CR>
+nmap <leader>st :e ~/.dotfiles/pages/howto_tmux.md<CR>
 
 " clipboard registers
 map <leader>cl :reg<CR>
