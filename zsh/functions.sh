@@ -26,3 +26,10 @@ function portsql(){
 function solr(){
   bundle exec rake sunspot:solr:$1
 }
+
+# get tmuxinator working with rbenv http://prioritized.net/blog/using-rbenv-with-tmuxinator/
+function rvm () {
+  if [[ $1 == 'use' ]]; then
+    rbenv shell $2
+  fi
+}

@@ -41,7 +41,7 @@ alias routes="rake routes"
 alias t="ruby -Ilib:test $*"
 alias worker="bundle exec rake jobs:work"
 alias rake="bundle exec rake $*"
-alias log="tail -f log/development.log"
+alias devlog="tail -f log/development.log"
 alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
 
 # OSX
