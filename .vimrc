@@ -157,14 +157,13 @@ set scrolloff=3 " keep more context when scrolling off the end of a buffer
 set laststatus=2  " Always show status line.
 set cmdheight=2
 set nofoldenable " Say no to code folding...
-set autoindent
+set autoindent " always set indenting on
 set showmatch
-set autoread
+set autoread " read an externally changed file automatically without prompting
 set wmh=0
 set viminfo+=!
 set guioptions-=T
 set et
-set autoindent " always set autoindenting on
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅   "display tabs and trailing spaces
 set sw=2
 set softtabstop=2 " how many columns text is indented with the reindent operations
@@ -187,6 +186,12 @@ set hlsearch
 set wrap " wrap long lines
 set linebreak " don't break words when wrapping lines
 set nolist  " list disables linebreak
+
+" fix mouse support inside tmux
+set ttymouse=xterm2
+
+" faster terminal rendering
+set ttyfast
 
 " (Hopefully) removes the delay when hitting esc in insert mode
 set timeoutlen=1000 ttimeoutlen=-1
@@ -215,6 +220,8 @@ set wildignore+=*.ico,*.ICO,backup/**,*.sql,*.dump,*.tmp,*.min.js,Gemfile.lock
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**
 
 set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+" -------------------------------------------
 
 let g:netrw_cursor = 0
 
@@ -281,6 +288,9 @@ colorscheme solarized
 let g:Powerline_symbols='fancy'
 let g:Powerline_theme='short'
 let g:Powerline_colorscheme='solarized256_light'
+
+" enable mouse mode even in terminal vim
+set mouse=a
 
 if has("gui_running")
   set transparency=0
