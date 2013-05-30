@@ -1,3 +1,8 @@
+" if a file needs sudo access to write, make it so
+cnoreabbrev <expr> w!!
+                \((getcmdtype() == ':' && getcmdline() == 'w!!')
+                \?('!sudo tee % >/dev/null'):('w!!'))
+
 " ---------------------------------------------------------
 " MULTIPURPOSE TAB KEY
 " ---------------------------------------------------------

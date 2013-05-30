@@ -1,3 +1,9 @@
+" Tabular
+" map <Leader>cu :Tabularize /\|<CR>
+
+" press ctrl+l for a hash rocket =>
+" imap <C-l> <Space>=><Space>
+
 " Navigate splits
 map <Leader>h <C-W>h
 map <Leader>j <C-W>j

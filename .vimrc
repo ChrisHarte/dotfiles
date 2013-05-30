@@ -6,18 +6,31 @@ call vundle#rc()
 
 " let Vundle manage Vundle, required!
 Bundle 'gmarik/vundle'
-
-" my bundles
 Bundle 'tpope/vim-fugitive'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'scrooloose/syntastic'
+
+" buffer navigator
+Bundle 'duff/vim-bufonly'
+Bundle 'fholgado/minibufexpl.vim'
+
+" tag search
 Bundle 'majutsushi/tagbar'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'godlygeek/tabular'
+
+" file finder 
+Bundle 'wincent/Command-T'
+Bundle 'scrooloose/nerdtree'
+
+" code completion & formatting
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-endwise'
+
+" syntax checking
+Bundle 'scrooloose/syntastic'
+Bundle 'hallettj/jslint.vim'
+
+" file types
 Bundle 'johnantoni/nginx-vim-syntax'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
@@ -26,11 +39,9 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-markdown'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'msanders/snipmate.vim'
-Bundle 'hallettj/jslint.vim'
+
+" powerline
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
@@ -47,7 +58,15 @@ map <leader>d dd
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
 
-map <Leader>cu :Tabularize /\|<CR>
+map <Leader>h :CommandT<CR>
+map <Leader>j :CommandT app/assets/javascripts<CR>
+map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
+
+map <leader>b :MiniBufExplorer<cr>
+map <leader>B :BufOnly<CR>
+
+nmap <leader>n :NERDTreeToggle<CR>
+
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
@@ -56,25 +75,17 @@ map <Leader>sc :sp db/schema.rb<cr>
 map <Leader>so :so %<cr>
 map <Leader>vi :tabe ~/.vimrc<CR>
 
-" toggle splits
-map <Leader>w <C-w>w
-
-map <Leader>x :exec getline(".")<cr>
-map <leader>q :q!<CR>
-
 nmap <Leader>sn :e ~/Dropbox/notes/coding-notes.txt<cr>
 nmap <leader>sn :e ~/Dropbox/notes/snippets.rb<CR>
 nmap <leader>sv :e ~/.dotfiles/pages/howto_vim.md<CR>
 nmap <leader>st :e ~/.dotfiles/pages/howto_tmux.md<CR>
 
-" clipboard registers
-map <leader>cl :reg<CR>
+map <Leader>x :exec getline(".")<cr>
 
-map <Leader>h :CommandT<CR>
-map <Leader>j :CommandT app/assets/javascripts<CR>
-map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
+" toggle splits
+map <Leader>w <C-w>w
 
-" Use ctrl-[hjkl] to select the active split!
+" Use ctrl-[hjkl] to select the active split
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
@@ -86,10 +97,18 @@ map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
+" command typos
 command! Q q
 command! W w
 nnoremap ; :
 nnoremap <Leader><Leader> :
+
+" dash twice for underscore
+imap -- _
+
+" quit
+" map <leader>q :q!<CR>
+" nmap <C-c> :q<CR>
 
 " new tab
 map <C-t> <esc>:tabnew<CR>
@@ -101,34 +120,24 @@ imap <C-s> <esc>:w<CR>
 " exit insert mode
 imap jj <Esc>
 
-" ctrl+l goto end of line
+" goto end of line
 imap <C-l> <esc>$a
-
-" press dash twice for an underscore
-imap -- _
-
-" press ctrl+l for a hash rocket =>
-" imap <C-l> <Space>=><Space>
-
-nmap <C-c> :q<CR>
 
 " move up/down long lines
 nmap k gk
 nmap j gj
 
-" if a file needs sudo access to write, make it so
-cnoreabbrev <expr> w!!
-                \((getcmdtype() == ':' && getcmdline() == 'w!!')
-                \?('!sudo tee % >/dev/null'):('w!!'))
-
-nmap <silent> ,/ :nohlsearch<CR> " clear search buffer
+" unhighlight search
+map <CR> :nohlsearch<CR>
 
 " toggle paste formatting off/on
 set pastetoggle=<F2>
 
-" indent entire file
-map <F7> mzgg=G`z<CR>
+" copy and paste to system clipboard
+map <leader>v "*p<CR>:exe ":echo 'pasted from clipboard'"<CR>
+map <leader>c "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
 
+" find in files
 map <leader>a :grep<space>
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
@@ -277,4 +286,5 @@ if has("gui_running")
   set transparency=0
   set lines=90 columns=200
   set mouse=a
+  set background=dark
 endif
