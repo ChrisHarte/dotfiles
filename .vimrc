@@ -76,9 +76,10 @@ map <Leader>so :so %<cr>
 map <Leader>vi :tabe ~/.vimrc<CR>
 
 nmap <Leader>sn :e ~/Dropbox/notes/coding-notes.txt<cr>
-nmap <leader>sn :e ~/Dropbox/notes/snippets.rb<CR>
-nmap <leader>sv :e ~/.dotfiles/pages/howto_vim.md<CR>
-nmap <leader>st :e ~/.dotfiles/pages/howto_tmux.md<CR>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 map <Leader>x :exec getline(".")<cr>
 
@@ -107,8 +108,8 @@ nnoremap <Leader><Leader> :
 imap -- _
 
 " quit
-" map <leader>q :q!<CR>
-" nmap <C-c> :q<CR>
+nmap <leader>q :q!<CR>
+nmap <C-c> :q<CR>
 
 " new tab
 map <C-t> <esc>:tabnew<CR>
@@ -128,7 +129,7 @@ nmap k gk
 nmap j gj
 
 " unhighlight search
-map <CR> :nohlsearch<CR>
+nmap <silent> ,/ :nohlsearch<CR>
 
 " toggle paste formatting off/on
 set pastetoggle=<F2>
@@ -141,6 +142,13 @@ map <leader>c "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
 map <leader>a :grep<space>
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" save file with needing sudo rights
+cmap w!! w !sudo tee % >/dev/null
 
 " -------------------------------------------
 
