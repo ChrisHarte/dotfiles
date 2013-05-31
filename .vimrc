@@ -13,6 +13,9 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'duff/vim-bufonly'
 Bundle 'fholgado/minibufexpl.vim'
 
+" copy and paste
+Bundle 'johnantoni/YankRing.vim'
+
 " tag search
 Bundle 'majutsushi/tagbar'
 
@@ -129,7 +132,7 @@ nmap k gk
 nmap j gj
 
 " unhighlight search
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <CR> :nohlsearch<CR>
 
 " toggle paste formatting off/on
 set pastetoggle=<F2>
