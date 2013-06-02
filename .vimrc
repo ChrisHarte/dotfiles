@@ -7,27 +7,29 @@ call vundle#rc()
 " let Vundle manage Vundle, required!
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
+
+" pair matching
 Bundle 'tpope/vim-unimpaired'
 
-" buffer navigator
+" buffer clear & listing
 Bundle 'duff/vim-bufonly'
 Bundle 'fholgado/minibufexpl.vim'
 
-" copy and paste
+" copy & paste
 Bundle 'johnantoni/YankRing.vim'
 
-" tag search
+" tag finder
 Bundle 'majutsushi/tagbar'
 
-" file finder 
+" file managers
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/nerdtree'
 
-" code completion & formatting
+" code completion, formatting, commenting
 Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-endwise'
+Bundle 'tomtom/tcomment_vim'
 
 " syntax checking
 Bundle 'scrooloose/syntastic'
@@ -49,7 +51,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 
-filetype plugin indent on   " required!
+" required
+filetype plugin indent on
 
 compiler ruby " Enable compiler support for ruby
 syntax on " Enable highlighting for syntax
@@ -76,7 +79,6 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>ra :%s/
 map <Leader>sc :sp db/schema.rb<cr>
 map <Leader>so :so %<cr>
-map <Leader>vi :tabe ~/.vimrc<CR>
 
 nmap <Leader>sn :e ~/Dropbox/notes/coding-notes.txt<cr>
 
@@ -140,6 +142,8 @@ set pastetoggle=<F2>
 " copy and paste to system clipboard
 map <leader>v "*p<CR>:exe ":echo 'pasted from clipboard'"<CR>
 map <leader>c "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
+
+nmap <leader>y :YRShow<CR>
 
 " find in files
 map <leader>a :grep<space>
