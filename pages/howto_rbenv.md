@@ -17,6 +17,10 @@
 
     rbenv global 2.0.0-p0
 
+### Install Ruby with OPENSSL, READLINE and INSTALL
+
+    CONFIGURE_OPTS="--disable-install-doc --with-openssl --with-readline-dir=/opt/local --with-libyaml --with-openssl-dir=/opt/local --with-opt-dir=/opt/local" rbenv install 1.9.3-p194
+
 ### List Ruby versions available
 
     rbenv install -l
