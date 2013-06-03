@@ -11,13 +11,15 @@
     which openssl
     => /usr/bin/openssl
 
-### Install Ruby with OPENSSL
+### Install Ruby with OPENSSL (OSX BREW)
 
     CONFIGURE_OPTS=--with-openssl-dir=/usr/bin rbenv install 2.0.0-p0
 
     rbenv global 2.0.0-p0
 
-### Install Ruby with OPENSSL, READLINE and INSTALL
+### Install Ruby with OPENSSL, READLINE and INSTALL (OSX MACPORTS)
+
+    sudo port install readline openssl
 
     CONFIGURE_OPTS="--disable-install-doc --with-openssl --with-readline-dir=/opt/local --with-libyaml --with-openssl-dir=/opt/local --with-opt-dir=/opt/local" rbenv install 1.9.3-p194
 
