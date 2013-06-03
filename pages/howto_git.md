@@ -141,6 +141,10 @@ See remote branches
     git branch --track new-feature origin/new-feature
     git co new-feature
 
+## Create a new Branch based on the current commit
+
+    git co -b [new-branch-name]
+
 ## Links
 
 http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
