@@ -78,13 +78,13 @@ map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
 map <Leader>ra :%s/
 map <Leader>sc :sp db/schema.rb<cr>
+
+" load file
 map <Leader>so :so %<cr>
 
-nmap <Leader>sn :e ~/Dropbox/notes/coding-notes.txt<cr>
+map <Leader>vi :tabe ~/.vimrc<CR>
 
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <Leader>sn :e ~/Google\ Drive/Notes/coding-notes.txt<cr>
 
 map <Leader>x :exec getline(".")<cr>
 
