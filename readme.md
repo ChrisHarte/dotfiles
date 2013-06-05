@@ -83,6 +83,11 @@ Quit with Ctrl+C
 
 ### 9. Fonts & Colours
 
-#### Adobe Source Code Pro
+#### Colours
 
-* [https://github.com/adobe/Source-Code-Pro](https://github.com/adobe/Source-Code-Pro)
+* Solarized [http://ethanschoonover.com/solarized](http://ethanschoonover.com/solarized)
+* Solarized for iTerm2 [https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
+
+#### Fonts
+
+* Adobe Source Code Pro [https://github.com/adobe/Source-Code-Pro](https://github.com/adobe/Source-Code-Pro)
