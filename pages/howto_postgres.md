@@ -1,5 +1,15 @@
 ## Postgres
 
+### Install
+
+#### json.pm (osx)
+
+    sudo cpan App::cpanminus
+
+or
+
+    curl -L http://cpanmin.us | perl - _sudo App::cpanminus
+
 ### Backup
 
 via Linux

@@ -4,7 +4,8 @@ ZSH=$HOME/.oh-my-zsh
 # Plugins
 plugins=(git rbenv)
 
-ZSH_THEME="agnoster-light"
+#ZSH_THEME="agnoster-light"
+ZSH_THEME="robbyrussell"
 
 # Completion dots
 COMPLETION_WAITING_DOTS="true"

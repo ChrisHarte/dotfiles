@@ -7,9 +7,8 @@ call vundle#rc()
 " let Vundle manage Vundle, required!
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-
-" pair matching
 Bundle 'tpope/vim-unimpaired'
+Bundle 'ervandew/supertab'
 
 " buffer clear & listing
 Bundle 'duff/vim-bufonly'
@@ -18,16 +17,12 @@ Bundle 'fholgado/minibufexpl.vim'
 " copy & paste
 Bundle 'johnantoni/YankRing.vim'
 
-" tag finder
-Bundle 'majutsushi/tagbar'
-
 " file managers
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/nerdtree'
 
-" code completion, formatting, commenting
+" code completion
 Bundle 'msanders/snipmate.vim'
-Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-endwise'
 Bundle 'tomtom/tcomment_vim'
 
@@ -70,6 +65,9 @@ map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
 
 map <leader>b :MiniBufExplorer<cr>
 map <leader>B :BufOnly<CR>
+
+map <leader>cc :TComment<CR>
+map <leader>cb :TCommentBlock<CR>
 
 nmap <leader>n :NERDTreeToggle<CR>
 
@@ -306,10 +304,12 @@ let g:Powerline_colorscheme='solarized256_light'
 
 " enable mouse mode even in terminal vim
 set mouse=a
+set background=light
+let g:solarized_termtrans=1
+colorscheme solarized
 
 if has("gui_running")
   set transparency=0
   set lines=90 columns=200
   set mouse=a
-  set background=dark
 endif
