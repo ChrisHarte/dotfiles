@@ -10,7 +10,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'ervandew/supertab'
 
-" buffer clear & listing
+" buffer management
 Bundle 'duff/vim-bufonly'
 Bundle 'fholgado/minibufexpl.vim'
 
@@ -28,7 +28,6 @@ Bundle 'tomtom/tcomment_vim'
 
 " syntax checking
 Bundle 'scrooloose/syntastic'
-Bundle 'hallettj/jslint.vim'
 
 " file types
 Bundle 'johnantoni/nginx-vim-syntax'
@@ -56,12 +55,10 @@ let mapleader=","
 " -------------------------------------------
 
 map <leader>d dd
-map <Leader>bb :!bundle install<cr>
-nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
+map <leader>bb :!bundle install<cr>
+nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
 
-map <Leader>h :CommandT<CR>
-map <Leader>j :CommandT app/assets/javascripts<CR>
-map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
+map <leader>h :CommandT<CR>
 
 map <leader>b :MiniBufExplorer<cr>
 map <leader>B :BufOnly<CR>
@@ -71,41 +68,35 @@ map <leader>cb :TCommentBlock<CR>
 
 nmap <leader>n :NERDTreeToggle<CR>
 
-map <Leader>gac :Gcommit -m -a ""<LEFT>
-map <Leader>gc :Gcommit -m ""<LEFT>
-map <Leader>gs :Gstatus<CR>
-map <Leader>ra :%s/
-map <Leader>sc :sp db/schema.rb<cr>
+map <leader>gac :Gcommit -m -a ""<LEFT>
+map <leader>gc :Gcommit -m ""<LEFT>
+map <leader>gs :Gstatus<CR>
+map <leader>ra :%s/
+map <leader>sc :sp db/schema.rb<cr>
 
 " load file
-map <Leader>so :so %<cr>
+map <leader>so :so %<cr>
 
-map <Leader>vi :tabe ~/.vimrc<CR>
+map <leader>vi :tabe ~/.vimrc<CR>
 
-nmap <Leader>sn :e ~/Google\ Drive/Notes/coding-notes.txt<cr>
+nmap <leader>sn :e ~/Google\ Drive/Notes/coding-notes.txt<cr>
 
-map <Leader>x :exec getline(".")<cr>
+map <leader>x :exec getline(".")<cr>
 
 " toggle splits
-map <Leader>w <C-w>w
-
-" Use ctrl-[hjkl] to select the active split
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+map <leader>w <C-w>w
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 " command typos
 command! Q q
 command! W w
 nnoremap ; :
-nnoremap <Leader><Leader> :
+nnoremap <leader><leader> :
 
 " dash twice for underscore
 imap -- _
@@ -214,10 +205,10 @@ set vb " no annoying sound on errors
 
 " We have to have a winheight bigger than we want to set winminheight. But if we
 " set winheight to be huge before winminheight, the winminheight set will fail.
-set winwidth=84
-set winheight=10
-set winminheight=10
-set winheight=999
+"set winwidth=84
+"set winheight=10
+"set winminheight=10
+"set winheight=999
 
 set wildmenu " make tab completion for files/buffers act like bash
 set wildmode=list:longest,full " use emacs-style tab completion when selecting files, etc
