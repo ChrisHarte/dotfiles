@@ -80,3 +80,9 @@ You can run rake commands and the generators the same with
     rails console       => zeus console / zeus c
 
 Quit with Ctrl+C
+
+### 9. Fonts & Colours
+
+#### Adobe Source Code Pro
+
+* [https://github.com/adobe/Source-Code-Pro](https://github.com/adobe/Source-Code-Pro)
