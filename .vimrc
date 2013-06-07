@@ -14,9 +14,6 @@ Bundle 'ervandew/supertab'
 Bundle 'duff/vim-bufonly'
 Bundle 'fholgado/minibufexpl.vim'
 
-" copy & paste
-Bundle 'johnantoni/YankRing.vim'
-
 " file managers
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/nerdtree'
@@ -57,12 +54,14 @@ let mapleader=","
 map <leader>d dd
 map <leader>bb :!bundle install<cr>
 nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
-
 map <leader>h :CommandT<CR>
 
+" show buffers
 map <leader>b :MiniBufExplorer<cr>
+" wipe buffers
 map <leader>B :BufOnly<CR>
 
+" comment line or block
 map <leader>cc :TComment<CR>
 map <leader>cb :TCommentBlock<CR>
 
@@ -74,14 +73,17 @@ map <leader>gs :Gstatus<CR>
 map <leader>ra :%s/
 map <leader>sc :sp db/schema.rb<cr>
 
-" load file
 map <leader>so :so %<cr>
-
 map <leader>vi :tabe ~/.vimrc<CR>
-
 nmap <leader>sn :e ~/Google\ Drive/Notes/coding-notes.txt<cr>
 
 map <leader>x :exec getline(".")<cr>
+
+" show registers
+map <leader>" :reg<CR>
+
+" paste from register ("[reg],p)
+nnoremap <expr> <leader>p ':put ' . v:register . '<CR>'
 
 " toggle splits
 map <leader>w <C-w>w
@@ -92,7 +94,7 @@ map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
-" command typos
+" typos
 command! Q q
 command! W w
 nnoremap ; :
@@ -131,8 +133,6 @@ set pastetoggle=<F2>
 " copy and paste to system clipboard
 map <leader>v "*p<CR>:exe ":echo 'pasted from clipboard'"<CR>
 map <leader>c "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
-
-nmap <leader>y :YRShow<CR>
 
 " find in files
 map <leader>a :grep<space>

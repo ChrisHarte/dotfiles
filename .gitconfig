@@ -20,6 +20,7 @@
     pop = stash pop
 
     s = status
+    st = status
     ds = diff --stat=160,120  # files changed
     di = diff                 # uncommitted changes
     dh1 = diff HEAD~1         # changes in last commit
