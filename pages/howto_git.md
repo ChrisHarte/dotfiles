@@ -148,3 +148,11 @@ See remote branches
 ## Links
 
 http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
+
+## Amend a commit
+
+    git commit -m 'initial commit'
+    git add forgotten_file
+    git commit --amend
+
+    
