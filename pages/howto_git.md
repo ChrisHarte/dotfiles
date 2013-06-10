@@ -155,4 +155,8 @@ http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
     git add forgotten_file
     git commit --amend
 
-    
+or
+
+    git co HEAD~1
+    git commit -m 'forgotten file'
+    git push --force
