@@ -145,10 +145,6 @@ See remote branches
 
     git co -b [new-branch-name]
 
-## Links
-
-http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
-
 ## Amend a commit
 
     git commit -m 'initial commit'
@@ -160,3 +156,8 @@ or
     git co HEAD~1
     git commit -m 'forgotten file'
     git push origin branch-name --force
+
+## Links
+
+[revert to previous commit](http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how)
+[25 Tips for Intermediate Git Users](http://andyjeffries.co.uk/articles/25-tips-for-intermediate-git-users)
