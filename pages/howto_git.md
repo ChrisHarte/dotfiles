@@ -159,4 +159,4 @@ or
 
     git co HEAD~1
     git commit -m 'forgotten file'
-    git push --force
+    git push origin branch-name --force
