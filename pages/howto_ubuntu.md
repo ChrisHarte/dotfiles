@@ -1,9 +1,15 @@
 ## Ubuntu 12.04
 
-### Set Locale
+### Set Locale 
+
+on Ubuntu
 
     sudo apt-get install language-pack-en-base
     sudo dpkg-reconfigure locales
+
+on Debian
+
+    sudo locale-gen
 
 ### Add Linux user to Group (ubuntu/debian)
 
