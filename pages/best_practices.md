@@ -6,3 +6,13 @@
 * ID & class names should be separated by colons => nav-item
 * With styling specific to your app try to namespace it with p-nav-item [p for paypal].
 * For header styling add classes .h1, .h2, .h3, .h4, .h5 on top of your usual header styling so you have flexibility where needed.
+
+## HTML / SLIM
+
+* With slim use the ' rather than | to get a trailing space at the end of the line.
+
+## Assets
+
+* All asset names should be lower-case, separated by colons => small-warning.png
+* Favour .png for icons, solid graphics, .jpg for people's photos.
+* Use tools like [ImageOptim](http://imageoptim.com/) to crush the file size.
