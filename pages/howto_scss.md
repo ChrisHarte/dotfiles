@@ -1,0 +1,8 @@
+## SCSS / CSS Markup
+
+* If your only ever going to have block1, block2, block3 consider using ID's and name them after the content type (site-nav-block, article-nav-block).
+* If your going to use classes name them after the content type (nav-item, article-summary).
+* With SCSS nesting try to keep with the inception rule, Never Go More Than 3 Levels Deep.
+* ID & class names should be separated by colons => nav-item
+* With styling specific to your app try to namespace it with p-nav-item [p for paypal].
+* For header styling add classes .h1, .h2, .h3, .h4, .h5 on top of your usual header styling so you have flexibility where needed.
