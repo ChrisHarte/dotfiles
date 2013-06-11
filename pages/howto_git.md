@@ -1,10 +1,34 @@
 # GIT
 
-## TIG (text-mode interface for git)
+## Quick Tips
 
-    brew install tig
+### Fetching Remote Branches
 
-https://github.com/jonas/tig
+    git fetch --all
+
+### Create a new Branch based on the current commit
+
+    git co -b [new-branch-name]
+
+### Track Branch (git 1.8)
+
+    git branch -u origin/new-feature
+
+### Amend a Commit
+
+    git commit -m 'initial commit'
+    git add forgotten_file
+    git commit --amend
+
+### Ammend a Commit (rewriting remote branch's history)
+
+    git co HEAD~1
+    git commit -m 'forgotten file'
+    git push origin branch-name --force
+
+## Tools
+
+* TIG[https://github.com/jonas/tig]
 
 ## Rebase
 
@@ -127,35 +151,8 @@ See both local and remote branches
 See local branches
 
 ### git branch -r
+
 See remote branches
-
-## Fetching remote branches
-
-    git fetch origin [branch]
-    git co [branch]
-
-## Tracking remote branches
-
-    git fetch
-    git branch -a
-    git branch --track new-feature origin/new-feature
-    git co new-feature
-
-## Create a new Branch based on the current commit
-
-    git co -b [new-branch-name]
-
-## Amend a commit
-
-    git commit -m 'initial commit'
-    git add forgotten_file
-    git commit --amend
-
-or
-
-    git co HEAD~1
-    git commit -m 'forgotten file'
-    git push origin branch-name --force
 
 ## Links
 
