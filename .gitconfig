@@ -16,7 +16,6 @@
     pu = pull --rebase
     pull = pull --rebase
     pullff = pull --ff-only
-    ba = branch -a
     pop = stash pop
 
     s = status
