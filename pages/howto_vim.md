@@ -19,6 +19,8 @@
     " + 3 + p       paste from register 3
 
     ctrl + l        goto end of line (insert mode)
+    
+    shift + a       goto end of line+1 and switch to insert mode
 
     ctrl + h        goto left split
     ctrl + j        goto bottom split
@@ -27,6 +29,9 @@
 
     [[ or gg        goto top of file
     ]] or shift+gg  goto bottom of file
+
+    ctrl + f        page down
+    ctrl + b        page up
 
     shift + [       go up 1 paragraph/block
     shift + ]       go down 1 paragraph/block
@@ -38,6 +43,10 @@
     F7              indent entire file based on file-type
 
     g + g + = + G   reformat entire page (gg jump to top of page, = select from top to bottom, G reformat)
+
+    :cd [path]      change working path
+
+    ,so             load current file
 
 ## jumping to help
 

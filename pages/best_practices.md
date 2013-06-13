@@ -16,3 +16,8 @@
 * All asset names should be lower-case, separated by colons => small-warning.png
 * Favour .png for icons, solid graphics, .jpg for people's photos.
 * Use tools like [ImageOptim](http://imageoptim.com/) to crush the file size.
+
+## Tables
+
+* There's contention whether paragraph's should be inside tabular data, on this case it's a fair assumption to go with not using p tags inside td elements.
+
