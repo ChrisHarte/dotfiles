@@ -45,6 +45,7 @@
     g + g + = + G   reformat entire page (gg jump to top of page, = select from top to bottom, G reformat)
 
     :cd [path]      change working path
+    :pwd            show current working path
 
     ,so             load current file
 
