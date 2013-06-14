@@ -9,20 +9,17 @@ alias hosts="sudo nano /etc/hosts" # edit hosts
 
 alias free="free -m"
 alias df="df -h"
-alias la='ls -la'
+alias ll='ls -laG'
 alias ls='ls -G'
-alias dir=ls
-alias l=ls
-alias ll='ls -lG'
+alias l='ls -lhG'
 alias duh='du -csh'
 alias c=clear
-alias cls=clear
-alias hist=history
 alias q=exit
 alias v=vim
 alias vi=vim
 alias m=mvim
-alias ch="rm $HISTFILE"
+alias hist=history
+alias clearhist="rm $HISTFILE"
 alias pcat='pygmentize'
 alias grep=ag
 

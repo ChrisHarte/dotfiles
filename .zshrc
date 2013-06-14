@@ -92,8 +92,10 @@ bindkey -v
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-# Use dotfiles version of tig (tig broken in macports and brew doesnt play with macports)
-alias tig=tig-osx
+# Use dotfiles version of tig on OSX (tig broken in macports and brew doesnt play with both)
+if [[ -f /etc/zshenv && $(uname) == Darwin ]]; then
+  alias tig=tig-osx
+fi
 
 source $HOME/.dotfiles/zsh/aliases.sh
 source $HOME/.dotfiles/zsh/functions.sh
