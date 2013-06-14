@@ -1,6 +1,6 @@
 # GIT
 
-## Quick Tips
+## Common Development Tasks
 
 ### Fetching Remote Branches
 
@@ -26,68 +26,33 @@
     git commit -m 'forgotten file'
     git push origin branch-name --force
 
-## Tools
+### Get all changes from Parent branch
 
-* TIG[https://github.com/jonas/tig]
+Say you're on new-feature and you want to pull the changes from master
 
-## Rebase
+    git co new-feature
+    git rebase master
 
-Filters are included to help with rebasing using http://technosorcery.net/blog/2010/02/07/fun-with-the-upcoming-1-7-release-of-git-rebase---interactive---autosquash/
+When you rebase it will stop if there's merge conflicts introduced from master.
 
-Basically for any commit you are doing that you know you will want to squash, put 'squash!' at the beginning of the commit.
+If you get any, fix them with your text editor then:
 
-Now when you go to rebase,
+Check what's been changed:
+    git status
+    git diff
 
-    git ri <branch-name>
+Add your resolutions:
+    git add .
 
-It will use those comments to mark them as 'squash'able automatically, any others will be marked with pick as usual.
+Continue rebasing:
+    git rebase --continue
 
-Note, if you exit out of the editor (in this case vim) without saving git will still try to perform the rebase to revert this do:
+If nothing was changed with resolution:
+    git rebase --skip
 
-    git reset --soft
+Once resolved & rebased you will now be back on the new-feature branch with an updated commit history.
 
-You'll now be ready to redo the rebase.
-
-### Abort
-
-If you screw up the rebase and need to abort the rebase do:
-
-    git rebase --abort
-
-### play-by-play
-
-When you do do a rebase, here's how it goes:
-
-1. First you perform the rebase, specifying the ref and branch.
-
-    **git ri origin/master** or **git rebase origin/master --interactive**
-
-2. Next git will open your editor of choice specified from .gitconfig, in this vim
-3. You will now see a list of your local commits, in ascending order (first to last).
-4. All will be marked with the 'pick' command, change as appropriate.
-6. Save and quit ":wq!"
-7. VIM will re-open and you'll now see all the commit messages from the squashed commits.
-8. Save and quit again ":wq!"
-9. You should finally see this message confirming the rebase has gone correctly,
-
-    **Successfully rebased and updated refs/heads/master.**
-
-10. You still need to push your changes
-
-    **git push origin master**
-
-Note: because of the [default=nothing] setting in .gitconfig, you will always have to specify the ref to push with rather than use the default. it's safer this way http://technosorcery.net/blog/2011/12/15/making-git-push-a-little-smarter-slash-safer/
-
-### rebase commands
-
-    p, pick = use commit
-    r, reword = use commit, but edit the commit message
-    e, edit = use commit, but stop for amending
-    s, squash = use commit, but meld into previous commit
-    f, fixup = like "squash", but discard this commit's log message
-    x, exec = run command (the rest of the line) using shell
-
-## Notes
+## Commands
 
 ### git r
 show current branch history
@@ -153,6 +118,21 @@ See local branches
 ### git branch -r
 
 See remote branches
+
+## Tools
+
+* TIG[https://github.com/jonas/tig]
+
+## Notes
+
+### Rebase Types
+
+    p, pick = use commit
+    r, reword = use commit, but edit the commit message
+    e, edit = use commit, but stop for amending
+    s, squash = use commit, but meld into previous commit
+    f, fixup = like "squash", but discard this commit's log message
+    x, exec = run command (the rest of the line) using shell
 
 ## Links
 

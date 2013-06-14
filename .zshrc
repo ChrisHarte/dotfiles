@@ -92,6 +92,9 @@ bindkey -v
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+# Use dotfiles version of tig (tig broken in macports and brew doesnt play with macports)
+alias tig=tig-osx
+
 source $HOME/.dotfiles/zsh/aliases.sh
 source $HOME/.dotfiles/zsh/functions.sh
 
