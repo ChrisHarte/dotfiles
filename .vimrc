@@ -67,9 +67,11 @@ map <leader>cb :TCommentBlock<CR>
 
 nmap <leader>n :NERDTreeToggle<CR>
 
-map <leader>gac :Gcommit -m -a ""<LEFT>
+map <leader>gac :Gcommit -am ""<LEFT>
 map <leader>gc :Gcommit -m ""<LEFT>
 map <leader>gs :Gstatus<CR>
+map <leader>gd :! git diff<CR>
+
 map <leader>ra :%s/
 map <leader>sc :sp db/schema.rb<cr>
 
