@@ -38,16 +38,20 @@ When you rebase it will stop if there's merge conflicts introduced from master.
 If you get any, fix them with your text editor then:
 
 Check what's been changed:
+
     git status
     git diff
 
 Add your resolutions:
+
     git add .
 
 Continue rebasing:
+
     git rebase --continue
 
 If nothing was changed with resolution:
+
     git rebase --skip
 
 Once resolved & rebased you will now be back on the new-feature branch with an updated commit history.
