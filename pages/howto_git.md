@@ -60,7 +60,9 @@ Once resolved & rebased you will now be back on the new-feature branch with an u
 
 Find the commit id for the one you want to apply to the top of your current branch, then:
 
-    git [cherry-pick](http://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/) [commit hash]
+    git cherry-pick [commit hash]
+
+More [here](http://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/)
 
 ## Commands
 
