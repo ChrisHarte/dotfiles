@@ -56,6 +56,12 @@ If nothing was changed with resolution:
 
 Once resolved & rebased you will now be back on the new-feature branch with an updated commit history.
 
+## [Cherry Pick](http://ariejan.net/2010/06/10/cherry-picking-specific-commits-from-another-branch/) one commit into current branch
+
+Find the commit id for the one you want to apply to the top of your current branch, then:
+
+    git cherry-pick [commit hash]
+
 ## Commands
 
 ### git r
