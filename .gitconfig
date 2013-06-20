@@ -7,7 +7,7 @@
     ci = commit
     cp = cherry-pick
     amend = commit --amend
-    aa = add --all
+    aa = add --all .
     fo = fetch origin
     fa = fetch --all
     ff = merge --ff-only

@@ -293,11 +293,11 @@ colorscheme solarized
 
 let g:Powerline_symbols='fancy'
 let g:Powerline_theme='short'
-let g:Powerline_colorscheme='solarized256_dark'
+let g:Powerline_colorscheme='solarized256_light'
 
 " enable mouse mode even in terminal vim
 set mouse=a
-set background=dark
+set background=light
 let g:solarized_termtrans=1
 colorscheme solarized
 

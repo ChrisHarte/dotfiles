@@ -21,7 +21,6 @@ alias m=mvim
 alias hist=history
 alias clearhist="rm $HISTFILE"
 alias pcat='pygmentize'
-alias grep=ag
 
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
