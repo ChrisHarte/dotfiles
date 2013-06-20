@@ -286,18 +286,18 @@ source ~/.dotfiles/vim-config/plugins.vim
 source ~/.dotfiles/vim-config/functions.vim
 
 set t_Co=256
-set background=light
+set background=dark
 
 let g:solarized_termcolors=256
 colorscheme solarized
 
 let g:Powerline_symbols='fancy'
 let g:Powerline_theme='short'
-let g:Powerline_colorscheme='solarized256_light'
+let g:Powerline_colorscheme='solarized256_dark'
 
 " enable mouse mode even in terminal vim
 set mouse=a
-set background=light
+set background=dark
 let g:solarized_termtrans=1
 colorscheme solarized
 

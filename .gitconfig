@@ -53,16 +53,16 @@
 [branch]
   autosetuprebase = always
 [filemerge]
-  executable = vimdiff
+  executable = diffmerge
 [merge]
-  tool = vimdiff
+	tool = diffmerge
 [mergetool]
-	keepBackup = true
+	keepBackup = false
   prompt = false
 [difftool]
   prompt = false
 [diff]
-  tool = vimdiff
+	tool = diffmerge
 [hooks "pre-commit"]
   enabled = true
   whitespace-rb = false
@@ -77,8 +77,13 @@
 [init]
   templatedir = ~/.dotfiles/git_template
 [push]
-  default = nothing
+	default = simple
 [tig]
   show-date = relative
   line-graphics = utf8
   tab-size = 4
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true

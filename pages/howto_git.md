@@ -150,3 +150,5 @@ See remote branches
 
 * [revert to previous commit](http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how)
 * [25 Tips for Intermediate Git Users](http://andyjeffries.co.uk/articles/25-tips-for-intermediate-git-users)
+* [GitX for OSX](https://github.com/rowanj/gitx)
+
