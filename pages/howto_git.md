@@ -26,9 +26,18 @@
     git commit -m 'forgotten file'
     git push origin branch-name --force
 
-### Get all changes from Parent branch
+### Get all Changes from Parent branch
 
 Say you're on new-feature and you want to pull the changes from master
+
+##### First make sure your local master is up-to-date
+
+    git co master
+    git pull --rebase -p
+
+-p means prune any obsolete branches
+
+##### Now checkout your new-feature branch and pull the changes from master
 
     git co new-feature
     git rebase master
@@ -37,7 +46,7 @@ When you rebase it will stop if there's merge conflicts introduced from master.
 
 If you get any, fix them with your text editor then:
 
-Check what's been changed:
+##### Check what's been changed:
 
     git status
     git diff
