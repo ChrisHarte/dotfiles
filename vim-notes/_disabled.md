@@ -1,3 +1,22 @@
+" We have to have a winheight bigger than we want to set winminheight. But if we
+" set winheight to be huge before winminheight, the winminheight set will fail.
+"set winwidth=84
+"set winheight=10
+"set winminheight=10
+"set winheight=999
+
+map <leader>bb :!bundle install<cr>
+nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
+
+" goto end of line
+imap <C-l> <esc>$a
+
+" set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
+
+" load external files
+source ~/.dotfiles/vim-config/plugins.vim
+source ~/.dotfiles/vim-config/functions.vim
+
 " Tabular
 " map <Leader>cu :Tabularize /\|<CR>
 

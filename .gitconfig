@@ -12,7 +12,6 @@
     fa = fetch --all
     ff = merge --ff-only
     noff = merge --no-ff
-    pom = push origin master
     pu = pull --rebase
     pull = pull --rebase
     pullff = pull --ff-only

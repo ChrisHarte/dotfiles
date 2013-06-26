@@ -47,106 +47,7 @@ filetype plugin indent on
 
 compiler ruby " Enable compiler support for ruby
 syntax on " Enable highlighting for syntax
-let mapleader=","
 
-" -------------------------------------------
-
-map <leader>d dd
-map <leader>bb :!bundle install<cr>
-nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
-map <leader>h :CommandT<CR>
-
-" show buffers
-map <leader>b :MiniBufExplorer<cr>
-" wipe buffers
-map <leader>B :BufOnly<CR>
-
-" comment line or block
-map <leader>cc :TComment<CR>
-map <leader>cb :TCommentBlock<CR>
-
-nmap <leader>n :NERDTreeToggle<CR>
-
-map <leader>gac :Gcommit -am ""<LEFT>
-map <leader>gc :Gcommit -m ""<LEFT>
-map <leader>gs :Gstatus<CR>
-map <leader>gd :! git diff<CR>
-
-map <leader>ra :%s/
-map <leader>sc :sp db/schema.rb<cr>
-
-map <leader>so :so %<cr>
-map <leader>vi :tabe ~/.vimrc<CR>
-nmap <leader>sn :e ~/Google\ Drive/Notes/coding-notes.txt<cr>
-
-map <leader>x :exec getline(".")<cr>
-
-" show registers
-map <leader>" :reg<CR>
-
-" paste from register ("[reg],p)
-nnoremap <expr> <leader>p ':put ' . v:register . '<CR>'
-
-" toggle splits
-map <leader>w <C-w>w
-
-" Edit another file in the same directory as the current file
-" uses expression to extract path from current file's path
-map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
-
-" typos
-command! Q q
-command! W w
-nnoremap ; :
-nnoremap <leader><leader> :
-
-" dash twice for underscore
-imap -- _
-
-" quit
-nmap <leader>q :q!<CR>
-nmap <C-c> :q<CR>
-
-" new tab
-map <C-t> <esc>:tabnew<CR>
-
-" ctrl save
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-
-" exit insert mode
-imap jj <Esc>
-
-" goto end of line
-imap <C-l> <esc>$a
-
-" move up/down long lines
-nmap k gk
-nmap j gj
-
-" unhighlight search
-nmap <CR> :nohlsearch<CR>
-
-" toggle paste formatting off/on
-set pastetoggle=<F2>
-
-" copy and paste to system clipboard
-map <leader>v "*p<CR>:exe ":echo 'pasted from clipboard'"<CR>
-map <leader>c "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
-
-" find in files
-map <leader>a :grep<space>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-
-" Use Q for formatting the current paragraph (or selection)
-vmap Q gq
-nmap Q gqap
-
-" save file with needing sudo rights
-cmap w!! w !sudo tee % >/dev/null
 
 " -------------------------------------------
 
@@ -192,49 +93,153 @@ set hlsearch
 set wrap " wrap long lines
 set linebreak " don't break words when wrapping lines
 set nolist  " list disables linebreak
-
-" fix mouse support inside tmux
-set ttymouse=xterm2
-
-" faster terminal rendering
-set ttyfast
-
-" (Hopefully) removes the delay when hitting esc in insert mode
-set timeoutlen=1000 ttimeoutlen=-1
-
-" set noesckeys " DO NOT ENABLE breaks normal vim's arrow keys in insert mode
+set ttymouse=xterm2 " fix mouse support inside tmux
+set ttyfast " faster terminal rendering
+set timeoutlen=1000 ttimeoutlen=-1 " remove delay when hitting esc in insert mode
 set vb " no annoying sound on errors
-
-" We have to have a winheight bigger than we want to set winminheight. But if we
-" set winheight to be huge before winminheight, the winminheight set will fail.
-"set winwidth=84
-"set winheight=10
-"set winminheight=10
-"set winheight=999
-
 set wildmenu " make tab completion for files/buffers act like bash
 set wildmode=list:longest,full " use emacs-style tab completion when selecting files, etc
-
 set swapfile
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
 set shell=zsh " use ZSH
-set grepprg=ag " Use Silver Searcher instead of grep
 
+" Use Silver Searcher instead of grep
+set grepprg=ag
+
+" Splits
+set splitright
+set splitbelow
+
+set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+
+" -------------------------------------------
+
+let mapleader=","
+
+map <leader>d dd
+map <leader>f :CommandT<CR>
+
+" show buffers
+map <leader>b :MiniBufExplorer<cr>
+" wipe buffers
+map <leader>B :BufOnly<CR>
+
+" comment out line or block
+map <leader>cc :TComment<CR>
+map <leader>cb :TCommentBlock<CR>
+
+nmap <leader>n :NERDTreeToggle<CR>
+
+map <leader>gac :Gcommit -am ""<LEFT>
+map <leader>gc :Gcommit -m ""<LEFT>
+map <leader>gs :Gstatus<CR>
+map <leader>gd :! git diff<CR>
+
+map <leader>ra :%s/
+map <leader>sc :sp db/schema.rb<cr>
+
+map <leader>vi :vsplit ~/.vimrc<CR><C-l>
+nmap <leader>sn :vsplit ~/Google\ Drive/Notes/coding-notes.txt<CR><C-l>
+
+map <leader>x :exec getline(".")<cr>
+
+" show registers
+map <leader>" :reg<CR>
+
+" paste from register ("[reg],p)
+nnoremap <expr> <leader>p ':put ' . v:register . '<CR>'
+
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+
+" typos
+command! Q q
+command! W w
+nnoremap ; :
+nnoremap <leader><leader> :
+
+" dash twice for underscore
+imap -- _
+
+" quit
+nmap <leader>q :q!<CR>
+nmap <C-c> :q<CR>
+
+" new tab
+map <C-t> <esc>:tabnew<CR>
+
+command! Wq wq
+
+nmap <c-s> <esc>:w<CR>
+imap <c-s> <esc>:w<CR>
+
+" exit insert mode
+imap jj <Esc>
+
+" move up/down long lines
+nmap k gk
+nmap j gj
+
+" toggle paste formatting off/on
+set pastetoggle=<F2>
+
+" copy and paste to system clipboard
+map <leader>v "*p<CR>:exe ":echo 'pasted from clipboard'"<CR>
+map <leader>c "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
+
+" find in files
+map <leader>a :grep<space>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" save file with needing sudo rights
+cmap w!! w !sudo tee % >/dev/null
+
+" Clear the search buffer when hitting return
+function! MapCR()
+  nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
+
+let g:netrw_cursor = 0
+
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
+
+" Disable auto popup, use <Tab> to autocomplete
+let g:clang_complete_auto = 0
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
+
+" Command-T
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,solr/**,log/**,*.psd,*.PSD,.git/**,.gitkeep
 set wildignore+=*.ico,*.ICO,backup/**,*.sql,*.dump,*.tmp,*.min.js,Gemfile.lock
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**
 
-set statusline=%<%f\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+let g:CommandTMaxHeight=50
+let g:CommandTMatchWindowAtTop=1
+let g:CommandTMatchWindowReverse=0
+let g:CommandTMaxFiles=20000
+let g:CommandTCancelMap=['<C-q>', '<C-c>']
+
 
 " -------------------------------------------
-
-let g:netrw_cursor = 0
-
-filetype plugin indent on " load indent files, to automatically do language-dependent indenting.
-
-" Format xml files
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+filetype plugin indent on
 
 augroup vimrcEx
   " Clear all autocmds in the group
@@ -247,11 +252,14 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 
-  "for ruby, autoindent with two spaces, always expand tabs
+  " Format xml files
+  autocmd FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+
+  " Autoindent with two spaces, always expand tabs
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,haml,coffee set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
-  "don't remember file position for git commits
+  " Dont remember file position for git commits
   autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
@@ -278,28 +286,61 @@ augroup vimrcEx
 
   autocmd! BufRead,BufNewFile *.conf setfiletype nginx
 
-  autocmd BufWritePre *.rb :%s/\s\+$//e " Remove trailing whitespace on save for ruby files.
-  autocmd filetype svn,*commit* setlocal spell "spell check when writing commit logs
+  " Remove trailing whitespace
+  autocmd BufWritePre * :%s/\s\+$//e
+
+  " Spell check when writing commit logs
+  autocmd filetype svn,*commit* setlocal spell
+
+  " Source the vimrc file after saving it
+  autocmd bufwritepost .vimrc source $MYVIMRC
+
+  " Watch for file changes
+  autocmd FileChangedShell * echo "File changed :e to reload"
 augroup END
 
-source ~/.dotfiles/vim-config/plugins.vim
-source ~/.dotfiles/vim-config/functions.vim
+" ---------------------------------------------------------
+" MULTIPURPOSE TAB KEY
+" ---------------------------------------------------------
+" Indent if we're at the beginning of a line. Else, do completion.
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
 
+" ---------------------------------------------------------
+" RENAME CURRENT FILE
+" ---------------------------------------------------------
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>r :call RenameFile()<cr>
+
+" ---------------------------------------------------------
 set t_Co=256
 set background=dark
-
+let g:solarized_termtrans=1
 let g:solarized_termcolors=256
+let g:solarized_contrast="high"
 colorscheme solarized
 
 let g:Powerline_symbols='fancy'
 let g:Powerline_theme='short'
 let g:Powerline_colorscheme='solarized256_dark'
 
-" enable mouse mode even in terminal vim
 set mouse=a
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
 
 if has("gui_running")
   set transparency=0
