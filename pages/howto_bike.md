@@ -48,4 +48,4 @@ most tyres accept 65psi but check what you're accepts, don't pump it up too much
 
 quick release wheels are great when you've got a flat, without them they're a PITA to replace a flat.
 
-remember some quick release are actually cam's and don't need to tighten the wheel in really hard just get it in just so and push the lever back.
+remember quick releases are actually cam's and you don't need to tighten the wheel in really hard, just get it in just so and push the lever back.
