@@ -7,6 +7,7 @@
 
 * Watch for taxi's, buses, trucks or anything that's bigger than you. if you see a person on a mobile or with a dog give them a wide berth as the dog may get excited and run towards your bike.
 * Never cycle faster than you can keep control of the bike, showing off will get you killed.
+* If you're in a car and you hit a kid above 30 they're dead, think of what a bike would do.
 * Make sure your helmet is secure, if you fall off and crack the styrofoam helmets then throw it away and get another one.
 
 ### two types of tyres
