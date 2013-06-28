@@ -1,9 +1,9 @@
 ### Grid System
 
+    [row]
     [two-column] [two-column]
     [three-column] [x-column]
-    
-    [row]
+        (vertical-align: top;)
     
 ### Progress Bar
 
@@ -16,3 +16,11 @@
       li.[faux-tab]
     
     div.[faux-content] (visible)
+
+### Form Elements
+
+    .full-width
+        (width: 100%;)
+        
+    textarea.full-width
+        (height: 130px;)
