@@ -10,7 +10,7 @@
     a               insert mode after cursor
     jj              exit insert mode
 
-    ,h              search by filename (commandt)
+    ,f              search by filename (commandt)
     ,a              search by content (silver searcher)
     ,n              file tree (nerdtree)
 
