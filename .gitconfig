@@ -26,7 +26,7 @@
     l = "!. ~/.githelpers && pretty_git_log" # pretty commit log
     ll = log --stat --abbrev-commit # verbose commit log
     div = divergence # how far branch has diverged from parent branch
-  
+
     grep-all = !sh -c 'git rev-list --all | xargs git grep \"${1}\"' - # find in all commits
     whois = !sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' - # find who made the change
 
@@ -64,7 +64,7 @@
 	tool = diffmerge
 [hooks "pre-commit"]
   enabled = true
-  whitespace-rb = false
+  whitespace-rb = true
 [hooks "post-checkout"]
   enabled = true
   update-submodules-rb = true

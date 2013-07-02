@@ -140,7 +140,7 @@ map <leader>gd :! git diff<CR>
 map <leader>ra :%s/
 map <leader>sc :sp db/schema.rb<cr>
 
-map <leader>vi :vsplit ~/.vimrc<CR><C-l>
+map <leader>vi :e ~/.vimrc<CR>
 nmap <leader>sn :vsplit ~/Google\ Drive/Notes/coding-notes.txt<CR><C-l>
 
 map <leader>x :exec getline(".")<cr>
@@ -173,14 +173,13 @@ nnoremap <leader><leader> :
 imap -- _
 
 " quit
-nmap <leader>q :q!<CR>
-nmap <C-c> :q<CR>
+nmap <C-q> :q<CR>
 
 " new tab
 map <C-t> <esc>:tabnew<CR>
 
+" save
 command! Wq wq
-
 nmap <c-s> <esc>:w<CR>
 imap <c-s> <esc>:w<CR>
 
@@ -193,10 +192,6 @@ nmap j gj
 
 " toggle paste formatting off/on
 set pastetoggle=<F2>
-
-" copy and paste to system clipboard
-map <leader>v "*p<CR>:exe ":echo 'pasted from clipboard'"<CR>
-map <leader>c "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
 
 " find in files
 map <leader>a :grep<space>

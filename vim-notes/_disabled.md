@@ -5,6 +5,12 @@
 "set winminheight=10
 "set winheight=999
 
+
+" copy and paste to system clipboard
+map <leader>p "*p<CR>:exe ":echo 'pasted from clipboard'"<CR>
+map <leader>y "*y<CR>:exe ":echo 'copied to clipboard'"<CR>
+
+
 map <leader>bb :!bundle install<cr>
 nmap <leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
 
