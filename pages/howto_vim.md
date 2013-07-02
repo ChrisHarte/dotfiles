@@ -49,6 +49,12 @@
 
     ,so             load current file
 
+## copy & paste
+
+   shift + v        switch to visual mode
+   yy               yank selection
+   leader + p       paste selection
+
 ## jumping to help
 
     :help [subject]
