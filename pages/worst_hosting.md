@@ -1,4 +1,4 @@
-## Hosting companies I've had poor experiences with
+## Hosting companies I've had poor experiences with and when
 
-* Allstream
-* Bluehost (oversold boxes)
+* Allstream (2011)
+* Bluehost (oversold boxes) (2012-2013)
