@@ -126,9 +126,8 @@ map <leader>b :MiniBufExplorer<cr>
 " wipe buffers
 map <leader>B :BufOnly<CR>
 
-" comment out line or block
+" comment out line/selection
 map <leader>cc :TComment<CR>
-map <leader>cb :TCommentBlock<CR>
 
 nmap <leader>n :NERDTreeToggle<CR>
 

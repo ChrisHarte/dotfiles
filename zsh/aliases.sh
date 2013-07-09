@@ -5,7 +5,7 @@ alias concat="grep -r'<<<<' *"
 alias copy="cp -r $*" # recursive copy
 alias find="sudo find / -name $*"
 alias crush="optipng -o 7"
-alias hosts="sudo nano /etc/hosts" # edit hosts
+alias hosts="sudo vim /etc/hosts" # edit hosts
 
 alias free="free -m"
 alias df="df -h"

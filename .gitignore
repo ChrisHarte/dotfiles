@@ -65,6 +65,7 @@ pickle-email-*.html
 .project
 /bin
 *.dump
+*.pgdump
 
 # RUBY
 *.gem
