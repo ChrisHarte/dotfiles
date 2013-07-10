@@ -21,6 +21,7 @@ alias m=mvim
 alias hist=history
 alias clearhist="rm $HISTFILE"
 alias pcat='pygmentize'
+alias kill='kill -9'
 
 # DEVELOPMENT
 alias git-pup="git pull && git submodule init && git submodule update && git submodule status"
@@ -40,8 +41,10 @@ alias tt='bundle exec rake test'
 alias worker="bundle exec rake jobs:work"
 alias rake="bundle exec rake $*"
 alias devlog="tail -f log/development.log"
-alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
 alias z=zeus
+
+alias photo="open -b \"com.adobe.Photoshop\""
+alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
 
 # OSX
 alias killdock="Killall Dock" # Force all spaces to restart, thus resetting all spaces wallpaper to whatever's on desktop 1

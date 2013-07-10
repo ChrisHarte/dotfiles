@@ -162,8 +162,8 @@ map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
-" typos
 command! Q q
+command! Qall qall
 command! W w
 nnoremap ; :
 nnoremap <leader><leader> :
@@ -172,7 +172,7 @@ nnoremap <leader><leader> :
 imap -- _
 
 " quit
-nmap <C-q> :q<CR>
+" nmap <C-q> :q<CR>
 
 " new tab
 map <C-t> <esc>:tabnew<CR>
