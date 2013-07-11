@@ -14,3 +14,8 @@ e.g.
 
 * Locate the new folder you created
 * Launch the .xcodeproj file in the folder
+
+## Tutorials
+
+* [http://www.raywenderlich.com/30734/phonegap-tutorial-a-cross-platform-zombie-app]
+* [http://docs.phonegap.com/en/2.0.0/guide_getting-started_ios_index.md.html]
