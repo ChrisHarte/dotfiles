@@ -17,5 +17,5 @@ e.g.
 
 ## Tutorials
 
-* [http://www.raywenderlich.com/30734/phonegap-tutorial-a-cross-platform-zombie-app]
-* [http://docs.phonegap.com/en/2.0.0/guide_getting-started_ios_index.md.html]
+* http://www.raywenderlich.com/30734/phonegap-tutorial-a-cross-platform-zombie-app
+* http://docs.phonegap.com/en/2.0.0/guide_getting-started_ios_index.md.html
