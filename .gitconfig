@@ -50,9 +50,8 @@
     contains=branch --contains
 
     # commit log
-    r = !git l -30
-    l = "!. ~/.githelpers && pretty_git_log"  # pretty
-    ll = log --stat --abbrev-commit           # verbose
+    r = !git l -10
+    l = "!. ~/.githelpers && pretty_git_log"
 
 [core]
   autocrlf = input
