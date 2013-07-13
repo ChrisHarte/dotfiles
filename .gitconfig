@@ -1,37 +1,58 @@
 [user]
-	name = John Griffiths
+  name = John Griffiths
 	email = john@johnantoni.com
 [alias]
+    cl = clone
     co = checkout
-    commit = commit --verbose
     ci = commit
     cp = cherry-pick
-    amend = commit --amend
+    br = branch
     aa = add --all .
+
     fo = fetch origin
     fa = fetch --all
-    ff = merge --ff-only
-    noff = merge --no-ff
     pu = pull --rebase
     pull = pull --rebase
     pullff = pull --ff-only
-    pop = stash pop
+    up = push
 
-    s = status
-    st = status
-    ds = diff --stat=160,120  # files changed
-    di = diff                 # uncommitted changes
-    dh1 = diff HEAD~1         # changes in last commit
-    r = !git l -30            # commit log
-    l = "!. ~/.githelpers && pretty_git_log" # pretty commit log
-    ll = log --stat --abbrev-commit # verbose commit log
-    div = divergence # how far branch has diverged from parent branch
+    sl = stash list
+    sa = stash apply
+    ss = stash save
 
-    grep-all = !sh -c 'git rev-list --all | xargs git grep \"${1}\"' - # find in all commits
-    whois = !sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' - # find who made the change
+    s = status -s
+    st = status -s
 
+    di = diff
+    diff = diff --word-diff
+    dc = diff -cached
+
+    # modified files in last commit
+    dl = !git ll -1
+
+    # diff against last commit
+    dlc = diff _cached HEAD^
+
+    # find file
+    f = "!git ls-files | grep -i"
+
+    # find string in codebase
+    grep = grep -Ii
+    gr = grep -Ii
+
+    # find in all commits
+    grep-all = !sh -c 'git rev-list --all | xargs git grep \"${1}\"' -
+
+    # find author
+    whois = !sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' -
+
+    # check for branch inside current branch
     contains=branch --contains
-    clean-untracked=clean -ndf
+
+    # commit log
+    r = !git l -30
+    l = "!. ~/.githelpers && pretty_git_log"  # pretty
+    ll = log --stat --abbrev-commit           # verbose
 
 [core]
   autocrlf = input
@@ -64,7 +85,7 @@
 	tool = diffmerge
 [hooks "pre-commit"]
   enabled = true
-  whitespace-rb = true
+  whitespace-rb = false
 [hooks "post-checkout"]
   enabled = true
   update-submodules-rb = true
