@@ -23,18 +23,21 @@
     s = status -s
     st = status -s
 
+    # diff
     di = diff
-    diff = diff --word-diff
     dc = diff --cached
+    diff = diff --word-diff
 
     # modified files in last commit
-    dl = !git log -1
+    dl = "!git ll -1"
 
     # diff against last commit
     dlc = diff --cached HEAD^
 
     # find file
     f = "!git ls-files | grep -i"
+    filelog = log -u
+    fl = log -u
 
     # find string in codebase
     grep = grep -Ii
@@ -50,8 +53,28 @@
     contains=branch --contains
 
     # commit log
-    r = !git l -10
-    l = "!. ~/.githelpers && pretty_git_log"
+    l = !git ld -10
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    le = log --oneline --decorate
+
+    # standard log or tree
+    log = "!. ~/.githelpers && pretty_git_log"
+    tree = log --oneline --decorate --all --graph
+
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+
+    # reset
+    r = reset
+    r1 = reset HEAD^
+    r2 = reset HEAD^^
+    rh = reset _hard
+    rh1 = reset HEAD^ _hard
+    rh2 = reset HEAD^^ _hard
 
 [core]
   autocrlf = input

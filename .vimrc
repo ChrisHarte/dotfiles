@@ -169,7 +169,7 @@ nnoremap ; :
 nnoremap <leader><leader> :
 
 " dash twice for underscore
-imap -- _
+" imap -- _
 
 " quit
 " nmap <C-q> :q<CR>
