@@ -25,13 +25,13 @@
 
     di = diff
     diff = diff --word-diff
-    dc = diff -cached
+    dc = diff --cached
 
     # modified files in last commit
-    dl = !git ll -1
+    dl = !git log -1
 
     # diff against last commit
-    dlc = diff _cached HEAD^
+    dlc = diff --cached HEAD^
 
     # find file
     f = "!git ls-files | grep -i"
